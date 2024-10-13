@@ -1,0 +1,29 @@
+.Editable {
+    font-size: inherit;
+    font-style: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+    text-decoration: inherit;
+    background-color: inherit;
+    line-height: inherit;
+    color: inherit;
+    cursor: pointer;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+textarea.Editable,
+textarea.Editable::placeholder {
+    resize: none;
+    cursor: auto;
+    border: none;
+    outline: none;
+    overflow: auto;
+    width: 100%;
+}
+
+.Editable.Placeholder,
+textarea.Editable::placeholder {
+    opacity: 0.5;
+}
