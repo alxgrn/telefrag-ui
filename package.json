@@ -1,5 +1,5 @@
 {
-  "name": "telefrag-ui",
+  "name": "@alxgrn/telefrag-ui",
   "description": "UI library for The Daily Telefrag project",
   "version": "0.0.0",
   "private": false,
