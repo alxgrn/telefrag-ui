@@ -1,0 +1,31 @@
+.Panel {
+    background-color: var(--alxgrn-bg-panel);
+    border-radius: var(--alxgrn-unit-half);
+    padding: var(--alxgrn-unit-double);
+    margin: var(--alxgrn-unit) 0;
+}
+
+.Panel:first-child {
+    margin-top: 0;
+}
+
+.Panel:last-child {
+    margin-bottom: 0;
+}
+
+.Panel p:first-child,
+.Panel .p:first-child {
+    margin-top: 0;
+}
+
+.Panel p:last-child,
+.Panel .p:last-child {
+    margin-bottom: 0;
+}
+
+
+@media (max-width: 512px) {
+    .Panel {
+        padding: var(--alxgrn-unit);
+    }
+}

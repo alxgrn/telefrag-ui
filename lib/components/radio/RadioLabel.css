@@ -2,6 +2,7 @@
  * Лейбл поля ввода для radio/checkbox
  */
  .Form label.Radio {
+    color: var(--alxgrn-color-text);
     width: auto;
 	display: block;
     user-select: none;
@@ -16,13 +17,13 @@
 
 .Form label.Radio .Bottom {
     font-size: smaller;
-    color: var(--alxgrn-color-topbottom);
+    color: var(--alxgrn-color-light);
     cursor: default;
 }
 
 .Form label.Radio.Disabled,
 .Form label.Radio.Disabled .Bottom {
-    color: var(--alxgrn-color-disabled);
+    color: var(--alxgrn-color-light);
     cursor: default;
 }
 
@@ -78,10 +79,10 @@
 /* Disabled */
 .Form label.Radio.Disabled s {
     opacity: .5;
-    border: 1px solid var(--alxgrn-color-disabled);
+    border: 1px solid var(--alxgrn-color-light);
 }
 .Form label.Radio.Disabled.Checked s {
-    background-color: var(--alxgrn-color-disabled);
+    background-color: var(--alxgrn-color-light);
 }
 /* Checked */
 .Form label.Radio.Checked s {

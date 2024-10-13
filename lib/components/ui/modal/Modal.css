@@ -1,12 +1,12 @@
 :root {
     --alxgrn-modal-zindex: 1000; /* выше прочих */
     --alxgrn-modal-shadow: 0 0 var(--alxgrn-unit-half) rgba(0,0,0,.1);
-    --alxgrn-modal-bg-color: white;
+    --alxgrn-modal-bg-color: var(--alxgrn-bg-panel);
     --alxgrn-modal-animation-length: 100ms;
     --alxgrn-modal-width: 512px;
-    --alxgrn-modal-color-close: var(--alxgrn-color-disabled);
+    --alxgrn-modal-color-close: var(--alxgrn-color-light);
     --alxgrn-modal-color-accent: var(--alxgrn-color-accent);
-    --alxgrn-modal-color-scroll: var(--alxgrn-color-scroll);
+    --alxgrn-modal-color-scroll: var(--alxgrn-color-light);
 }
 
 .Modal {
@@ -40,7 +40,7 @@
     background-color: var(--alxgrn-modal-bg-color);
     width: var(--alxgrn-modal-width);
     max-height: 100%;
-    border-radius: var(--alxgrn-unit);
+    border-radius: var(--alxgrn-unit-half);
     overflow: auto;
 }
 

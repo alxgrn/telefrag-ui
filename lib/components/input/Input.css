@@ -2,11 +2,11 @@
  * Цвета
  */
 :root {
-    --alxgrn-input-bg: var(--alxgrn-bg-input);
+    --alxgrn-input-bg: var(--alxgrn-bg-accent);
     --alxgrn-input-color: var(--alxgrn-color-text);
     --alxgrn-input-border: var(--alxgrn-color-accent);
 
-    --alxgrn-input-bg-focus: var(--alxgrn-bg-focus);
+    --alxgrn-input-bg-focus: var(--alxgrn-bg-active);
     --alxgrn-input-color-focus: var(--alxgrn-color-text);
     --alxgrn-input-border-focus: var(--alxgrn-color-accent);
 
@@ -18,9 +18,9 @@
     --alxgrn-input-color-success: var(--alxgrn-color-success);
     --alxgrn-input-border-success: var(--alxgrn-color-success);
 
-    --alxgrn-input-bg-disabled: var(--alxgrn-bg-disabled);
-    --alxgrn-input-color-disabled: var(--alxgrn-color-disabled);
-    --alxgrn-input-border-disabled: lightgrey;
+    --alxgrn-input-bg-disabled: var(--alxgrn-bg-light);
+    --alxgrn-input-color-disabled: var(--alxgrn-color-light);
+    --alxgrn-input-border-disabled: var(--alxgrn-border-light);
 
     --alxgrn-input-color-placeholder: lightslategrey;
 }

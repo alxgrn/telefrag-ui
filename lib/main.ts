@@ -16,6 +16,8 @@ import FormRow from './components/form/FormRow';
 import FormCol from './components/form/FormCol';
 import DatePicker from './components/date/DatePicker';
 import { Menu, MenuItem } from './components/ui/menu/Menu';
+import Block from './components/ui/block/Block';
+import Panel from './components/ui/panel/Panel';
 import Modal from './components/ui/modal/Modal';
 import Popup from './components/ui/popup/Popup';
 import Portal from './components/ui/portal/Portal';
@@ -43,6 +45,8 @@ export {
     FormCol,
     DatePicker,
     Menu,
+    Block,
+    Panel,
     Modal,
     Popup,
     Portal,

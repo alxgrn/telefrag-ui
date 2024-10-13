@@ -4,9 +4,9 @@
  */
 :root {
     --alxgrn-datepicker-bg: transparent;
-    --alxgrn-datepicker-bg-day: var(--alxgrn-bg-disabled);
-    --alxgrn-datepicker-bg-menu: var(--alxgrn-bg-input);
-    --alxgrn-datepicker-bg-hover: var(--alxgrn-bg-focus);
+    --alxgrn-datepicker-bg-day: var(--alxgrn-bg-light);
+    --alxgrn-datepicker-bg-menu: var(--alxgrn-bg-accent);
+    --alxgrn-datepicker-bg-hover: var(--alxgrn-bg-active);
     --alxgrn-datepicker-bg-select: var(--alxgrn-color-accent);
     --alxgrn-datepicker-color: var(--alxgrn-color-text);
     --alxgrn-datepicker-color-accent: var(--alxgrn-color-accent);

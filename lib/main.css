@@ -1,32 +1,57 @@
+* {
+    box-sizing: border-box;
+    overflow-wrap: anywhere;
+}
+
 :root {
     /**
-      * Цвета
-      */
-    --alxgrn-bg-input: aliceblue;
-    --alxgrn-bg-focus: moccasin;
-    --alxgrn-bg-error: #fee;
-    --alxgrn-bg-button: gainsboro;
-    --alxgrn-bg-success: #efe;
-    --alxgrn-bg-disabled: whitesmoke;
-    --alxgrn-color-text: #333;
-    --alxgrn-color-error: firebrick;
-    --alxgrn-color-accent: steelblue;
-    --alxgrn-color-scroll: gainsboro;
-    --alxgrn-color-button: lightslategrey;
-    --alxgrn-color-success: forestgreen;
-    --alxgrn-color-disabled: slategrey;
-    --alxgrn-color-topbottom: slategrey;
+     * Размеры
+     */
+    --alxgrn-unit: 16px;
+    --alxgrn-unit-half: 8px;
+    --alxgrn-unit-small: 4px;
+    --alxgrn-unit-double: 32px;
+    --alxgrn-unit-smallest: 2px;
     /**
-      * Размеры
-      */
-    --alxgrn-unit: 1rem;
-    --alxgrn-unit-half: .5rem;
-    --alxgrn-unit-small: .25rem;
-    --alxgrn-unit-double: 2rem;
-    --alxgrn-unit-smallest: .125rem;
+     * Шрифт
+     */
+    --alxgrn-font-size: 16px;
+    --alxgrn-font-small: 12px;
+    --alxgrn-line-height: 1.3;
+    --alxgrn-font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     /**
-      * Размеры шрифта
-      */
-    --alxgrn-font-size: 1rem;
-    --alxgrn-font-small: .8rem;
+     * Основные цвета
+     */
+    --alxgrn-color-text: #555; /* обычный текст */
+    --alxgrn-color-dark: var(--alxgrn-color-text); /* alias */
+    --alxgrn-color-light: lightslategrey; /* бледный текст */
+    --alxgrn-color-error: firebrick; /* текст сообщения об ошибке */
+    --alxgrn-color-accent: steelblue; /* текст акцента в т.ч. ссылок */
+    --alxgrn-color-active: moccasin; /* текст активного текста или элемента ввода с фокусом */
+    --alxgrn-color-success: forestgreen; /* текст сообщения об успехе */
+    /**
+     * Цвета подложки
+     */
+    --alxgrn-bg-main: #eee; /* цвет фона страницы */
+    --alxgrn-bg-panel: #fff; /* цвет фона типовой панели */
+    --alxgrn-bg-dark: #888; /* темный цвет фона в панели (обычная кнопка) */
+    --alxgrn-bg-light: rgba(119, 136, 153, .1); /* светлый цвет фона в панели */
+    --alxgrn-bg-error: rgba(178, 34, 34, .1); /* цвет фона элемента ошибки */
+    --alxgrn-bg-accent: rgba(70, 130, 180, .1); /* цвет фона акцентного элемента */
+    --alxgrn-bg-active: moccasin; /* цвет фона активного элемента (фокус ввода) */
+    --alxgrn-bg-success: rgba(34, 139, 34, .1); /* цвет фона элемента успеха */
+    /**
+     * Цветв границ
+     */
+    --alxgrn-border-light: rgba(119, 136, 153, .5); /* текст границ и разделителей */
+}
+/**
+ * Тёмная тема
+ */
+[data-theme='dark'] {
+    --alxgrn-color-text: #999;
+    --alxgrn-color-light: #666;
+
+    --alxgrn-bg-main: #111;
+    --alxgrn-bg-panel: #222;
 }

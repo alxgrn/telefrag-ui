@@ -4,12 +4,12 @@
  :root {
     --alxgrn-fieldset-color: var(--alxgrn-color-accent);
     --alxgrn-fieldset-color-error: var(--alxgrn-color-error);
-    --alxgrn-fieldset-color-top: var(--alxgrn-color-topbottom);
-    --alxgrn-fieldset-color-bottom: var(--alxgrn-color-topbottom);
-    --alxgrn-fieldset-color-disabled: var(--alxgrn-color-disabled);
+    --alxgrn-fieldset-color-top: var(--alxgrn-color-light);
+    --alxgrn-fieldset-color-bottom: var(--alxgrn-color-light);
+    --alxgrn-fieldset-color-disabled: var(--alxgrn-color-light);
     --alxgrn-fieldset-border: var(--alxgrn-color-accent);
     --alxgrn-fieldset-border-error: var(--alxgrn-color-error);
-    --alxgrn-fieldset-border-disabled: gainsboro;
+    --alxgrn-fieldset-border-disabled: var(--alxgrn-border-light);
 }
 /**
  * Блок элементов

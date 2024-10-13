@@ -1,0 +1,41 @@
+.Block {
+    display: block;
+    margin: var(--alxgrn-unit) 0;
+    padding: var(--alxgrn-unit-half);
+    color: var(--alxgrn-color-text);
+    background-color: var(--alxgrn-bg-light);
+    border-radius: var(--alxgrn-unit-small);
+}
+
+.Block.Accent {
+    color: var(--alxgrn-color-accent);
+    background-color: var(--alxgrn-bg-accent);
+}
+
+.Block.Error {
+    color: var(--alxgrn-color-error);
+    background-color: var(--alxgrn-bg-error);
+}
+
+.Block.Success {
+    color: var(--alxgrn-color-success);
+    background-color: var(--alxgrn-bg-success);
+}
+
+.Block:first-child {
+    margin-top: 0;
+}
+
+.Block:last-child {
+    margin-bottom: 0;
+}
+
+.Block p:first-child,
+.Block .p:first-child {
+    margin-top: 0;
+}
+
+.Block p:last-child,
+.Block .p:last-child {
+    margin-bottom: 0;
+}

@@ -3,6 +3,6 @@
 }
 
 .App header {
-    font-size: large;
+    font-size: var(--alxgrn-font-size);
     font-weight: bold;
 }

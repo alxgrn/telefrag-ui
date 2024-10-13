@@ -5,7 +5,7 @@ import { RadioListOption } from '../radio/RadioList';
 import { SelectOption } from '../select/Select';
 import { CheckboxListOption, CheckboxListValue } from '../checkbox/CheckboxList';
 import Button, { ButtonType } from '../button/Button';
-import { Hidden, Checkbox, Input, Select, RadioList, Files, Date, CheckboxList, Time } from '../../main';
+import { Hidden, Checkbox, Input, Select, RadioList, Files, Date, CheckboxList, Time, Block } from '../../main';
 import './Form.css';
 
 export type FormProps = {
@@ -143,9 +143,9 @@ export const Form: React.FC<PropsWithChildren<FormProps>> = ({ info, error, succ
 
     return(
         <div className={wide ? 'Form FormWide' : 'Form'}>
-            {success && <div className='FormSuccess'>{success}</div>}
-            {error && <div className='FormError'>{error}</div>}
-            {info && <div className='FormInfo'>{info}</div>}
+            {success && <Block type='Success'>{success}</Block>}
+            {error && <Block type='Error'>{error}</Block>}
+            {info && <Block>{info}</Block>}
             {children}
             {(submit || cancel) &&
             <div className='FormSubmitButtons'>

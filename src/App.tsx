@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Form, Files, Input, RadioList, Select, Checkbox, CheckboxList, Fieldset, Date, FormData, FormRow, FormCol, Time, Modal, Button, Alert, Confirm, Prompt } from '../';
+import { Form, Files, Input, RadioList, Select, Checkbox, CheckboxList, Fieldset, Date, FormData, FormRow, FormCol, Time, Modal, Button, Alert, Confirm, Prompt, Panel } from '../lib/main';
 import './App.css';
 import { CheckboxListOption } from '../lib/components/checkbox/CheckboxList';
 import { RadioListOption, RadioListValue } from '../lib/components/radio/RadioList';
@@ -43,6 +43,7 @@ function App() {
     const [ isAlertOpen, setIsAlertOpen ] = useState(false);
     const [ isConfirmOpen, setIsConfirmOpen ] = useState(false);
     const [ isPromptOpen, setIsPromptOpen ] = useState(false);
+    const [ theme, setTheme ] = useState<'light'|'dark'>('light');
 
     const onSubmit = (data: FormData) => {
         window.alert(data);
@@ -67,16 +68,28 @@ function App() {
         setFiles(files);
     };
 
+    const onTheme = () => {
+        if (theme === 'dark') {
+            setTheme('light');
+            document.documentElement.setAttribute('data-theme', 'light');
+        } else {
+            setTheme('dark');
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+    };
+
     return (
-        <div className="App">
-            <header>
-                React Form Test
-            </header>
-            <p>
-                <Button type='Accent' onClick={() => setIsAlertOpen(true)} label='Alert'/>&nbsp;
-                <Button type='Success' onClick={() => setIsConfirmOpen(true)} label='Confirm'/>&nbsp;
-                <Button type='Error' onClick={() => setIsPromptOpen(true)} label='Prompt'/>
-            </p>
+    <div className="App">
+        <header>
+            React Form Test
+        </header>
+        <Panel>
+            <Button type='Accent' onClick={() => setIsAlertOpen(true)} label='Alert'/>&nbsp;
+            <Button type='Success' onClick={() => setIsConfirmOpen(true)} label='Confirm'/>&nbsp;
+            <Button type='Error' onClick={() => setIsPromptOpen(true)} label='Prompt'/>&nbsp;
+            <Button onClick={() => onTheme()} label={theme === 'dark' ? 'Dark' : 'Light'}/>
+        </Panel>
+        <Panel>
             <Form
                 info='Info text'
                 success='Success text'
@@ -237,6 +250,8 @@ function App() {
                     </FormCol>
                 </FormRow>
             </Form>
+        </Panel>
+        <Panel>
             <p>
                 <Button type='Default' label='Default'/>&nbsp;
                 <Button type='Accent' label='Accent'/>&nbsp;
@@ -249,45 +264,46 @@ function App() {
                 <Button type='Success' size='Small' label='Success'/>&nbsp;
                 <Button type='Error' size='Small' label='Error'/>&nbsp;
             </p>
-            <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} close={false}>
-                Следует отметить, что начало повседневной работы по формированию позиции требует определения и уточнения системы обучения кадров, соответствующей насущным потребностям. Задача организации, в особенности же социально-экономическое развитие способствует повышению качества существующих финансовых и административных условий. Приятно, граждане, наблюдать, как реплицированные с зарубежных источников, современные исследования освещают чрезвычайно интересные особенности картины в целом, однако конкретные выводы, разумеется, рассмотрены исключительно в разрезе маркетинговых и финансовых предпосылок. Прежде всего, современная методология разработки прекрасно подходит для реализации системы массового участия. Лишь некоторые особенности внутренней политики, инициированные исключительно синтетически, смешаны с не уникальными данными до степени совершенной неузнаваемости, из-за чего возрастает их статус бесполезности. Банальные, но неопровержимые выводы, а также активно развивающиеся страны третьего мира преданы социально-демократической анафеме. Каждый из нас понимает очевидную вещь: семантический разбор внешних противодействий обеспечивает широкому кругу (специалистов) участие в формировании приоретизации разума над эмоциями. Ясность нашей позиции очевидна: убеждённость некоторых оппонентов обеспечивает актуальность вывода текущих активов. Но перспективное планирование влечет за собой процесс внедрения и модернизации поэтапного и последовательного развития общества. Как уже неоднократно упомянуто, тщательные исследования конкурентов призывают нас к новым свершениям, которые, в свою очередь, должны быть смешаны с не уникальными данными до степени совершенной неузнаваемости, из-за чего возрастает их статус бесполезности.
-            </Modal>         
-            <Alert
-                icon='https://dailytelefrag.ru/warning.png'
-                type='round'
-                isOpen={isAlertOpen}
-                onClose={() => setIsAlertOpen(false)}
-                title='Заголовок'
-                message='Тестовое сообщение'
-                close='Понятно'
-                closeType='Success'
-            />
-            <Confirm
-                icon='https://dailytelefrag.ru/warning.png'
-                type='square'
-                isOpen={isConfirmOpen}
-                onCancel={() => { setIsConfirmOpen(false); alert('Cancel'); }}
-                onConfirm={() => { setIsConfirmOpen(false); alert('Confirm'); }}
-                title='Заголовок'
-                message='Тестовое сообщение'
-                cancel='Отменить'
-                confirm='Продолжить'
-                cancelType='Error'
-                confirmType='Success'
-            />
-            <Prompt
-                value='Hello!'
-                isOpen={isPromptOpen}
-                onCancel={() => setIsPromptOpen(false)}
-                onSubmit={(s) => { setIsPromptOpen(false); alert(s); }}
-                title='Заголовок'
-                top='Сверху'
-                bottom='Снизу'
-                submit='Ввести'
-                submitType='Error'
-                //limit={5}
-            />
-        </div>
+        </Panel>
+        <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} close={false}>
+            Следует отметить, что начало повседневной работы по формированию позиции требует определения и уточнения системы обучения кадров, соответствующей насущным потребностям. Задача организации, в особенности же социально-экономическое развитие способствует повышению качества существующих финансовых и административных условий. Приятно, граждане, наблюдать, как реплицированные с зарубежных источников, современные исследования освещают чрезвычайно интересные особенности картины в целом, однако конкретные выводы, разумеется, рассмотрены исключительно в разрезе маркетинговых и финансовых предпосылок. Прежде всего, современная методология разработки прекрасно подходит для реализации системы массового участия. Лишь некоторые особенности внутренней политики, инициированные исключительно синтетически, смешаны с не уникальными данными до степени совершенной неузнаваемости, из-за чего возрастает их статус бесполезности. Банальные, но неопровержимые выводы, а также активно развивающиеся страны третьего мира преданы социально-демократической анафеме. Каждый из нас понимает очевидную вещь: семантический разбор внешних противодействий обеспечивает широкому кругу (специалистов) участие в формировании приоретизации разума над эмоциями. Ясность нашей позиции очевидна: убеждённость некоторых оппонентов обеспечивает актуальность вывода текущих активов. Но перспективное планирование влечет за собой процесс внедрения и модернизации поэтапного и последовательного развития общества. Как уже неоднократно упомянуто, тщательные исследования конкурентов призывают нас к новым свершениям, которые, в свою очередь, должны быть смешаны с не уникальными данными до степени совершенной неузнаваемости, из-за чего возрастает их статус бесполезности.
+        </Modal>         
+        <Alert
+            icon='https://dailytelefrag.ru/warning.png'
+            type='round'
+            isOpen={isAlertOpen}
+            onClose={() => setIsAlertOpen(false)}
+            title='Заголовок'
+            message='Тестовое сообщение'
+            close='Понятно'
+            closeType='Success'
+        />
+        <Confirm
+            icon='https://dailytelefrag.ru/warning.png'
+            type='square'
+            isOpen={isConfirmOpen}
+            onCancel={() => { setIsConfirmOpen(false); alert('Cancel'); }}
+            onConfirm={() => { setIsConfirmOpen(false); alert('Confirm'); }}
+            title='Заголовок'
+            message='Тестовое сообщение'
+            cancel='Отменить'
+            confirm='Продолжить'
+            cancelType='Error'
+            confirmType='Success'
+        />
+        <Prompt
+            value='Hello!'
+            isOpen={isPromptOpen}
+            onCancel={() => setIsPromptOpen(false)}
+            onSubmit={(s) => { setIsPromptOpen(false); alert(s); }}
+            title='Заголовок'
+            top='Сверху'
+            bottom='Снизу'
+            submit='Ввести'
+            submitType='Error'
+            //limit={5}
+        />
+    </div>
     );
 }
 

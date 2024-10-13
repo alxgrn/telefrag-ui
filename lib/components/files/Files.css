@@ -7,6 +7,7 @@
  * Список файлов
  */
 .Form ul.FileList {
+    color: var(--alxgrn-color-text);
     margin: 0 0 var(--alxgrn-unit-half) 0;
     padding: 0 0 0 var(--alxgrn-unit);
 }
@@ -30,14 +31,14 @@
 .Form ul.FileList li div span:last-child {
     white-space: nowrap;
     font-size: smaller;
-    color: var(--alxgrn-color-topbottom);
+    color: var(--alxgrn-color-light);
 }
 .Form ul.FileList.Disabled li {
     cursor: default;
 }
 .Form ul.FileList.Disabled li div span {
     cursor: default;
-    color: var(--alxgrn-color-disabled);
+    color: var(--alxgrn-color-light);
 }
 /**
  * Маркер списка
@@ -52,7 +53,7 @@
 }
 .Form ul.FileList.Disabled li::marker {
     content: "■";
-    color: var(--alxgrn-color-disabled);
+    color: var(--alxgrn-color-light);
 }
 /**
  * Лейбл состоит из "кнопки" и подписи рядом с ней
@@ -81,7 +82,7 @@
 }
 .Form .FileLabel span {
     flex: 1 1 auto;
-    color: var(--alxgrn-color-topbottom);
+    color: var(--alxgrn-color-light);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -91,7 +92,7 @@
     opacity: .5;
 }
 .Form .FileLabel.Disabled span {
-    color: var(--alxgrn-color-disabled);
+    color: var(--alxgrn-color-light);
 }
 .Form .FileLabel.Error label {
     background-color: var(--alxgrn-files-bg-error);

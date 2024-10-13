@@ -4,9 +4,9 @@
  :root {
     --alxgrn-label-color: var(--alxgrn-color-accent);
     --alxgrn-label-color-error: var(--alxgrn-color-error);
-    --alxgrn-label-color-top: var(--alxgrn-color-topbottom);
-    --alxgrn-label-color-bottom: var(--alxgrn-color-topbottom);
-    --alxgrn-label-color-disabled: var(--alxgrn-color-disabled);
+    --alxgrn-label-color-top: var(--alxgrn-color-light);
+    --alxgrn-label-color-bottom: var(--alxgrn-color-light);
+    --alxgrn-label-color-disabled: var(--alxgrn-color-light);
 }
 /**
  * Лейбл поля ввода text/password/textarea/select

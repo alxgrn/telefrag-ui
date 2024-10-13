@@ -1,0 +1,132 @@
+:root {
+    --unit: 1rem;
+    --unit-half: .5rem;
+    --unit-small: .25rem;
+    --unit-smallest: .125rem;
+    --unit-double: 2rem;
+
+    --font-size: 1rem;
+    --line-height: 1.3;
+    --font-size-big: 1.6rem;
+    --font-size-huge: 2.5rem;
+    --font-size-large: 1.2rem;
+    --font-size-largest: 1.4rem;
+    --font-size-small: .8rem;
+    --font-size-smallest: .6rem;
+    --color-h1: #777;
+    --color-h2: #777;
+    --color-h3: #777;
+    --font-size-h1: var(--font-size-huge);
+    --font-size-h2: var(--font-size-big);
+    --font-size-h3: var(--font-size-large);
+    --line-height-h1: 1.1;
+    --line-height-h2: var(--line-height);
+    --line-height-h3: var(--line-height);
+    --font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+    --header-height: calc(3.5 * var(--unit)); /* 2.5 юнита размер юзерпика + паддинги */
+    --page-width: 800px; /* максимальная ширина центральной колонки */
+
+    /* фирменные цвета логотипа */
+    --logo-color-blue: #7091a7;
+    --logo-color-navi: #004571;
+    --logo-color-beige: #c9c1ae;
+
+    /* по-умолчанию цвета светлой темы */
+    --text-color: #555;
+    --link-color: steelblue;
+    --light-color: #999;
+    --accent-color: steelblue;
+    --error-color: firebrick;
+    --success-color: forestgreen;
+    --border-color: #ddd;
+    --button-color: white; /* цвет обычной кнопки */
+    --button-color-disabled: gray; /* цвет заблокированной кнопки */
+
+    --main-bg-color: #eee; /* цвет подложки всей страницы */
+    --menu-bg-color: #fff; /* цвет подложки меню */
+    --panel-bg-color: #fff; /* цвет подложки основной текстовой панели */
+    --modal-bg-color: #fff; /* цвет подложки модального окна */
+    --error-bg-color: #b2222222; /* firebrick с прозрачностью 22 */
+    --accent-bg-color: #4682b422; /* steelblue с прозрачностью 22 */
+    --button-bg-color: var(--accent-color); /* подложка обычной кнопки */
+    --button-bg-color-disabled: lightgray; /* подложка задизейбленой кнопки */
+    --button-bg-color-error: firebrick; /* подложка кнопки ошибки*/
+    --button-bg-color-success: forestgreen; /* подложка кнопки успеха */
+
+    /* переменные библиотеки компонентов */
+    --alxgrn-color-accent: var(--accent-color);
+    --alxgrn-input-border: var(--border-color);
+    --alxgrn-fieldset-border: var(--border-color);
+    --alxgrn-form-info-error-bg: rgba(255,0,0,.1);
+    --alxgrn-form-info-error-border: 1px solid rgba(255,0,0,.1);
+}
+
+[data-theme='dark'] {
+    --text-color: #999;
+    --light-color: #666;
+    --border-color: #555;
+
+    --main-bg-color: #111;
+    --panel-bg-color: #222;
+
+    /* переопределяем цвета форм */
+    --alxgrn-color-text: var(--text-color);
+    --alxgrn-form-info-color: var(--text-color);
+    --alxgrn-popup-bg-color: #333;
+    --alxgrn-menu-bg-hover: var(--accent-bg-color);
+    --alxgrn-menu-color-separator: var(--border-color);
+    --alxgrn-modal-color-close: var(--light-color);
+    --alxgrn-modal-bg-color: var(--panel-bg-color);
+    --alxgrn-color-scroll: #444;
+
+    --alxgrn-input-bg: #444;
+    --alxgrn-input-color: var(--text-color);
+    --alxgrn-input-bg-focus: rgba(255, 228, 181, .75);
+    --alxgrn-input-color-focus: #333;
+    --alxgrn-input-border-focus: var(--alxgrn-color-accent);
+    --alxgrn-input-bg-error: #322;
+    --alxgrn-input-color-error: var(--alxgrn-color-error);
+    --alxgrn-input-border-error: rgba(178, 34, 34, .5); /* firebrick opacity 0.5 */
+    --alxgrn-input-bg-success: var(--alxgrn-bg-success);
+    --alxgrn-input-color-success: var(--alxgrn-color-success);
+    --alxgrn-input-border-success: var(--alxgrn-color-success);
+    --alxgrn-input-bg-disabled: var(--alxgrn-bg-disabled);
+    --alxgrn-input-color-disabled: var(--alxgrn-color-disabled);
+    --alxgrn-input-border-disabled: lightgrey;
+    --alxgrn-input-color-placeholder: rgba(119, 136, 153, .5);  /* lightslategrey opacity 0.5 */
+
+    --alxgrn-datepicker-bg-day: #444;
+    --alxgrn-datepicker-bg-menu: #444;
+    --alxgrn-datepicker-bg-hover: #555;
+    --alxgrn-datepicker-bg-select: #888;
+    --alxgrn-datepicker-color-accent: #bbb;
+    --alxgrn-datepicker-color-select: #eee;
+}
+
+@media (max-width: 512px) {
+    * {
+        --font-size-h1: var(--font-size-big);
+        --font-size-h2: var(--font-size-largest);
+        --font-size-h3: var(--font-size-large);
+    }
+}
+
+@media (max-width: 800px) {
+    * {
+        --page-width: 100%; /* максимальная ширина центральной колонки */
+    }
+}
+
+/* для библиотеки кмопонентов */
+.ModalContent h1 {
+    color: var(--light-color);
+    font-size: var(--font-size-h2);
+    margin: 0 0 var(--unit) 0;
+    line-height: 100%;
+    font-weight: 600;
+}
+
+.Modal .ModalInner {
+    border-radius: var(--unit-half);
+}

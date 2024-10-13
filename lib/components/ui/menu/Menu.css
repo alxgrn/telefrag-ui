@@ -1,7 +1,7 @@
 :root {
-    --alxgrn-menu-bg-hover: var(--alxgrn-bg-focus);
-    --alxgrn-menu-color-scroll: var(--alxgrn-color-scroll);
-    --alxgrn-menu-color-separator: var(--alxgrn-color-scroll);
+    --alxgrn-menu-bg-hover: var(--alxgrn-bg-active);
+    --alxgrn-menu-color-scroll: var(--alxgrn-color-light);
+    --alxgrn-menu-color-separator: var(--alxgrn-color-light);
 }
 
 .Popup .Menu {
