@@ -7,8 +7,8 @@
     --alxgrn-fieldset-color-top: var(--alxgrn-color-light);
     --alxgrn-fieldset-color-bottom: var(--alxgrn-color-light);
     --alxgrn-fieldset-color-disabled: var(--alxgrn-color-light);
-    --alxgrn-fieldset-border: var(--alxgrn-color-accent);
-    --alxgrn-fieldset-border-error: var(--alxgrn-color-error);
+    --alxgrn-fieldset-border: var(--alxgrn-border-accent);
+    --alxgrn-fieldset-border-error: var(--alxgrn-border-error);
     --alxgrn-fieldset-border-disabled: var(--alxgrn-border-light);
 }
 /**

@@ -1,7 +1,8 @@
 :root {
     --alxgrn-popup-zindex: 2000; /* выше модалки */
     --alxgrn-popup-shadow: 0 0 var(--alxgrn-unit-half) rgba(0,0,0,.1);
-    --alxgrn-popup-bg-color: white;
+    --alxgrn-popup-color: var(--alxgrn-color-text);
+    --alxgrn-popup-bg-color: var(--alxgrn-bg-popup);
     --alxgrn-popup-animation-length: 100ms;
 }
 
@@ -11,6 +12,7 @@
 }
 
 .Popup * {
+    color: var(--alxgrn-popup-color);
     font-size: inherit;
     line-height: inherit;
     font-family: inherit;

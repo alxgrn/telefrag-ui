@@ -29,7 +29,7 @@ const Input: FC<InputProps> = ({ id, type = 'text', value, onChange, label,
 
     const getStyle = () => {
         if(isError()) return {
-            caretColor:'var(--alxgrn-input-border-error)',
+            caretColor:'var(--alxgrn-input-caret-error)',
             borderColor:'var(--alxgrn-input-border-error)',
             backgroundColor:'var(--alxgrn-input-bg-error)',
         };

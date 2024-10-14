@@ -2,21 +2,28 @@
  * Цвета
  */
  :root {
-    --alxgrn-button-bg: var(--alxgrn-bg-dark);
+    --alxgrn-button-bg: var(--alxgrn-border-dark);
     --alxgrn-button-color: white;
-    --alxgrn-button-border: var(--alxgrn-bg-dark);
+    --alxgrn-button-border: var(--alxgrn-border-dark);
 
-    --alxgrn-button-bg-error: var(--alxgrn-color-error);
+    --alxgrn-button-bg-error: var(--alxgrn-border-error);
     --alxgrn-button-color-error: white;
-    --alxgrn-button-border-error: var(--alxgrn-color-error);
+    --alxgrn-button-border-error: var(--alxgrn-border-error);
 
-    --alxgrn-button-bg-success: var(--alxgrn-color-success);
+    --alxgrn-button-bg-success: var(--alxgrn-border-success);
     --alxgrn-button-color-success: white;
-    --alxgrn-button-border-success: var(--alxgrn-color-success);
+    --alxgrn-button-border-success: var(--alxgrn-border-success);
 
-    --alxgrn-button-bg-accent: var(--alxgrn-color-accent);
+    --alxgrn-button-bg-accent: var(--alxgrn-border-accent);
     --alxgrn-button-color-accent: white;
-    --alxgrn-button-border-accent: var(--alxgrn-color-accent);
+    --alxgrn-button-border-accent: var(--alxgrn-border-accent);
+}
+
+[data-theme='dark'] {
+    --alxgrn-button-color: #ccc;
+    --alxgrn-button-color-error: #ccc;
+    --alxgrn-button-color-success: #ccc;
+    --alxgrn-button-color-accent: #ccc;
 }
 /**
  * Кнопка
@@ -26,7 +33,7 @@
 	cursor: pointer;
     color: var(--alxgrn-button-color);
     background-color: var(--alxgrn-button-bg);
-    border: 1px solid var(--alxgrn-button-border);
+    /* border: 1px solid var(--alxgrn-button-border); */
     display: inline-block;
     margin: 0;
     padding: var(--alxgrn-unit-half) var(--alxgrn-unit-double);

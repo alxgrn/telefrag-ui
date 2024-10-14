@@ -1,7 +1,11 @@
 :root {
-    --alxgrn-files-bg: var(--alxgrn-color-accent);
+    --alxgrn-files-bg: var(--alxgrn-border-accent);
     --alxgrn-files-color: white;
-    --alxgrn-files-bg-error: var(--alxgrn-color-error);
+    --alxgrn-files-bg-error: var(--alxgrn-border-error);
+}
+
+[data-theme='dark'] {
+    --alxgrn-files-color: #ccc;
 }
 /**
  * Список файлов

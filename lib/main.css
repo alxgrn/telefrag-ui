@@ -27,13 +27,15 @@
     --alxgrn-color-light: lightslategrey; /* бледный текст */
     --alxgrn-color-error: firebrick; /* текст сообщения об ошибке */
     --alxgrn-color-accent: steelblue; /* текст акцента в т.ч. ссылок */
-    --alxgrn-color-active: moccasin; /* текст активного текста или элемента ввода с фокусом */
+    --alxgrn-color-active: var(--alxgrn-color-text); /* текст активного текста или элемента ввода с фокусом */
     --alxgrn-color-success: forestgreen; /* текст сообщения об успехе */
     /**
      * Цвета подложки
      */
     --alxgrn-bg-main: #eee; /* цвет фона страницы */
     --alxgrn-bg-panel: #fff; /* цвет фона типовой панели */
+    --alxgrn-bg-modal: var(--alxgrn-bg-panel); /* цвет фона модальных окон */
+    --alxgrn-bg-popup: var(--alxgrn-bg-panel); /* цвет фона меню и прочих всплывашек */
     --alxgrn-bg-dark: #888; /* темный цвет фона в панели (обычная кнопка) */
     --alxgrn-bg-light: rgba(119, 136, 153, .1); /* светлый цвет фона в панели */
     --alxgrn-bg-error: rgba(178, 34, 34, .1); /* цвет фона элемента ошибки */
@@ -41,9 +43,14 @@
     --alxgrn-bg-active: moccasin; /* цвет фона активного элемента (фокус ввода) */
     --alxgrn-bg-success: rgba(34, 139, 34, .1); /* цвет фона элемента успеха */
     /**
-     * Цветв границ
+     * Цвета обводки
      */
-    --alxgrn-border-light: rgba(119, 136, 153, .5); /* текст границ и разделителей */
+    --alxgrn-border-dark: rgba(136, 136, 136, 1); /* темная обводка */
+    --alxgrn-border-light: rgba(119, 136, 153, 1); /* обычная обводка */
+    --alxgrn-border-error: rgba(178, 34, 34, 1); /* обводка ошибки */
+    --alxgrn-border-accent: rgba(70, 130, 180, 1); /* обводка акцента */
+    --alxgrn-border-active: moccasin; /* обводка активного элемента */
+    --alxgrn-border-success: rgba(34, 139, 34, 1); /* обводка успеха */
 }
 /**
  * Тёмная тема
@@ -54,4 +61,14 @@
 
     --alxgrn-bg-main: #111;
     --alxgrn-bg-panel: #222;
+    --alxgrn-bg-modal: #222;
+    --alxgrn-bg-popup: #333;
+    --alxgrn-bg-active: #444;
+
+    --alxgrn-border-dark: rgba(136, 136, 136, .5);
+    --alxgrn-border-light: rgba(119, 136, 153, .5);
+    --alxgrn-border-error: rgba(178, 34, 34, .5);
+    --alxgrn-border-accent: rgba(70, 130, 180, .5);
+    --alxgrn-border-active: rgba(255, 228, 181, .5);
+    --alxgrn-border-success: rgba(34, 139, 34, .5);
 }

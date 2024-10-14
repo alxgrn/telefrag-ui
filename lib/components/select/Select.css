@@ -4,19 +4,19 @@
  :root {
     --alxgrn-select-bg: var(--alxgrn-bg-accent);
     --alxgrn-select-color: var(--alxgrn-color-text);
-    --alxgrn-select-border: var(--alxgrn-color-accent);
+    --alxgrn-select-border: var(--alxgrn-border-accent);
 
     --alxgrn-select-bg-focus: var(--alxgrn-bg-active);
     --alxgrn-select-color-focus: var(--alxgrn-color-text);
-    --alxgrn-select-border-focus: var(--alxgrn-color-accent);
+    --alxgrn-select-border-focus: var(--alxgrn-border-accent);
 
     --alxgrn-select-bg-error: var(--alxgrn-bg-error);
     --alxgrn-select-color-error: var(--alxgrn-color-error);
-    --alxgrn-select-border-error: var(--alxgrn-color-error);
+    --alxgrn-select-border-error: var(--alxgrn-border-error);
 
     --alxgrn-select-bg-success: var(--alxgrn-bg-success);
     --alxgrn-select-color-success: var(--alxgrn-color-success);
-    --alxgrn-select-border-success: var(--alxgrn-color-success);
+    --alxgrn-select-border-success: var(--alxgrn-border-success);
 
     --alxgrn-select-bg-disabled: var(--alxgrn-bg-light);
     --alxgrn-select-color-disabled: var(--alxgrn-color-light);

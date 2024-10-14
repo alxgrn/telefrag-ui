@@ -4,22 +4,27 @@
 :root {
     --alxgrn-input-bg: var(--alxgrn-bg-accent);
     --alxgrn-input-color: var(--alxgrn-color-text);
-    --alxgrn-input-border: var(--alxgrn-color-accent);
+    --alxgrn-input-caret: var(--alxgrn-color-text);
+    --alxgrn-input-border: var(--alxgrn-border-accent);
 
     --alxgrn-input-bg-focus: var(--alxgrn-bg-active);
     --alxgrn-input-color-focus: var(--alxgrn-color-text);
-    --alxgrn-input-border-focus: var(--alxgrn-color-accent);
+    --alxgrn-input-caret-focus: var(--alxgrn-color-accent);
+    --alxgrn-input-border-focus: var(--alxgrn-border-accent);
 
     --alxgrn-input-bg-error: var(--alxgrn-bg-error);
     --alxgrn-input-color-error: var(--alxgrn-color-error);
-    --alxgrn-input-border-error: var(--alxgrn-color-error);
+    --alxgrn-input-caret-error: var(--alxgrn-color-error);
+    --alxgrn-input-border-error: var(--alxgrn-border-error);
 
     --alxgrn-input-bg-success: var(--alxgrn-bg-success);
     --alxgrn-input-color-success: var(--alxgrn-color-success);
-    --alxgrn-input-border-success: var(--alxgrn-color-success);
+    --alxgrn-input-caret-success: var(--alxgrn-color-success);
+    --alxgrn-input-border-success: var(--alxgrn-border-success);
 
     --alxgrn-input-bg-disabled: var(--alxgrn-bg-light);
     --alxgrn-input-color-disabled: var(--alxgrn-color-light);
+    --alxgrn-input-caret-disabled: var(--alxgrn-color-light);
     --alxgrn-input-border-disabled: var(--alxgrn-border-light);
 
     --alxgrn-input-color-placeholder: lightslategrey;
@@ -36,7 +41,7 @@
 	font-size: inherit;
     line-height: inherit;
     font-family: inherit;
-    caret-color: var(--alxgrn-input-border);
+    caret-color: var(--alxgrn-input-caret);
     border-radius: var(--alxgrn-unit-small);
     border: 1px solid var(--alxgrn-input-border);
     width: 100%;
@@ -67,7 +72,7 @@
     color: var(--alxgrn-input-color-focus);
 	background-color: var(--alxgrn-input-bg-focus);
     border: 1px solid var(--alxgrn-input-border-focus);
-    caret-color: var(--alxgrn-input-border-focus);
+    caret-color: var(--alxgrn-input-caret-focus);
 }
 /**
  * Устанавливаем свое оформление у плейсхолдера
@@ -88,7 +93,7 @@
     border-color: var(--alxgrn-input-border-disabled);
     background-color: var(--alxgrn-input-bg-disabled);
     cursor: default;
-    caret-color: var(--alxgrn-input-border-disabled);
+    caret-color: var(--alxgrn-input-caret-disabled);
 }
 /**
  * Иногда input могут быть только для чтения
