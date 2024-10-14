@@ -5,7 +5,7 @@ import { RadioListOption } from '../radio/RadioList';
 import { SelectOption } from '../select/Select';
 import { CheckboxListOption, CheckboxListValue } from '../checkbox/CheckboxList';
 import Button, { ButtonType } from '../button/Button';
-import { Hidden, Checkbox, Input, Select, RadioList, Files, Date, CheckboxList, Time, Block } from '../../main';
+import { Hidden, Checkbox, Input, Select, RadioList, Files, Date, CheckboxList, Time, Block } from '../../../main';
 import './Form.css';
 
 export type FormProps = {

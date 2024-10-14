@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useRef, useState } from 'react';
 import Label from '../label/Label';
-import Menu, { MenuItem } from '../ui/menu/Menu';
+import Menu, { MenuItem } from '../../ui/menu/Menu';
 import './Time.css';
 /**
  * TODO: Добавить выбор секунд

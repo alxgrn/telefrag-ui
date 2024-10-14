@@ -17,6 +17,7 @@
 .Form .Fieldset {
     display: block;
     margin: var(--alxgrn-unit) 0;
+    overflow: hidden;
 }
 
 .Form .Fieldset .FormItem {
@@ -28,6 +29,8 @@
 }
 
 .Form .Fieldset .Label {
+    display: flex;
+    align-items: center;
     color: var(--alxgrn-fieldset-color);
     margin-bottom: var(--alxgrn-unit-small);
 }

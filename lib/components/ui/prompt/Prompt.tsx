@@ -1,8 +1,8 @@
 import React, { FC, useEffect, useState } from 'react';
 import Modal from '../modal/Modal';
-import Form from '../../form/Form';
-import Input from '../../input/Input';
-import { ButtonType } from '../../button/Button';
+import Form from '../../form/form/Form';
+import Input from '../../form/input/Input';
+import { ButtonType } from '../../form/button/Button';
 
 export interface PromptProps {
     value?: string | null;

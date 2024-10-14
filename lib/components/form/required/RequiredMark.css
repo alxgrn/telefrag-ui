@@ -1,0 +1,4 @@
+.RequiredMark {
+    display: flex;
+    color: var(--alxgrn-color-error);
+}

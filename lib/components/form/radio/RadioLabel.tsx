@@ -28,7 +28,7 @@ const RadioLabel: React.FC<PropsWithChildren<RadioLabelProps>> = ({ label, botto
             <s/>
             <div>
                 {label &&
-                <div>
+                <div className='Label'>
                     <RequiredMark required={required}/>
                     <span style={error ? {color:'var(--alxgrn-color-error)'} : undefined}>
                         {label}

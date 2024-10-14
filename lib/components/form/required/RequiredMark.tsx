@@ -1,5 +1,6 @@
 import React from 'react';
-//import './RequiredMark.css';
+import { Asterisk } from '../../icons';
+import './RequiredMark.css';
 
 export interface RequiredMarkProps {
     required?: boolean | null;
@@ -7,8 +8,11 @@ export interface RequiredMarkProps {
 
 const RequiredMark: React.FC<RequiredMarkProps> = ({ required = false }) => {
     if(!required) return null;
-    return <span className='RequiredMark' style={{ color: 'var(--alxgrn-color-error)'}}>✱&nbsp;</span>;
-    //return <span className='RequiredMark'><span/><span/><span/></span>;
+    return (
+        <span className='RequiredMark'>
+            <Asterisk/>
+        </span>
+    );
 };
 
 export default RequiredMark;

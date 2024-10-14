@@ -1,5 +1,5 @@
 import React, { FC, useRef, useState } from 'react';
-import Popup from '../ui/popup/Popup';
+import Popup from '../../ui/popup/Popup';
 import Label from '../label/Label';
 import DatePicker, { DatePickerResult } from './DatePicker';
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import Message, { MessageIconType } from '../message/Message';
 import Modal from '../modal/Modal';
-import Form from '../../form/Form';
-import { ButtonType } from '../../button/Button';
+import Form from '../../form/form/Form';
+import { ButtonType } from '../../form/button/Button';
 
 export interface ModalConfirmProps {
 	icon?: string | null;

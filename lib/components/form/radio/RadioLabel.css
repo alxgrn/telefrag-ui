@@ -15,6 +15,11 @@
     margin-bottom: 0;
 }
 
+.Form label.Radio .Label {
+    display: flex;
+    align-items: center;
+}
+
 .Form label.Radio .Bottom {
     font-size: smaller;
     color: var(--alxgrn-color-light);

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { ChevronLeft, ChevronRight } from '../../icons';
 import './DatePicker.css';
 /**
  * Компонент отображающий календарь
@@ -91,9 +92,9 @@ const DatePicker: React.FC<DatePickerProps> = ({ year, month, day, onChange }) =
     return (
         <div className='FormDatePicker'>
             <div className='FormDatePickerMenu'>
-                <span className='FormDatePickerPrev' onClick={() => changeMonth(-1)}>&laquo;</span>
+                <span className='FormDatePickerPrev' onClick={() => changeMonth(-1)}><ChevronLeft/></span>
                 <span className='FormDatePickerText'>{monthName[displayedMonth]}</span>
-                <span className='FormDatePickerNext' onClick={() => changeMonth(1)}>&raquo;</span>
+                <span className='FormDatePickerNext' onClick={() => changeMonth(1)}><ChevronRight/></span>
             </div>
             <div className='FormDatePickerDays'>
                 {days.map((day, index) => (
@@ -107,9 +108,9 @@ const DatePicker: React.FC<DatePickerProps> = ({ year, month, day, onChange }) =
                 ))}
             </div>
             <div className='FormDatePickerMenu'>
-                <span className='FormDatePickerPrev' onClick={() => setDisplayedYear(displayedYear - 1)}>&laquo;</span>
+                <span className='FormDatePickerPrev' onClick={() => setDisplayedYear(displayedYear - 1)}><ChevronLeft/></span>
                 <span className='FormDatePickerText'>{displayedYear}</span>
-                <span className='FormDatePickerNext' onClick={() => setDisplayedYear(displayedYear + 1)}>&raquo;</span>
+                <span className='FormDatePickerNext' onClick={() => setDisplayedYear(displayedYear + 1)}><ChevronRight/></span>
             </div>
         </div>
     );

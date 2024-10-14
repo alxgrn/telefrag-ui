@@ -53,6 +53,9 @@
 .FormDatePicker .FormDatePickerMenu .FormDatePickerNext {
     color: var(--alxgrn-datepicker-color-accent);
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .FormDatePicker .FormDatePickerMenu .FormDatePickerPrev:hover,

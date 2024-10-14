@@ -19,6 +19,8 @@
 }
 
 .FormItem label .Label {
+    display: flex;
+    align-items: center;
     margin-bottom: var(--alxgrn-unit-small);
 }
 
