@@ -8,8 +8,8 @@ import Time from './components/form/time/Time';
 import Files from './components/form/files/Files';
 import Input from './components/form/input/Input';
 import Label from './components/form/label/Label';
-import RadioList from './components/form/radio/RadioList';
-import Button from './components/form/button/Button';
+import { RadioList, RadioListOption, RadioListValue } from './components/form/radio/RadioList';
+import { Button, ButtonType } from './components/form/button/Button';
 import Select from './components/form/select/Select';
 import Hidden from './components/form/hidden/Hidden';
 import Checkbox from './components/form/checkbox/Checkbox';
@@ -18,7 +18,7 @@ import Fieldset from './components/form/fieldset/Fieldset';
 import { Menu, MenuItem } from './components/ui/menu/Menu';
 import Block from './components/ui/block/Block';
 import Panel from './components/ui/panel/Panel';
-import Modal from './components/ui/modal/Modal';
+import { Modal, ModalProps } from './components/ui/modal/Modal';
 import Popup from './components/ui/popup/Popup';
 import Portal from './components/ui/portal/Portal';
 import Message from './components/ui/message/Message';
@@ -60,4 +60,8 @@ export {
 export type {
     FormData,
     MenuItem,
+    ModalProps,
+    ButtonType,
+    RadioListOption,
+    RadioListValue,
 };

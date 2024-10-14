@@ -11,7 +11,7 @@ export interface ButtonProps {
     onClick?: () => void;
 }
 
-const Button: React.FC<ButtonProps> = ({ label, type = 'Default', size = 'Normal', disabled = false, onClick }) => (
+export const Button: React.FC<ButtonProps> = ({ label, type = 'Default', size = 'Normal', disabled = false, onClick }) => (
     <span
         className={disabled ? `Button ${type} ${size} Disabled` : `Button ${type} ${size}`}
         onClick={() => { if(onClick && !disabled) onClick() }}

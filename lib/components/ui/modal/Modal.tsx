@@ -11,7 +11,7 @@ export type ModalProps = {
     close?: boolean; // рисовать или нет кнопку закрытия
 };
 
-const Modal: FC<PropsWithChildren<ModalProps>> = ({ children, isOpen, onClose, close = true }) => {
+export const Modal: FC<PropsWithChildren<ModalProps>> = ({ children, isOpen, onClose, close = true }) => {
     const nodeRef = useRef(null);
 
     // Отслеживаем нажатие ESC для закрытия окна
