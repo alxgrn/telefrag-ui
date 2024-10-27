@@ -19,13 +19,16 @@ import { Menu, MenuItem } from './components/ui/menu/Menu';
 import Block from './components/ui/block/Block';
 import Panel from './components/ui/panel/Panel';
 import { Modal, ModalProps } from './components/ui/modal/Modal';
+import Overlay from './components/ui/overlay/Overlay';
 import Popup from './components/ui/popup/Popup';
 import Portal from './components/ui/portal/Portal';
 import Message from './components/ui/message/Message';
 import Alert from './components/ui/alert/Alert';
 import Confirm from './components/ui/confirm/Confirm';
 import Prompt from './components/ui/prompt/Prompt';
+import Sidebar from './components/ui/sidebar/Sidebar';
 import Editable from './components/ui/editable/Editable';
+import Layout from './components/layout/Layout';
 
 export {
     Form,
@@ -48,13 +51,16 @@ export {
     Block,
     Panel,
     Modal,
+    Overlay,
     Popup,
     Portal,
     Message,
     Alert,
     Confirm,
     Prompt,
+    Sidebar,
     Editable,
+    Layout,
 };
 
 export type {

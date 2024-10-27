@@ -1,0 +1,59 @@
+.HeaderWrapper {
+    /* Ставим выше контента, но popup и modal все равно будут выше, меню при скролинге будут плыть над заголовком */
+    z-index: 100;
+    display: block;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 0;
+    background-color: var(--alxgrn-bg-panel);
+}
+
+.Header {
+    display: flex;
+    align-items: center;
+    gap: var(--alxgrn-unit-half);
+    padding: var(--alxgrn-unit-half) 0;
+    width: var(--alxgrn-layout-width);
+    margin: 0 auto;
+}
+
+.HeaderLeft,
+.HeaderRight {
+    display: none;
+}
+
+.HeaderCenter {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+}
+
+.HeaderCenter svg {
+    width: auto;
+    height: calc(3 * var(--alxgrn-unit-half));
+}
+
+
+@media (max-width: 1024px) {
+    .Header {
+        width: auto;
+        padding-left: var(--alxgrn-unit);
+        padding-right: var(--alxgrn-unit);
+    }
+}
+
+@media (max-width: 768px) {
+    .Header {
+        width: auto;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .HeaderLeft,
+    .HeaderRight {
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

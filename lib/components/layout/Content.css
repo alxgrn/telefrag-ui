@@ -1,0 +1,42 @@
+/*
+    Для того чтобы меню правильно прилипал должна быть указана высота родителя.
+    А чтобы сайд бар сдвигался вверх при скролле контента в самый верх, высота родителя
+    должна быть равной высоте контента. Поэтому ставим растягивание по высоте.
+*/
+.Content {
+    display: flex;
+    align-items: stretch;
+    gap: var(--alxgrn-unit);
+    width: var(--alxgrn-layout-width);
+    margin: 0 auto;
+    margin-top: var(--alxgrn-layout-header-height);
+}
+
+.ContentMenu {
+    flex: 0 0 auto;
+    width: var(--alxgrn-layout-menu-width);
+    color: var(--alxgrn-color-text);
+    background-color: var(--alxgrn-bg-main);
+}
+
+.ContentMain {
+    flex: 1 1 auto;
+}
+
+@media (max-width: 1024px) {
+    .Content {
+        width: auto;
+        padding-left: var(--alxgrn-unit);
+        padding-right: var(--alxgrn-unit);
+    }
+}
+
+@media (max-width: 768px) {
+    .Content {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .ContentMenu {
+        display: none;
+    }
+}

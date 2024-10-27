@@ -1,9 +1,6 @@
-import React, { FC, PropsWithChildren, useEffect, useRef } from 'react';
-import { CSSTransition } from 'react-transition-group';
-import Portal from '../portal/Portal';
+import React, { FC, PropsWithChildren, useEffect } from 'react';
+import Overlay from '../overlay/Overlay';
 import './Modal.css';
-
-const TIMEOUT = 100; // Должен согласовываться с длительностью анимации появления в .css
 
 export type ModalProps = {
     isOpen: boolean;
@@ -12,8 +9,6 @@ export type ModalProps = {
 };
 
 export const Modal: FC<PropsWithChildren<ModalProps>> = ({ children, isOpen, onClose, close = true }) => {
-    const nodeRef = useRef(null);
-
     // Отслеживаем нажатие ESC для закрытия окна
     useEffect(() => {
         const closeOnEscapeKey = (e: KeyboardEvent) => {
@@ -27,39 +22,28 @@ export const Modal: FC<PropsWithChildren<ModalProps>> = ({ children, isOpen, onC
         };
     }, [ isOpen, onClose ]);
 
-    // Обработчик клика на кнопку закрытия окна или на область вокруг окна
+    // Обработчик клика на кнопку закрытия окна
     const onClick = (e: React.MouseEvent) => {
-        // Без этого возможно двойное срабатывание при одном клике
         e.stopPropagation();
         onClose();
     };
 
-    // не нужно при использовании CSSTransition
-    // if (!isOpen) return null;
-
 	return (
-        <Portal id='alxgrn-modal' fixBody>
-            <CSSTransition
-                in={isOpen}
-                timeout={TIMEOUT}
-                unmountOnExit
-                classNames='Modal'
-                nodeRef={nodeRef}
-            >
-                <div className='Modal' ref={nodeRef} onClick={onClick}>
-                    <div className='ModalInner' onClick={e => e.stopPropagation()}>
-                        {close &&
-                        <div className='ModalClose' onClick={onClick}>
-                            <span/>
-                            <span/>
-                        </div>}
-                        <div className='ModalContent'>
-                            {children}
-                        </div>
-                    </div>
+        <Overlay
+            isOpen={isOpen}
+            onClick={onClose}
+        >
+            <div className='Modal' onClick={e => e.stopPropagation()}>
+                {close &&
+                <div className='ModalClose' onClick={onClick}>
+                    <span/>
+                    <span/>
+                </div>}
+                <div className='ModalInner'>
+                    {children}
                 </div>
-            </CSSTransition>
-        </Portal>
+            </div>
+        </Overlay>
 	);
 };
 

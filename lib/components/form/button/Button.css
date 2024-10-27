@@ -84,6 +84,6 @@
  * Разные размеры
  */
 .Button.Small {
-    font-size: var(--alxgrn-font-small);
+    font-size: var(--alxgrn-font-size-small);
     padding: var(--alxgrn-unit-small) var(--alxgrn-unit);
 }

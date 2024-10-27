@@ -1,0 +1,5 @@
+:root {
+    --alxgrn-layout-width: 1024px; /* максимальная ширина верстки */
+    --alxgrn-layout-menu-width: 124px; /* ширина меню */
+    --alxgrn-layout-header-height: calc(4 * var(--alxgrn-unit)); /* высота хедера */
+}

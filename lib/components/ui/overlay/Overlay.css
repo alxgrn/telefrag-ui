@@ -1,0 +1,70 @@
+:root {
+    --alxgrn-overlay-zindex: 1000; /* выше прочих */
+    --alxgrn-overlay-animation-length: var(--alxgrn-animation-length);
+}
+
+.Overlay {
+    z-index: var(--alxgrn-overlay-zindex);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Overlay.Left {
+    justify-content: flex-start;
+}
+
+.Overlay.Right {
+    justify-content: flex-end;
+}
+
+.Overlay.Top {
+    align-items: flex-start;
+}
+
+.Overlay.Bottom {
+    align-items: flex-end;
+}
+
+/*
+ * Анимации для CSSTransition
+ */
+
+.Overlay-enter {
+    pointer-events: none;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.Overlay-enter-active {
+    pointer-events: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: background-color var(--alxgrn-overlay-animation-length) ease-in;
+}
+
+.Overlay-enter-done {
+    pointer-events: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.Overlay-exit {
+    pointer-events: none;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.Overlay-exit-active {
+    pointer-events: none;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color var(--alxgrn-overlay-animation-length) ease-out;
+}
+
+.Overlay-exit-done {
+    pointer-events: auto;
+    background-color: rgba(0, 0, 0, 0);
+}

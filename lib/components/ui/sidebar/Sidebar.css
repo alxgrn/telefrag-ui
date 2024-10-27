@@ -1,0 +1,95 @@
+:root {
+    --alxgrn-sidebar-color: var(--alxgrn-color-text);
+    --alxgrn-sidebar-bg-color: var(--alxgrn-bg-modal);
+    --alxgrn-sidebar-animation-length: var(--alxgrn-animation-length);
+    --alxgrn-sidebar-color-scroll: var(--alxgrn-color-light);
+}
+
+.Sidebar * {
+    color: var(--alxgrn-sidebar-color);
+    font-size: inherit;
+    line-height: inherit;
+    font-family: inherit;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.Sidebar {
+    display: flex;
+    padding: var(--alxgrn-unit-double);
+    position: relative;
+    background-color: var(--alxgrn-sidebar-bg-color);
+    height: 100%;
+    overflow: auto;
+}
+
+.Sidebar .SidebarInner {
+    width: 100%;
+    overflow: auto;
+}
+
+/*
+ * Анимации содержимого для CSSTransition
+ */
+.Overlay-enter .Sidebar {
+    pointer-events: none;
+    transform: translateX(-100%);
+}
+.Overlay-enter-active .Sidebar {
+    pointer-events: none;
+    transform: translateX(0);
+    transition: transform var(--alxgrn-sidebar-animation-length) ease-in;
+}
+.Overlay-enter-done .Sidebar {
+    pointer-events: none;
+    transform: translateX(0);
+}
+.Overlay-exit .Sidebar {
+    pointer-events: none;
+    transform: translateX(0);
+}
+.Overlay-exit-active .Sidebar {
+    pointer-events: none;
+    transform: translateX(-100%);
+    transition: transform var(--alxgrn-sidebar-animation-length) ease-out;
+}
+.Overlay-exit-done .Sidebar {
+    pointer-events: none;
+    transform: translateX(-100%);
+}
+/* Для выезда справа */
+.Overlay-enter .Sidebar.Right,
+.Overlay-exit-active .Sidebar.Right,
+.Overlay-exit-done .Sidebar.Right {
+    transform: translateX(100%);
+}
+
+/*
+ * Scrollbar
+ * https://ishadeed.com/article/custom-scrollbars-css/
+ */
+ .Sidebar .SidebarInner {
+    scrollbar-color: transparent var(--alxgrn-sidebar-color-scroll);
+    scrollbar-width: thin;
+    /* scrollbar-gutter: stable; */
+}
+
+.Sidebar .SidebarInner::-webkit-scrollbar {
+    width: var(--alxgrn-unit-small);
+    height: var(--alxgrn-unit-small);
+}
+
+.Sidebar .SidebarInner::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: var(--alxgrn-unit-small);
+}
+
+.Sidebar .SidebarInner::-webkit-scrollbar-thumb {
+    background-color: var(--alxgrn-sidebar-color-scroll);
+    border-radius: var(--alxgrn-unit-small);
+}
+
+.Sidebar .SidebarInner::-webkit-scrollbar-corner {
+    background-color: transparent;
+}

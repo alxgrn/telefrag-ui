@@ -1,8 +1,9 @@
 body {
     margin: 0;
-    padding: var(--alxgrn-unit);
+    padding: 0;
     font-family: var(--alxgrn-font-family);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    color: var(--alxgrn-color-text);
     background-color: var(--alxgrn-bg-main);
 }
