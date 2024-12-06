@@ -6,11 +6,13 @@
     --alxgrn-input-color: var(--alxgrn-color-text);
     --alxgrn-input-caret: var(--alxgrn-color-text);
     --alxgrn-input-border: var(--alxgrn-border-accent);
+    --alxgrn-input-border-scroll: var(--alxgrn-bg-accent);
 
     --alxgrn-input-bg-focus: var(--alxgrn-bg-active);
     --alxgrn-input-color-focus: var(--alxgrn-color-text);
     --alxgrn-input-caret-focus: var(--alxgrn-color-accent);
     --alxgrn-input-border-focus: var(--alxgrn-border-accent);
+    --alxgrn-input-border-scroll-focus: var(--alxgrn-bg-active);
 
     --alxgrn-input-bg-error: var(--alxgrn-bg-error);
     --alxgrn-input-color-error: var(--alxgrn-color-error);
@@ -60,7 +62,7 @@
  * У текстовой области разрешаем изменение размера только по вертикали
  */
 .FormItem textarea {
-    resize: vertical;
+    resize: none;
 }
 /**
  * Отключаем браузерную подсветку фокуса и назначаем свое оформление
@@ -101,3 +103,32 @@
 .FormItem input:read-only {
     cursor: pointer;
 }
+
+/**
+ * Скроллбар для текстового блока
+ * https://ishadeed.com/article/custom-scrollbars-css/
+ */
+.FormItem textarea::-webkit-scrollbar {
+    width: var(--alxgrn-unit-half);
+    height: var(--alxgrn-unit-half);
+}
+
+.FormItem textarea::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: var(--alxgrn-unit-small);
+}
+
+.FormItem textarea::-webkit-scrollbar-thumb {
+    background-color: var(--alxgrn-input-border);
+    border-radius: var(--alxgrn-unit-small);
+    border: var(--alxgrn-unit-smallest) solid var(--alxgrn-input-border-scroll);;
+}
+
+.FormItem textarea:focus::-webkit-scrollbar-thumb {
+    border-color: var(--alxgrn-input-border-scroll-focus);
+}
+
+.FormItem textarea::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+

@@ -33,6 +33,7 @@
     --alxgrn-color-accent: steelblue; /* текст акцента в т.ч. ссылок */
     --alxgrn-color-active: var(--alxgrn-color-text); /* текст активного текста или элемента ввода с фокусом */
     --alxgrn-color-success: forestgreen; /* текст сообщения об успехе */
+    --alxgrn-color-scroll: #ccc; /* цвет скроллбара */
     /**
      * Цвета подложки
      */
@@ -43,7 +44,7 @@
     --alxgrn-bg-dark: #888; /* темный цвет фона в панели (обычная кнопка) */
     --alxgrn-bg-light: rgba(119, 136, 153, .1); /* светлый цвет фона в панели */
     --alxgrn-bg-error: rgba(178, 34, 34, .1); /* цвет фона элемента ошибки */
-    --alxgrn-bg-accent: rgba(70, 130, 180, .1); /* цвет фона акцентного элемента */
+    --alxgrn-bg-accent: #ecf2f7; /* steelblue с альфа 10% - цвет фона акцентного элемента */
     --alxgrn-bg-active: moccasin; /* цвет фона активного элемента (фокус ввода) */
     --alxgrn-bg-success: rgba(34, 139, 34, .1); /* цвет фона элемента успеха */
     /**
@@ -62,11 +63,13 @@
 [data-theme='dark'] {
     --alxgrn-color-text: #999;
     --alxgrn-color-light: #666;
+    --alxgrn-color-scroll: var(--alxgrn-bg-active);
 
     --alxgrn-bg-main: #111;
     --alxgrn-bg-panel: #222;
     --alxgrn-bg-modal: #222;
     --alxgrn-bg-popup: #333;
+    --alxgrn-bg-accent: #333b3f;
     --alxgrn-bg-active: #444;
 
     --alxgrn-border-dark: rgba(136, 136, 136, .5);
@@ -76,3 +79,32 @@
     --alxgrn-border-active: rgba(255, 228, 181, .5);
     --alxgrn-border-success: rgba(34, 139, 34, .5);
 }
+/**
+ * Скроллбар для модалок и меню
+ * https://ishadeed.com/article/custom-scrollbars-css/
+ */
+.Scrollbar::-webkit-scrollbar {
+    width: var(--alxgrn-unit-small);
+    height: var(--alxgrn-unit-small);
+}
+
+.Scrollbar::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: var(--alxgrn-unit-small);
+}
+
+.Scrollbar::-webkit-scrollbar-thumb {
+    background-color: var(--alxgrn-color-scroll);
+    border-radius: var(--alxgrn-unit-small);
+}
+
+.Scrollbar::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+
+/* Если использовать этот "новый" синтаксис, то он забивает старый и все начинает выглядеть как говно
+.Scrollbar {
+    scrollbar-color: transparent var(--alxgrn-modal-color-scroll);
+    scrollbar-width: thin;
+}
+*/

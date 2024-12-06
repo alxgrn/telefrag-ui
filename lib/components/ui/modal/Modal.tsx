@@ -39,7 +39,7 @@ export const Modal: FC<PropsWithChildren<ModalProps>> = ({ children, isOpen, onC
                     <span/>
                     <span/>
                 </div>}
-                <div className='ModalInner'>
+                <div className='ModalInner Scrollbar'>
                     {children}
                 </div>
             </div>

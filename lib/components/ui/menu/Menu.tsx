@@ -30,7 +30,7 @@ export const Menu: React.FC<MenuProps> = (props) => {
 
     return (
         <Popup {...popupProps}>
-            <div className='Menu'>
+            <div className='Menu Scrollbar'>
                 <ul>
                     {items.map((item, index) => (
                         <li

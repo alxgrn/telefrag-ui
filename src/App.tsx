@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Form, Files, Input, RadioList, Select, Checkbox, CheckboxList, Fieldset, Date, FormData, FormRow, FormCol, Time, Modal, Button, Alert, Confirm, Prompt, Panel } from '../lib/main';
 import './App.css';
-import { CheckboxListOption } from '../lib/components/checkbox/CheckboxList';
-import { RadioListOption, RadioListValue } from '../lib/components/radio/RadioList';
+import { CheckboxListOption } from '../lib/components/form/checkbox/CheckboxList';
+import { RadioListOption, RadioListValue } from '../lib/components/form/radio/RadioList';
 
 const options = [
     { value: 'one', option: 'one' },

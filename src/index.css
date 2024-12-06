@@ -6,4 +6,6 @@ body {
     -moz-osx-font-smoothing: grayscale;
     color: var(--alxgrn-color-text);
     background-color: var(--alxgrn-bg-main);
+    /* Это нужно чтобы скроллбар был всегда, тогда при появлении модалки он не пропадает */
+    overflow-y: scroll;
 }

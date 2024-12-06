@@ -1,6 +1,5 @@
 :root {
     --alxgrn-menu-bg-hover: var(--alxgrn-bg-active);
-    --alxgrn-menu-color-scroll: var(--alxgrn-color-light);
     --alxgrn-menu-color-separator: var(--alxgrn-color-light);
 }
 
@@ -68,33 +67,4 @@
 .Popup .Menu ul li.Disabled {
     color: var(--alxgrn-color-disabled);
     cursor: default;
-}
-
-/*
- * Scrollbar
- * https://ishadeed.com/article/custom-scrollbars-css/
- */
-.Popup .Menu {
-    scrollbar-color: transparent var(--alxgrn-menu-color-scroll);
-    scrollbar-width: thin;
-    /* scrollbar-gutter: stable; */
-}
-
-.Popup .Menu::-webkit-scrollbar {
-    width: var(--alxgrn-unit-small);
-    height: var(--alxgrn-unit-small);
-}
-
-.Popup .Menu::-webkit-scrollbar-track {
-    background-color: transparent;
-    border-radius: var(--alxgrn-unit-small);
-}
-
-.Popup .Menu::-webkit-scrollbar-thumb {
-    background-color: var(--alxgrn-menu-color-scroll);
-    border-radius: var(--alxgrn-unit-small);
-}
-
-.Popup .Menu::-webkit-scrollbar-corner {
-    background-color: transparent;
 }
