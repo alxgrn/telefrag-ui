@@ -3,7 +3,7 @@
     --alxgrn-popup-shadow: 0 0 var(--alxgrn-unit-half) rgba(0,0,0,.1);
     --alxgrn-popup-color: var(--alxgrn-color-text);
     --alxgrn-popup-bg-color: var(--alxgrn-bg-popup);
-    --alxgrn-popup-animation-length: 100ms;
+    --alxgrn-popup-animation-length: var(--alxgrn-animation-length);
 }
 
 .Popup {

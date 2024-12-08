@@ -1,13 +1,14 @@
 import React, { FC, PropsWithChildren, useEffect, useRef, useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import Portal from '../portal/Portal';
+import { ANIMATION_LENGTH } from '../../../config';
 import './Popup.css';
 /**
  * Компонент всплывающего блока.
  * Используется для отображения меню, блока выбора даты и т.п.
  * Предполагается что его надо располагать относительно родительского компонента.
  */
-const TIMEOUT = 100; // Должен согласовываться с длительностью анимации появления в .css
+const TIMEOUT = ANIMATION_LENGTH;
 
 export interface PopupProps {
     parent: React.RefObject<HTMLElement>;

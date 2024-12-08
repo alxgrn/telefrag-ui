@@ -23,6 +23,7 @@
     flex: 1 1 auto;
 }
 
+/* Максимальная ширина контента */
 @media (max-width: 1024px) {
     .Content {
         width: auto;
@@ -30,7 +31,7 @@
         padding-right: var(--alxgrn-unit);
     }
 }
-
+/* Разрешение экрана, ниже которого мы считаем что у нас мобильная версия */
 @media (max-width: 768px) {
     .Content {
         padding-left: 0;

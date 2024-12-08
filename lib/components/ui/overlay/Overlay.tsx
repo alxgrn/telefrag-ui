@@ -1,9 +1,10 @@
 import React, { FC, PropsWithChildren, useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import Portal from '../portal/Portal';
+import { ANIMATION_LENGTH } from '../../../config';
 import './Overlay.css';
 
-const TIMEOUT = 300; // Должен согласовываться с длительностью анимации появления в .css
+const TIMEOUT = ANIMATION_LENGTH;
 
 export type Props = {
     isOpen: boolean;

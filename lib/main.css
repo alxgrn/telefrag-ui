@@ -14,8 +14,9 @@
     --alxgrn-unit-smallest: 2px;
     /**
      * Длительность анимации
+     * Должна согласоываться с константой экспортируемой в main.ts
      */
-    --alxgrn-animation-length: 300ms;
+    --alxgrn-animation-length: 150ms;
     /**
      * Шрифт
      */
