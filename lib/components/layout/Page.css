@@ -1,0 +1,19 @@
+.Page {
+    display: flex;
+    flex-direction: column;
+    gap: var(--alxgrn-unit);
+}
+
+.Page > div:last-child {
+    display: flex;
+    gap: var(--alxgrn-unit);
+}
+
+.Page .PageContent {
+    flex: 1 1 auto;
+}
+
+.Page .PageSidebar {
+    flex: 0 0 auto;
+    width: 200px;
+}

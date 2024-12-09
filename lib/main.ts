@@ -29,6 +29,7 @@ import Prompt from './components/ui/prompt/Prompt';
 import Sidebar from './components/ui/sidebar/Sidebar';
 import Editable from './components/ui/editable/Editable';
 import Layout from './components/layout/Layout';
+import Page from './components/layout/Page';
 
 export {
     Form,
@@ -61,6 +62,7 @@ export {
     Sidebar,
     Editable,
     Layout,
+    Page,
 };
 
 export type {
