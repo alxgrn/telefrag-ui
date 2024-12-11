@@ -81,7 +81,7 @@
     --alxgrn-border-success: rgba(34, 139, 34, .5);
 }
 /**
- * Скроллбар для модалок и меню
+ * Скроллбар для модалок, меню и сайдбара
  * https://ishadeed.com/article/custom-scrollbars-css/
  */
 .Scrollbar::-webkit-scrollbar {

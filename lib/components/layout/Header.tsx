@@ -1,23 +1,24 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 import { Menu, TelefragLogo } from '../icons';
 import './Header.css';
 
 type Props = {
+    userMenu: React.ReactNode;
     onMenuSwitch: () => void;
 };
 
-const Header: FC<Props> = ({ onMenuSwitch }) => {
+const Header: FC<Props> = ({ userMenu, onMenuSwitch }) => {
     return (
         <header className='HeaderWrapper'>
             <div className='Header'>
-                <div className='HeaderLeft' onClick={onMenuSwitch}>
-                    <Menu/>
+                <div className='HeaderLeft'>
+                    <span onClick={onMenuSwitch}><Menu/></span>
                 </div>
                 <div className='HeaderCenter'>
                     <TelefragLogo/>
                 </div>
                 <div className='HeaderRight'>
-                    <Menu/>
+                    {userMenu}
                 </div>
             </div>
         </header>

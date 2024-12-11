@@ -18,7 +18,7 @@
 .Sidebar {
     display: flex;
     padding: var(--alxgrn-unit-double);
-    position: relative;
+    position: absolute;
     background-color: var(--alxgrn-sidebar-bg-color);
     height: 100%;
     overflow: auto;
@@ -58,38 +58,35 @@
     pointer-events: none;
     transform: translateX(-100%);
 }
+
 /* Для выезда справа */
-.Overlay-enter .Sidebar.Right,
-.Overlay-exit-active .Sidebar.Right,
-.Overlay-exit-done .Sidebar.Right {
+.Sidebar.Right {
+    right: 0;
     transform: translateX(100%);
 }
-
-/*
- * Scrollbar
- * https://ishadeed.com/article/custom-scrollbars-css/
- */
- .Sidebar .SidebarInner {
-    scrollbar-color: transparent var(--alxgrn-sidebar-color-scroll);
-    scrollbar-width: thin;
-    /* scrollbar-gutter: stable; */
+.Overlay-enter .Sidebar.Right {
+    pointer-events: none;
+    transform: translateX(100%);
 }
-
-.Sidebar .SidebarInner::-webkit-scrollbar {
-    width: var(--alxgrn-unit-small);
-    height: var(--alxgrn-unit-small);
+.Overlay-enter-active .Sidebar.Right {
+    pointer-events: none;
+    transform: translateX(0);
+    transition: transform var(--alxgrn-sidebar-animation-length) ease-in;
 }
-
-.Sidebar .SidebarInner::-webkit-scrollbar-track {
-    background-color: transparent;
-    border-radius: var(--alxgrn-unit-small);
+.Overlay-enter-done .Sidebar.Right {
+    pointer-events: none;
+    transform: translateX(0);
 }
-
-.Sidebar .SidebarInner::-webkit-scrollbar-thumb {
-    background-color: var(--alxgrn-sidebar-color-scroll);
-    border-radius: var(--alxgrn-unit-small);
+.Overlay-exit .Sidebar.Right {
+    pointer-events: none;
+    transform: translateX(0);
 }
-
-.Sidebar .SidebarInner::-webkit-scrollbar-corner {
-    background-color: transparent;
+.Overlay-exit-active .Sidebar.Right {
+    pointer-events: none;
+    transform: translateX(100%);
+    transition: transform var(--alxgrn-sidebar-animation-length) ease-out;
+}
+.Overlay-exit-done .Sidebar.Right {
+    pointer-events: none;
+    transform: translateX(100%);
 }

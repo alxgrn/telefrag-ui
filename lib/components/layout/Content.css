@@ -10,6 +10,7 @@
     width: var(--alxgrn-layout-width);
     margin: 0 auto;
     margin-top: var(--alxgrn-layout-header-height);
+    /* padding: var(--alxgrn-unit); */
 }
 
 .ContentMenu {
@@ -24,11 +25,12 @@
 }
 
 /* Максимальная ширина контента */
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
     .Content {
         width: auto;
-        padding-left: var(--alxgrn-unit);
-        padding-right: var(--alxgrn-unit);
+    }
+    .ContentMenu {
+        display: none;
     }
 }
 /* Разрешение экрана, ниже которого мы считаем что у нас мобильная версия */
@@ -36,8 +38,5 @@
     .Content {
         padding-left: 0;
         padding-right: 0;
-    }
-    .ContentMenu {
-        display: none;
     }
 }

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Form, Files, Input, RadioList, Select, Checkbox, CheckboxList, Fieldset, Date, FormData, FormRow, FormCol, Time, Modal, Button, Alert, Confirm, Prompt, Panel, Layout, Page } from '../lib/main';
 import { CheckboxListOption } from '../lib/components/form/checkbox/CheckboxList';
 import { RadioListOption, RadioListValue } from '../lib/components/form/radio/RadioList';
+import { Menu } from '../lib/components/icons';
 
 const options = [
     { value: 'one', option: 'one' },
@@ -43,6 +44,7 @@ function App() {
     const [ isConfirmOpen, setIsConfirmOpen ] = useState(false);
     const [ isPromptOpen, setIsPromptOpen ] = useState(false);
     const [ theme, setTheme ] = useState<'light'|'dark'>('light');
+    const [ isSidebarVisible, setIsSidebarVisible ] = useState(false);
 
     const onSubmit = (data: FormData) => {
         window.alert(data);
@@ -78,13 +80,16 @@ function App() {
     };
 
     return (
-    <Layout menu={<>
-        <div>Меню</div>
-        <div>Меню</div>
-        <div>Меню</div>
-        <div>Меню</div>
-        <div>Меню</div>
-    </>}>
+    <Layout
+        mainMenu={<>
+            <div>Меню</div>
+            <div>Меню</div>
+            <div>Меню</div>
+            <div>Меню</div>
+            <div>Меню</div>
+        </>}
+        userMenu={<Menu/>}
+    >
         <Page
             header={
                 <Panel>
@@ -92,7 +97,10 @@ function App() {
                     <Button type='Accent' onClick={() => setIsAlertOpen(true)} label='Alert'/>&nbsp;
                     <Button type='Success' onClick={() => setIsConfirmOpen(true)} label='Confirm'/>&nbsp;
                     <Button type='Error' onClick={() => setIsPromptOpen(true)} label='Prompt'/>&nbsp;
-                    <Button onClick={() => onTheme()} label={theme === 'dark' ? 'Dark' : 'Light'}/>
+                    <Button onClick={() => onTheme()} label={theme === 'dark' ? 'Dark' : 'Light'}/>&nbsp;
+                    <span className='LayoutSidebarShow'>
+                        <Button onClick={() => setIsSidebarVisible(true)} label='Sidebar'/>
+                    </span>
                 </Panel>}
             sidebar={
                 <Panel>
@@ -109,6 +117,8 @@ function App() {
                     <Button type='Error' size='Small' label='Error'/>&nbsp;
                 </p>
             </Panel>}
+            isSidebarVisible={isSidebarVisible}
+            onSidebarClose={() => setIsSidebarVisible(false)}
         >
             <Panel>
                 <Form

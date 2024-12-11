@@ -29,7 +29,7 @@ export const Sidebar: FC<PropsWithChildren<Props>> = ({ children, position = 'Le
             hAlign={position}
         >
             <div className={`Sidebar ${position}`} onClick={e => e.stopPropagation()}>
-                <div className='SidebarInner'>
+                <div className='SidebarInner Scrollbar'>
                     {children}
                 </div>
             </div>

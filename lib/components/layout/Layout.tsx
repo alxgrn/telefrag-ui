@@ -6,24 +6,27 @@ import './Layout.css';
 import { Sidebar } from '../../main';
 
 type Props = {
-	menu?: React.ReactNode;
+	mainMenu: React.ReactNode;
+	userMenu: React.ReactNode;
 }
 
-const Layout: FC<PropsWithChildren<Props>> = ({ children, menu }) => {
+const Layout: FC<PropsWithChildren<Props>> = ({ children, mainMenu, userMenu }) => {
 	const [ isMenuVisible, setIsMenuVisible ] = useState(false);
 	return (
 		<div className='Layout'>
-            <Header onMenuSwitch={() => setIsMenuVisible(b => !b)}/>
-            <Content menu={menu}>
+            <Header
+				userMenu={userMenu}
+				onMenuSwitch={() => setIsMenuVisible(b => !b)}
+			/>
+            <Content menu={mainMenu}>
 				{children}
 			</Content>
             <Footer/>
 			<Sidebar
 				isOpen={isMenuVisible}
 				onClose={() => setIsMenuVisible(false)}
-				//position='Right'
 			>
-				{menu}
+				{mainMenu}
 			</Sidebar>
 		</div>
 	);
