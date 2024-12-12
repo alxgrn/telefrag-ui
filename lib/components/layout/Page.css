@@ -4,22 +4,31 @@
     gap: var(--alxgrn-unit);
 }
 
-.Page > div:last-child {
+.Page .PageBody {
     display: flex;
     gap: var(--alxgrn-unit);
+    align-items: stretch;
 }
 
-.Page .PageContent {
+.Page .PageBody .PageContent {
     flex: 1 1 auto;
 }
 
-.Page .PageSidebar {
+.Page .PageBody .PageSidebar {
     flex: 1 1 auto;
     width: 33%;
+    display: flex;
+    align-items: flex-end;
 }
 
-@media (max-width: 1024px) {
-    .Page .PageSidebar {
+.Page .PageBody .PageSidebar .PageSidebarInner {
+    position: sticky;
+    bottom: var(--alxgrn-unit);
+    min-height: calc(100vh - var(--alxgrn-layout-header-height) - var(--alxgrn-unit));
+}
+
+@media (max-width: 768px) {
+    .Page .PageBody .PageSidebar {
         display: none;
     }
 }

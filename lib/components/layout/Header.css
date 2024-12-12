@@ -14,7 +14,7 @@
     align-items: center;
     gap: var(--alxgrn-unit-half);
     padding: 0 var(--alxgrn-unit);
-    width: var(--alxgrn-layout-width);
+    max-width: var(--alxgrn-layout-width);
     height: var(--alxgrn-layout-header-height);
     margin: 0 auto;
 }
@@ -39,11 +39,8 @@
     height: calc(2 * var(--alxgrn-unit));
 }
 
-
-@media (max-width: 1280px) {
-    .Header {
-        width: auto;
-    }
+/* Показываем весь контент */
+@media (max-width: 1024px) {
     .HeaderLeft {
         flex: 0 0 auto;
         display: flex;
@@ -54,10 +51,9 @@
         padding-left: 0;
     }
 }
-
+/* Мобильный вариант */
 @media (max-width: 768px) {
     .Header {
-        width: auto;
         padding-left: 0;
         padding-right: 0;
     }

@@ -1,6 +1,6 @@
 :root {
-    --alxgrn-layout-width: 1280px; /* максимальная ширина верстки */
-    --alxgrn-layout-menu-width: 180px; /* ширина меню */
+    --alxgrn-layout-width: 1024px; /* максимальная ширина верстки */
+    --alxgrn-layout-menu-width: 100px; /* ширина меню */
     --alxgrn-layout-sidebar-width: 340px; /* ширина боковой панели */
     --alxgrn-layout-header-height: calc(3 * var(--alxgrn-unit)); /* высота хедера 48px */
 }
@@ -10,7 +10,7 @@
     display: none;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
     .LayoutSidebarShow {
         display: initial;
     }

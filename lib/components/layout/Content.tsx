@@ -10,7 +10,9 @@ const Content: FC<PropsWithChildren<Props>> = ({ children, menu }) => {
         <main className='Content'>
             {menu &&
             <div className='ContentMenu'>
-                {menu}
+                <div className='ContentMenuInner'>
+                    {menu}
+                </div>
             </div>}
             <div className='ContentMain'>
                 {children}

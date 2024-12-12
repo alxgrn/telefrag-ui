@@ -7,29 +7,31 @@
     display: flex;
     align-items: stretch;
     gap: var(--alxgrn-unit);
-    width: var(--alxgrn-layout-width);
+    max-width: var(--alxgrn-layout-width);
     margin: 0 auto;
     margin-top: var(--alxgrn-layout-header-height);
     /* padding: var(--alxgrn-unit); */
 }
 
-.ContentMenu {
+.Content .ContentMenu {
     flex: 0 0 auto;
     width: var(--alxgrn-layout-menu-width);
     color: var(--alxgrn-color-text);
     background-color: var(--alxgrn-bg-main);
 }
 
-.ContentMain {
+.Content .ContentMenu .ContentMenuInner {
+    position: sticky;
+    top: var(--alxgrn-layout-header-height);
+}
+
+.Content .ContentMain {
     flex: 1 1 auto;
 }
 
 /* Максимальная ширина контента */
-@media (max-width: 1280px) {
-    .Content {
-        width: auto;
-    }
-    .ContentMenu {
+@media (max-width: 1024px) {
+    .Content .ContentMenu {
         display: none;
     }
 }

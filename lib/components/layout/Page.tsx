@@ -13,9 +13,14 @@ const Page: FC<PropsWithChildren<Props>> = ({ header, children, sidebar, isSideb
 	return (
 		<div className='Page'>
             {header && <div className='PageHeader'>{header}</div>}
-            <div>
+            <div className='PageBody'>
 				<div className='PageContent'>{children}</div>
-				{sidebar && <div className='PageSidebar'>{sidebar}</div>}
+				{sidebar &&
+				<div className='PageSidebar'>
+					<div className='PageSidebarInner'>
+						{sidebar}
+					</div>
+				</div>}
 			</div>
 			{sidebar && <Sidebar
 				isOpen={isSidebarVisible}
