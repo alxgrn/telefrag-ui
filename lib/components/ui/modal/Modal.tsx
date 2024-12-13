@@ -1,7 +1,7 @@
 import React, { FC, PropsWithChildren, useEffect } from 'react';
 import Overlay from '../overlay/Overlay';
+import { Plus } from '../../icons';
 import './Modal.css';
-
 export type ModalProps = {
     isOpen: boolean;
     onClose: () => void;
@@ -36,8 +36,7 @@ export const Modal: FC<PropsWithChildren<ModalProps>> = ({ children, isOpen, onC
             <div className='Modal' onClick={e => e.stopPropagation()}>
                 {close &&
                 <div className='ModalClose' onClick={onClick}>
-                    <span/>
-                    <span/>
+                    <Plus/>
                 </div>}
                 <div className='ModalInner Scrollbar'>
                     {children}

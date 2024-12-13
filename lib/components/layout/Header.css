@@ -12,7 +12,7 @@
 .Header {
     display: flex;
     align-items: center;
-    gap: var(--alxgrn-unit-half);
+    gap: var(--alxgrn-unit);
     padding: 0 var(--alxgrn-unit);
     max-width: var(--alxgrn-layout-width);
     height: var(--alxgrn-layout-header-height);

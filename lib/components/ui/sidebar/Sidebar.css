@@ -18,7 +18,7 @@
 .Sidebar {
     display: flex;
     padding: var(--alxgrn-unit-double);
-    position: absolute;
+    position: relative;
     background-color: var(--alxgrn-sidebar-bg-color);
     height: 100%;
     max-width: 80vw;
@@ -43,7 +43,7 @@
     transition: transform var(--alxgrn-sidebar-animation-length) ease-in;
 }
 .Overlay-enter-done .Sidebar {
-    pointer-events: none;
+    pointer-events: initial;
     transform: translateX(0);
 }
 .Overlay-exit .Sidebar {
@@ -75,7 +75,7 @@
     transition: transform var(--alxgrn-sidebar-animation-length) ease-in;
 }
 .Overlay-enter-done .Sidebar.Right {
-    pointer-events: none;
+    pointer-events: initial;
     transform: translateX(0);
 }
 .Overlay-exit .Sidebar.Right {

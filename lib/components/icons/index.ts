@@ -2,6 +2,7 @@ import Asterisk from "./Asterisk";
 import ChevronLeft from "./ChevronLeft";
 import ChevronRight from "./ChevronRight";
 import Menu from "./Menu";
+import Plus from "./Plus";
 import TelefragLogo from "./TelefragLogo";
 
 export {
@@ -9,5 +10,6 @@ export {
     ChevronLeft,
     ChevronRight,
     Menu,
+    Plus,
     TelefragLogo,
 };

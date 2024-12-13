@@ -7,16 +7,6 @@
     --alxgrn-modal-color-accent: var(--alxgrn-color-accent);
 }
 
-.Modal * {
-    color: var(--alxgrn-modal-color);
-    font-size: inherit;
-    line-height: inherit;
-    font-family: inherit;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-}
-
 .Modal {
     display: flex;
     padding: var(--alxgrn-unit-double) var(--alxgrn-unit) var(--alxgrn-unit-double) var(--alxgrn-unit-double);
@@ -26,6 +16,12 @@
     max-height: 90%;
     border-radius: var(--alxgrn-unit-half);
     overflow: auto;
+}
+
+.Modal * {
+    font-size: inherit;
+    line-height: inherit;
+    font-family: inherit;
 }
 
 .Modal .ModalInner {
@@ -48,25 +44,20 @@
     cursor: pointer;
 }
 
-.Modal .ModalClose span {
+.Modal .ModalClose {
     position: absolute;
-    background-color: var(--alxgrn-modal-color-close);
-    display: inline-block;
-    border-radius: 2px;
-    width: 2px;
-    height: var(--alxgrn-unit);
-    top: 0;
-    left: 0;
-    transform: translateX(var(--alxgrn-unit-half)) rotate(45deg);
-}
-.Modal .ModalClose span:nth-child(2) {
-    transform: translateX(var(--alxgrn-unit-half)) rotate(135deg);
+    color: var(--alxgrn-modal-color-close);
+    top: var(--alxgrn-unit-half);
+    right: var(--alxgrn-unit-half);
+    transform: rotate(45deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.Modal .ModalClose:hover span {
-    background-color: var(--alxgrn-modal-color-accent);
+.Modal .ModalClose:hover {
+    color: var(--alxgrn-modal-color-accent);
 }
-
 
 @media (max-width: 512px) {
     .Modal {
