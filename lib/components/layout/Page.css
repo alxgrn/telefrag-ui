@@ -16,12 +16,13 @@
 
 .Page .PageBody .PageSidebar {
     flex: 0 0 auto;
-    width: 40%;
+    width: 33%;
     display: flex;
     align-items: flex-end;
 }
 
 .Page .PageBody .PageSidebar .PageSidebarInner {
+    width: 100%;
     position: sticky;
     bottom: var(--alxgrn-unit);
     min-height: calc(100vh - var(--alxgrn-layout-header-height) - var(--alxgrn-unit));
