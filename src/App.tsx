@@ -80,16 +80,7 @@ function App() {
     };
 
     return (
-    <Layout
-        mainMenu={<>
-            <div>Меню</div>
-            <div>Меню</div>
-            <div>Меню</div>
-            <div>Меню</div>
-            <div>Меню</div>
-        </>}
-        userMenu={<Menu/>}
-    >
+    <Layout userMenu={<Menu/>}>
         <Page
             header={
                 <Panel>

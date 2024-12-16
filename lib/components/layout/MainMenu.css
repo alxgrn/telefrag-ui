@@ -1,0 +1,20 @@
+.MainMenu div {
+    display: flex;
+    align-items: center;
+    gap: var(--alxgrn-unit-half);
+    margin-bottom: var(--alxgrn-unit-half);
+    cursor: pointer;
+}
+
+.MainMenu div:hover * {
+    color: var(--alxgrn-color-accent);
+}
+
+.MainMenu div svg {
+    font-size: var(--alxgrn-font-size-big);
+}
+
+
+.MainMenu div span {
+    font-size: var(--alxgrn-font-size);
+}

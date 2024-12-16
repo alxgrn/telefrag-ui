@@ -4,14 +4,15 @@ import Footer from './Footer';
 import Content from './Content';
 import { Sidebar } from '../../main';
 import './Layout.css';
+import MainMenu from './MainMenu';
 
 type Props = {
-	mainMenu: React.ReactNode;
 	userMenu: React.ReactNode;
 	onLogoClick?: () => void;
+	onMenuClick?: (id: number|string) => void;
 }
 
-const Layout: FC<PropsWithChildren<Props>> = ({ children, mainMenu, userMenu, onLogoClick }) => {
+const Layout: FC<PropsWithChildren<Props>> = ({ children, userMenu, onLogoClick, onMenuClick }) => {
 	const [ isMenuVisible, setIsMenuVisible ] = useState(false);
 	return (
 		<div className='Layout'>
@@ -20,7 +21,7 @@ const Layout: FC<PropsWithChildren<Props>> = ({ children, mainMenu, userMenu, on
 				onMenuSwitch={() => setIsMenuVisible(b => !b)}
 				onLogoClick={onLogoClick}
 			/>
-            <Content menu={mainMenu}>
+            <Content onMenuClick={onMenuClick}>
 				{children}
 			</Content>
             <Footer/>
@@ -28,7 +29,10 @@ const Layout: FC<PropsWithChildren<Props>> = ({ children, mainMenu, userMenu, on
 				isOpen={isMenuVisible}
 				onClose={() => setIsMenuVisible(false)}
 			>
-				{mainMenu}
+				<MainMenu onMenuClick={id => {
+					setIsMenuVisible(false);
+					if (onMenuClick) onMenuClick(id);
+				}}/>
 			</Sidebar>
 		</div>
 	);
