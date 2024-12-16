@@ -9,7 +9,7 @@ const color = {
     light: {
         back: '#287BBF',
         fore: 'white',
-        text: '#333',
+        text: '#555',
     }
 };
 
