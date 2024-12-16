@@ -5,9 +5,10 @@ import './Header.css';
 type Props = {
     userMenu: React.ReactNode;
     onMenuSwitch: () => void;
+    onLogoClick?: () => void;
 };
 
-const Header: FC<Props> = ({ userMenu, onMenuSwitch }) => {
+const Header: FC<Props> = ({ userMenu, onMenuSwitch, onLogoClick }) => {
     return (
         <header className='HeaderWrapper'>
             <div className='Header'>
@@ -15,7 +16,7 @@ const Header: FC<Props> = ({ userMenu, onMenuSwitch }) => {
                     <span onClick={onMenuSwitch}><Menu/></span>
                 </div>
                 <div className='HeaderCenter'>
-                    <TelefragLogo/>
+                    <TelefragLogo onClick={onLogoClick}/>
                 </div>
                 <div className='HeaderRight'>
                     {userMenu}

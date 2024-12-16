@@ -5,7 +5,6 @@
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 0;
     background-color: var(--alxgrn-bg-main);
 }
 
@@ -13,7 +12,6 @@
     display: flex;
     align-items: center;
     gap: var(--alxgrn-unit);
-    padding: 0 var(--alxgrn-unit);
     max-width: var(--alxgrn-layout-width);
     height: var(--alxgrn-layout-header-height);
     margin: 0 auto;
@@ -49,12 +47,5 @@
     }
     .HeaderCenter {
         padding-left: 0;
-    }
-}
-/* Мобильный вариант */
-@media (max-width: 768px) {
-    .Header {
-        padding-left: 0;
-        padding-right: 0;
     }
 }
