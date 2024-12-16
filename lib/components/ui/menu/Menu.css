@@ -30,13 +30,13 @@
 
 .Popup .Menu ul li .Icon {
     flex: 0 0 auto;
-    font-size: larger;
+    font-size: var(--alxgrn-font-size-large);
     display: flex;
 }
 
 .Popup .Menu ul li .Text {
     flex: 1 1 auto;
-    font-size: smaller;
+    font-size: var(--alxgrn-font-size-small);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

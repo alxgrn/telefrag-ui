@@ -34,7 +34,7 @@
 }
 .Form ul.FileList li div span:last-child {
     white-space: nowrap;
-    font-size: smaller;
+    font-size: var(--alxgrn-font-size-small);
     color: var(--alxgrn-color-light);
 }
 .Form ul.FileList.Disabled li {

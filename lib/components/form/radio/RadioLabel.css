@@ -21,7 +21,7 @@
 }
 
 .Form label.Radio .Bottom {
-    font-size: smaller;
+    font-size: var(--alxgrn-font-size-small);
     color: var(--alxgrn-color-light);
     cursor: default;
 }

@@ -46,7 +46,7 @@
 
 .FormDatePicker .FormDatePickerMenu .FormDatePickerText {
     grid-column : span 5;
-    font-size: smaller;
+    font-size: var(--alxgrn-font-size-small);
 }
 
 .FormDatePicker .FormDatePickerMenu .FormDatePickerPrev,
@@ -67,7 +67,7 @@
     display: grid;
     grid-template-columns: repeat(7, var(--alxgrn-unit-double));
     gap: var(--alxgrn-unit-smallest);
-    font-size: smaller;
+    font-size: var(--alxgrn-font-size-small);
 }
 
 .FormDatePicker .FormDatePickerDays span {

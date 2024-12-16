@@ -43,7 +43,7 @@
 
 .Form .Fieldset .Top,
 .Form .Fieldset .Bottom {
-    font-size: smaller;
+    font-size: var(--alxgrn-font-size-small);
 }
 
 .Form .Fieldset .Top {
