@@ -16,7 +16,7 @@ export interface RadioListOption {
 }
 
 export interface RadioListProps {
-    //id: string;
+    id: string;
     label?: string | null;
     value: RadioListValue;
     options: RadioListOption[];
@@ -26,7 +26,7 @@ export interface RadioListProps {
     //__TYPE?: 'RadioList';
 }
 
-export const RadioList: React.FC<RadioListProps> = ({ label, value, onChange, required = false, disabled = false, options }) => {
+export const RadioList: React.FC<RadioListProps> = ({ id, label, value, onChange, required = false, disabled = false, options }) => {
 
     const [ error, setError ] = useState(false);
     
@@ -47,6 +47,7 @@ export const RadioList: React.FC<RadioListProps> = ({ label, value, onChange, re
         >
             {options.map((item, index) => (
                 <Radio
+                    id={id}
                     key={index}
                     label={item.label}
                     value={item.value}

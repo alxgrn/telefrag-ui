@@ -9,6 +9,7 @@ import RadioLabel from './RadioLabel';
  * отметки элемента.
  */
 export interface RadioProps {
+    id: string;
     type?: 'radio' | 'checkbox';
     value: string | number;
     error?: boolean;
@@ -21,7 +22,7 @@ export interface RadioProps {
     //__TYPE?: 'Radio';
 };
 
-export const Radio: React.FC<RadioProps> = ({ type = 'radio', value, onChange, label, bottom, error = false,
+export const Radio: React.FC<RadioProps> = ({ id, type = 'radio', value, onChange, label, bottom, error = false,
                                               required = false, disabled = false, checked = false }) => {
 
     return (
@@ -34,6 +35,7 @@ export const Radio: React.FC<RadioProps> = ({ type = 'radio', value, onChange, l
             checked={checked ? true : false}
         >
             <input
+                id={id}
                 type={type}
                 onChange={(e) => onChange(e.target.checked, value)}
                 checked={checked ? true : false}

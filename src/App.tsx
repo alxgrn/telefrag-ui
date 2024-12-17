@@ -203,7 +203,7 @@ function App() {
                     <FormRow>
                         <FormCol>
                             <RadioList
-                                //id='radio'
+                                id='radio'
                                 label='Radio legend'
                                 value={radio}
                                 options={radios}
@@ -216,7 +216,7 @@ function App() {
                                 label='Checkbox Legend'
                             >
                                 <Checkbox
-                                    //id='checkbox1'
+                                    id='checkbox1'
                                     value='checkbox1'
                                     checked={checkbox1}
                                     onChange={(b) => onCheckboxChange(b, 1)}
@@ -225,7 +225,7 @@ function App() {
                                     required={true}
                                 />
                                 <Checkbox
-                                    //id='checkbox2'
+                                    id='checkbox2'
                                     value='checkbox2'
                                     checked={checkbox2}
                                     onChange={(b) => onCheckboxChange(b, 2)}
@@ -234,7 +234,7 @@ function App() {
                                     disabled={true}
                                 />
                                 <Checkbox
-                                    //id='checkbox3'
+                                    id='checkbox3'
                                     value='checkbox3'
                                     checked={checkbox3}
                                     onChange={(b) => onCheckboxChange(b, 3)}
@@ -262,7 +262,7 @@ function App() {
                         </FormCol>
                         <FormCol>
                             <CheckboxList
-                                //id='checkboxlist'
+                                id='checkboxlist'
                                 label='Checkbox List'
                                 required={true}
                                 disabled={false}

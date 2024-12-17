@@ -6,10 +6,11 @@ export interface CheckboxProps extends Omit<RadioProps, '__TYPE' | 'type'> {
     //__TYPE?: 'Checkbox';
 };
 
-const Checkbox: React.FC<CheckboxProps> = ({ value, onChange, label, bottom,
+const Checkbox: React.FC<CheckboxProps> = ({ id, value, onChange, label, bottom,
                                              required = false, disabled = false, checked = false }) => (
     <div className='FormItem'>
         <Radio
+            id={id}
             type='checkbox'
             label={label}
             value={value}

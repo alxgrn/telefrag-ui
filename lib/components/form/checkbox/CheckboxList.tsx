@@ -14,7 +14,7 @@ export interface CheckboxListOption {
 }
 
 export interface CheckboxListProps {
-    //id: string;
+    id: string;
     label?: string | null;
     options: CheckboxListOption[];
     onChange: (v: CheckboxListOption[]) => void;
@@ -23,7 +23,7 @@ export interface CheckboxListProps {
     //__TYPE?: 'CheckboxList';
 }
 
-export const CheckboxList: React.FC<CheckboxListProps> = ({ label, onChange,
+export const CheckboxList: React.FC<CheckboxListProps> = ({ id, label, onChange,
                                                             required = false, disabled = false, options }) => {
 
     const [ error, setError ] = useState(false);
@@ -54,6 +54,7 @@ export const CheckboxList: React.FC<CheckboxListProps> = ({ label, onChange,
         >
             {options.map((item, index) => (
                 <Radio
+                    id={id}
                     key={index}
                     type='checkbox'
                     error={error}
