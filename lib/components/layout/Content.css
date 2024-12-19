@@ -9,8 +9,7 @@
     gap: var(--alxgrn-unit);
     max-width: var(--alxgrn-layout-width);
     margin: 0 auto;
-    margin-top: var(--alxgrn-layout-header-height);
-    /* padding: var(--alxgrn-unit); */
+    margin-top: calc(var(--alxgrn-unit-half) + var(--alxgrn-layout-header-height));
 }
 
 .Content .ContentMenu {
@@ -22,7 +21,7 @@
 
 .Content .ContentMenu .ContentMenuInner {
     position: sticky;
-    top: var(--alxgrn-layout-header-height);
+    top: calc(var(--alxgrn-unit) + var(--alxgrn-layout-header-height));
 }
 
 .Content .ContentMain {

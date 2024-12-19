@@ -5,7 +5,7 @@
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: var(--alxgrn-bg-main);
+    background-color: var(--alxgrn-bg-panel);
 }
 
 .Header {

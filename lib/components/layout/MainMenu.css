@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     gap: var(--alxgrn-unit-half);
-    margin-bottom: var(--alxgrn-unit-half);
+    margin-bottom: var(--alxgrn-unit);
     cursor: pointer;
 }
 
