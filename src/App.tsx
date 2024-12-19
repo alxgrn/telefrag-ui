@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Form, Files, Input, RadioList, Select, Checkbox, CheckboxList, Fieldset, Date, FormData, FormRow, FormCol, Time, Modal, Button, Alert, Confirm, Prompt, Panel, Layout, Page } from '../lib/main';
+import { Icons as Icon, Form, Files, Input, RadioList, Select, Checkbox, CheckboxList, Fieldset, Date, FormData, FormRow, FormCol, Time, Modal, Button, Alert, Confirm, Prompt, Panel, Layout, Page, MainMenuItem } from '../lib/main';
 import { CheckboxListOption } from '../lib/components/form/checkbox/CheckboxList';
 import { RadioListOption, RadioListValue } from '../lib/components/form/radio/RadioList';
 import { Menu } from '../lib/components/icons';
@@ -23,6 +23,33 @@ const checkboxes: CheckboxListOption[] = [
     { value: 4, label: 'Four', checked: true },
 ];
 
+const mainMenu: MainMenuItem[] = [{
+    id: 'articles',
+    text: 'Публикации',
+    icon: <Icon.Files/>,
+},{
+    id: 'groups',
+    text: 'Группы',
+    icon: <Icon.Users/>,
+},{
+    title: 'Заголовок',
+},{
+    id: 'img',
+    text: 'Картинка',
+    icon: <img src='https://habrastorage.org/getpro/habr/company/7c0/e9b/e19/7c0e9be196cdcb46ffbf5be93ddb1af3.png'/>
+},{
+    id: 'projects',
+    text: 'Проекты',
+    icon: <Icon.Gamepad/>,
+},{
+    id: 'launches',
+    text: 'Запуски',
+    icon: <Icon.Rocket/>,
+},{
+    id: 'calendar',
+    text: 'Календарь',
+    icon: <Icon.Calendar/>,
+}];
 
 const file = new File(['CONTENT'], 'test.txt', { type: 'text/plain;charset=utf-8' });
 
@@ -80,7 +107,7 @@ function App() {
     };
 
     return (
-    <Layout userMenu={<Menu/>}>
+    <Layout mainMenu={mainMenu} userMenu={<Menu/>}>
         <Page
             header={
                 <Panel>

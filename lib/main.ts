@@ -10,10 +10,10 @@ import Input from './components/form/input/Input';
 import Label from './components/form/label/Label';
 import { RadioList, RadioListOption, RadioListValue } from './components/form/radio/RadioList';
 import { Button, ButtonType } from './components/form/button/Button';
-import Select from './components/form/select/Select';
+import { Select, SelectOption } from './components/form/select/Select';
 import Hidden from './components/form/hidden/Hidden';
 import Checkbox from './components/form/checkbox/Checkbox';
-import CheckboxList from './components/form/checkbox/CheckboxList';
+import { CheckboxList, CheckboxListOption } from './components/form/checkbox/CheckboxList';
 import Fieldset from './components/form/fieldset/Fieldset';
 import { Menu, MenuItem } from './components/ui/menu/Menu';
 import Block from './components/ui/block/Block';
@@ -29,7 +29,9 @@ import Prompt from './components/ui/prompt/Prompt';
 import Sidebar from './components/ui/sidebar/Sidebar';
 import Editable from './components/ui/editable/Editable';
 import Layout from './components/layout/Layout';
+import { MainMenuItem } from './components/layout/MainMenu';
 import Page from './components/layout/Page';
+import * as Icons from './components/icons';
 
 export {
     Form,
@@ -63,13 +65,17 @@ export {
     Editable,
     Layout,
     Page,
+    Icons,
 };
 
 export type {
     FormData,
+    MainMenuItem,
     MenuItem,
     ModalProps,
     ButtonType,
+    CheckboxListOption,
     RadioListOption,
     RadioListValue,
+    SelectOption,
 };

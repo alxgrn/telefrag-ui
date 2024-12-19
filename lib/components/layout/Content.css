@@ -21,7 +21,7 @@
 
 .Content .ContentMenu .ContentMenuInner {
     position: sticky;
-    top: calc(var(--alxgrn-unit) + var(--alxgrn-layout-header-height));
+    top: calc(var(--alxgrn-unit-half) + var(--alxgrn-layout-header-height));
 }
 
 .Content .ContentMain {

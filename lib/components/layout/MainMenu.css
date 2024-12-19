@@ -2,8 +2,21 @@
     display: flex;
     align-items: center;
     gap: var(--alxgrn-unit-half);
-    margin-bottom: var(--alxgrn-unit);
     cursor: pointer;
+    padding: var(--alxgrn-unit-half);
+    border-radius: var(--alxgrn-unit-half);
+}
+
+.MainMenu div:hover {
+    background-color: var(--alxgrn-bg-panel);
+}
+
+.MainMenu div.MainMenuTitle {
+    cursor: initial;
+}
+
+.MainMenu div.MainMenuTitle:hover {
+    background-color: unset;
 }
 
 .MainMenu div:hover * {
@@ -14,7 +27,19 @@
     font-size: var(--alxgrn-font-size-big);
 }
 
+.MainMenu div img {
+    width: var(--alxgrn-font-size-big);
+    height: var(--alxgrn-font-size-big);
+    border-radius: 50%;
+}
 
 .MainMenu div span {
     font-size: var(--alxgrn-font-size);
+}
+
+.MainMenu div.MainMenuTitle span {
+    text-transform: uppercase;
+    font-size: var(--alxgrn-font-size-small);
+    font-weight: 600;
+    color: var(--alxgrn-color-light);
 }

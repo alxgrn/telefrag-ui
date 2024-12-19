@@ -1,39 +1,38 @@
-import { FC } from 'react';
-import * as Icon from '../icons';
-import { MenuAlternative } from '../ui/menu/Menu';
+import { FC, ReactNode } from 'react';
 import './MainMenu.css';
 
-const items: MenuAlternative[] = [{
-    id: 'articles',
-    text: 'Публикации',
-    icon: <Icon.Files/>,
-},{
-    id: 'groups',
-    text: 'Группы',
-    icon: <Icon.Users/>,
-},{
-    id: 'projects',
-    text: 'Проекты',
-    icon: <Icon.Gamepad/>,
-},{
-    id: 'launches',
-    text: 'Запуски',
-    icon: <Icon.Rocket/>,
-},{
-    id: 'calendar',
-    text: 'Календарь',
-    icon: <Icon.Calendar/>,
-}];
-
-type Props = {
-    onMenuClick?: (id: number|string) => void;
+export type MainMenuTitle = {
+    id?: never;
+    text?: never;
+    icon?: never;
+    title: string;
 };
 
-const MainMenu: FC<Props> = ({ onMenuClick }) => {
+export type MainMenuAlternative = {
+    id: string;
+    text: string;
+    icon: ReactNode;
+    title?: never;
+};
+
+export type MainMenuItem = MainMenuTitle | MainMenuAlternative;
+
+type Props = {
+    items: MainMenuItem[];
+    onMenuClick?: (id: string) => void;
+};
+
+const MainMenu: FC<Props> = ({ items, onMenuClick }) => {
     return (
         <div className='MainMenu'>
-            {items.map(item => <div key={item.id} onClick={() => { if(onMenuClick) onMenuClick(item.id) }}>
-                {item.icon}<span>{item.text}</span>
+            {items.map((item, index) => <div
+                key={index}
+                onClick={() => { if(onMenuClick && item.id) onMenuClick(item.id) }}
+                className={item.title ? 'MainMenuTitle' : undefined}
+            >
+                {item.title
+                ? <span>{item.title}</span>
+                : <>{item.icon}<span>{item.text}</span></>}
             </div>)}
         </div>
     );
