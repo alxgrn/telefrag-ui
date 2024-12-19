@@ -6,6 +6,7 @@ export type MainMenuTitle = {
     text?: never;
     icon?: never;
     title: string;
+    checked?: never;
 };
 
 export type MainMenuAlternative = {
@@ -13,6 +14,7 @@ export type MainMenuAlternative = {
     text: string;
     icon: ReactNode;
     title?: never;
+    checked?: boolean; 
 };
 
 export type MainMenuItem = MainMenuTitle | MainMenuAlternative;
@@ -31,8 +33,9 @@ const MainMenu: FC<Props> = ({ items, onMenuClick }) => {
                 className={item.title ? 'MainMenuTitle' : undefined}
             >
                 {item.title
-                ? <span>{item.title}</span>
-                : <>{item.icon}<span>{item.text}</span></>}
+                ? <span className='one-line'>{item.title}</span>
+                : <>{item.icon}<span className='one-line'>{item.text}</span></>}
+                {item.checked && <span className='MainMenuCheck'/>}
             </div>)}
         </div>
     );

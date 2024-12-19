@@ -31,10 +31,18 @@
     width: var(--alxgrn-font-size-big);
     height: var(--alxgrn-font-size-big);
     border-radius: 50%;
+    flex: 0 0 auto;
 }
 
 .MainMenu div span {
     font-size: var(--alxgrn-font-size);
+    overflow-wrap: break-word;
+    display: -webkit-box;
+    line-clamp: 1;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    flex: 1 1 auto;
 }
 
 .MainMenu div.MainMenuTitle span {
@@ -42,4 +50,13 @@
     font-size: var(--alxgrn-font-size-small);
     font-weight: 600;
     color: var(--alxgrn-color-light);
+}
+
+.MainMenu div span.MainMenuCheck {
+    display: block;
+    width: var(--alxgrn-unit-half);
+    height: var(--alxgrn-unit-half);
+    border-radius: 50%;
+    background-color: var(--alxgrn-color-accent);
+    flex: 0 0 auto;
 }
