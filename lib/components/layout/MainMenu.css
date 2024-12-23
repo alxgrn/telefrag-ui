@@ -1,3 +1,7 @@
+.MainMenu {
+    margin-right: var(--alxgrn-unit-half);
+}
+
 .MainMenu div {
     display: flex;
     align-items: center;

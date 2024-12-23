@@ -108,7 +108,7 @@ function App() {
     };
 
     return (
-    <Layout mainMenu={mainMenu} userMenu={<Menu/>}>
+    <Layout mainMenu={[...mainMenu, ...mainMenu, ...mainMenu]} userMenu={<Menu/>}>
         <Page
             header={
                 <Panel>

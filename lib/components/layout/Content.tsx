@@ -11,9 +11,7 @@ const Content: FC<PropsWithChildren<Props>> = ({ children, mainMenu, onMenuClick
     return (
         <main className='Content'>
             <div className='ContentMenu'>
-                <div className='ContentMenuInner'>
-                    <MainMenu items={mainMenu} onMenuClick={onMenuClick}/>
-                </div>
+                <MainMenu items={mainMenu} onMenuClick={onMenuClick}/>
             </div>
             <div className='ContentMain'>
                 {children}

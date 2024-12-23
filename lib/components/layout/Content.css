@@ -1,15 +1,14 @@
-/*
-    Для того чтобы меню правильно прилипало должна быть указана высота родителя.
-    А чтобы сайд бар сдвигался вверх при скролле контента в самый верх, высота родителя
-    должна быть равной высоте контента. Поэтому ставим растягивание по высоте.
-*/
 .Content {
     display: flex;
     align-items: stretch;
-    gap: var(--alxgrn-unit);
+    gap: var(--alxgrn-unit-half);
     max-width: var(--alxgrn-layout-width);
     margin: 0 auto;
     margin-top: calc(var(--alxgrn-unit-half) + var(--alxgrn-layout-header-height));
+}
+
+.Content .ContentMain {
+    flex: 1 1 auto;
 }
 
 .Content .ContentMenu {
@@ -17,15 +16,34 @@
     width: var(--alxgrn-layout-menu-width);
     color: var(--alxgrn-color-text);
     background-color: var(--alxgrn-bg-main);
-}
-
-.Content .ContentMenu .ContentMenuInner {
+    max-height: calc(100vh - var(--alxgrn-unit) - var(--alxgrn-layout-header-height));
+    overflow-y: auto;
     position: sticky;
     top: calc(var(--alxgrn-unit-half) + var(--alxgrn-layout-header-height));
 }
 
-.Content .ContentMain {
-    flex: 1 1 auto;
+.Content .ContentMenu::-webkit-scrollbar {
+    width: var(--alxgrn-unit-small);
+    height: var(--alxgrn-unit-small);
+}
+
+.Content .ContentMenu::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+
+.Content .ContentMenu::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: var(--alxgrn-unit-small);
+}
+
+.Content .ContentMenu::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: var(--alxgrn-unit-small);
+}
+
+.Content .ContentMenu:hover::-webkit-scrollbar-thumb {
+    background-color: var(--alxgrn-color-scroll);
+    border-radius: var(--alxgrn-unit-small);
 }
 
 /* Максимальная ширина контента */
@@ -34,6 +52,7 @@
         display: none;
     }
 }
+
 /* Разрешение экрана, ниже которого мы считаем что у нас мобильная версия */
 @media (max-width: 768px) {
     .Content {
