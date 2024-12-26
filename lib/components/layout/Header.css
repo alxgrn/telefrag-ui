@@ -29,7 +29,7 @@
     flex: 1 1 auto;
     display: flex;
     align-items: center;
-    padding-left: calc(var(--alxgrn-unit) + var(--alxgrn-layout-menu-width));
+    padding-left: calc(var(--alxgrn-unit-half) + var(--alxgrn-layout-menu-width));
 }
 
 .HeaderCenter svg {
