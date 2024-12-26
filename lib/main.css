@@ -53,8 +53,9 @@
     /**
      * Цвета обводки
      */
+    --alxgrn-border: #ddd; /* обычная обводка */
     --alxgrn-border-dark: rgba(136, 136, 136, 1); /* темная обводка */
-    --alxgrn-border-light: rgba(119, 136, 153, 1); /* обычная обводка */
+    --alxgrn-border-light: rgba(119, 136, 153, 1); /* светлая обводка */
     --alxgrn-border-error: rgba(178, 34, 34, 1); /* обводка ошибки */
     --alxgrn-border-accent: rgba(70, 130, 180, 1); /* обводка акцента */
     --alxgrn-border-active: moccasin; /* обводка активного элемента */
@@ -75,6 +76,7 @@
     --alxgrn-bg-accent: #333b3f;
     --alxgrn-bg-active: #444;
 
+    --alxgrn-border: #555;
     --alxgrn-border-dark: rgba(136, 136, 136, .5);
     --alxgrn-border-light: rgba(119, 136, 153, .5);
     --alxgrn-border-error: rgba(178, 34, 34, .5);

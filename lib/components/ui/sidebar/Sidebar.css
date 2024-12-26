@@ -1,12 +1,9 @@
 :root {
-    --alxgrn-sidebar-color: var(--alxgrn-color-text);
     --alxgrn-sidebar-bg-color: var(--alxgrn-bg-modal);
     --alxgrn-sidebar-animation-length: var(--alxgrn-animation-length);
-    --alxgrn-sidebar-color-scroll: var(--alxgrn-color-light);
 }
 
 .Sidebar * {
-    color: var(--alxgrn-sidebar-color);
     font-size: inherit;
     line-height: inherit;
     font-family: inherit;

@@ -28,6 +28,7 @@
 }
 
 .MainMenu div svg {
+    color: var(--alxgrn-color-accent);
     font-size: var(--alxgrn-font-size-big);
 }
 
