@@ -22,10 +22,29 @@
      */
     --alxgrn-font-size: 16px;
     --alxgrn-font-size-big: 20px;
+    --alxgrn-font-size-huge: 40px;
     --alxgrn-font-size-large: 18px;
     --alxgrn-font-size-small: 14px;
     --alxgrn-line-height: 1.3;
     --alxgrn-font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    /**
+     * Заголовки
+     */
+    --alxgrn-color-h1: #777;
+    --alxgrn-color-h2: #777;
+    --alxgrn-color-h3: #777;
+    --alxgrn-font-size-h1: var(--alxgrn-font-size-huge);
+    --alxgrn-font-size-h2: var(--alxgrn-font-size-big);
+    --alxgrn-font-size-h3: var(--alxgrn-font-size-large);
+    --alxgrn-line-height-h1: var(--alxgrn-line-height);
+    --alxgrn-line-height-h2: var(--alxgrn-line-height);
+    --alxgrn-line-height-h3: var(--alxgrn-line-height);
+    /**
+     * Фирменные цвета
+     */
+    --alxgrn-logo-color-blue: #7091a7;
+    --alxgrn-logo-color-navi: #004571;
+    --alxgrn-logo-color-beige: #c9c1ae;
     /**
      * Основные цвета
      */
@@ -113,3 +132,10 @@
     scrollbar-width: thin;
 }
 */
+@media (max-width: 512px) {
+    * {
+        --alxgrn-font-size-h1: var(--alxgrn-font-size-big);
+        --alxgrn-font-size-h2: var(--alxgrn-font-size-largest);
+        --alxgrn-font-size-h3: var(--alxgrn-font-size-large);
+    }
+}
