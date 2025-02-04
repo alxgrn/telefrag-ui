@@ -24,7 +24,7 @@
 .Page .PageBody .PageSidebar .PageSidebarInner {
     width: 100%;
     position: sticky;
-    bottom: var(--alxgrn-unit);
+    bottom: 0;
     min-height: calc(100vh - var(--alxgrn-layout-header-height) - var(--alxgrn-unit));
 }
 

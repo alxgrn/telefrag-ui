@@ -31,6 +31,7 @@ import Editable from './components/ui/editable/Editable';
 import Layout from './components/layout/Layout';
 import { MainMenuItem } from './components/layout/MainMenu';
 import Page from './components/layout/Page';
+import PageHeader from './components/layout/PageHeader';
 import * as Icons from './components/icons';
 
 export {
@@ -65,6 +66,7 @@ export {
     Editable,
     Layout,
     Page,
+    PageHeader,
     Icons,
 };
 

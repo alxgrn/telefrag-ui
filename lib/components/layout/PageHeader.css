@@ -1,0 +1,152 @@
+/*
+ * Заголовок страницы
+ */
+
+.PageHeader {
+    border-radius: var(--alxgrn-unit-half);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/*
+ * Обложка
+ */
+
+.PageHeader .PageHeaderBack {
+    width: 100%;
+    position: relative;
+    padding-bottom: 25%;
+    background-size: cover;
+    background-color: var(--alxgrn-logo-color-beige);
+}
+
+.PageHeader .PageHeaderBack .PageHeaderBackCreate,
+.PageHeader .PageHeaderBack .PageHeaderBackRemove {
+    display: flex;
+    position: absolute;
+    font-size: var(--alxgrn-font-size-large);
+    padding: var(--alxgrn-unit-half);
+    margin: var(--alxgrn-unit-half);
+    background-color: var(--alxgrn-bg-panel);
+    border-radius: var(--alxgrn-unit-small);
+    top: 0;
+    left: 0;
+    color: var(--alxgrn-color-light);
+    cursor: pointer;
+    opacity: 0;
+    transition: .5s;
+}
+.PageHeader .PageHeaderBack:hover .PageHeaderBackCreate,
+.PageHeader .PageHeaderBack:hover .PageHeaderBackRemove {
+    opacity: 1;
+    transition: .5s;
+}
+.PageHeader .PageHeaderBack .PageHeaderBackCreate {
+    left: unset;
+    right: 0;
+}
+.PageHeader .PageHeaderBack .PageHeaderBackCreate:hover,
+.PageHeader .PageHeaderBack .PageHeaderBackRemove:hover {
+    color: var(--alxgrn-color-accent);
+}
+
+/*
+ * Информация
+ */
+
+.PageHeader .PageHeaderAbout {
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    height: calc(6 * var(--alxgrn-unit));
+    background-color: var(--alxgrn-bg-panel);
+    z-index: 1;
+}
+
+/*
+ * Лого
+ */
+
+.PageHeader .PageHeaderAbout .PageHeaderLogo {
+    flex: 0 0 auto;
+    border-radius: var(--alxgrn-unit-half);
+    border: var(--alxgrn-unit-small) solid var(--alxgrn-bg-panel);
+    background-size: contain;
+    background-color: var(--alxgrn-logo-color-blue);
+    width: calc(10 * var(--alxgrn-unit));
+    height: calc(10 * var(--alxgrn-unit));
+    margin: var(--alxgrn-unit);
+    position: relative;
+}
+
+.PageHeader .PageHeaderAbout .PageHeaderLogo .PageHeaderLogoCreate,
+.PageHeader .PageHeaderAbout .PageHeaderLogo .PageHeaderLogoRemove {
+    display: flex;
+    position: absolute;
+    font-size: var(--alxgrn-font-size-large);
+    padding: var(--alxgrn-unit-half);
+    margin: var(--alxgrn-unit-half);
+    background-color: var(--alxgrn-bg-panel);
+    border-radius: 50%;
+    bottom: 0;
+    left: 0;
+    cursor: pointer;
+    color: var(--alxgrn-color-light);
+    opacity: 0;
+    transition: .5s;
+}
+.PageHeader .PageHeaderAbout .PageHeaderLogo:hover .PageHeaderLogoCreate,
+.PageHeader .PageHeaderAbout .PageHeaderLogo:hover .PageHeaderLogoRemove {
+    opacity: 1;
+    transition: .5s;
+}
+.PageHeader .PageHeaderAbout .PageHeaderLogo .PageHeaderLogoCreate {
+    left: unset;
+    right: 0;
+}
+.PageHeader .PageHeaderAbout .PageHeaderLogo .PageHeaderLogoCreate:hover,
+.PageHeader .PageHeaderAbout .PageHeaderLogo .PageHeaderLogoRemove:hover {
+    color: var(--alxgrn-color-accent);
+}
+
+/*
+ * Заголовок и подзаголовок
+ */
+
+.PageHeader .PageHeaderAbout .PageHeaderDescr {
+    flex: 1 1 auto;
+    align-self: center;
+    overflow: hidden;
+}
+
+.PageHeader .PageHeaderAbout .PageHeaderDescr .PageHeaderTitle {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.PageHeader .PageHeaderAbout .PageHeaderDescr .PageHeaderSubtitle {
+    color: var(--alxgrn-color-light);
+}
+
+@media (max-width: 768px) {
+    .PageHeader .PageHeaderAbout {
+        height: calc(3 * var(--alxgrn-unit));
+    }
+    .PageHeader .PageHeaderAbout .PageHeaderLogo {
+        border-width: var(--alxgrn-unit-smallest);
+        width: calc(5 * var(--alxgrn-unit));
+        height: calc(5 * var(--alxgrn-unit));
+        margin: var(--alxgrn-unit-half);
+    }
+    .PageHeader .PageHeaderAbout .PageHeaderLogo .PageHeaderLogoRemove,
+    .PageHeader .PageHeaderAbout .PageHeaderLogo .PageHeaderLogoCreate {
+        margin: 0;
+    }
+    .PageHeader .PageHeaderAbout .PageHeaderDescr .PageHeaderTitle {
+        font-size: var(--alxgrn-font-size-largest);
+    }
+    .PageHeader .PageHeaderAbout .PageHeaderDescr .PageHeaderSubtitle {
+        display: none;
+    }   
+}

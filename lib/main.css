@@ -134,6 +134,17 @@
     scrollbar-width: thin;
 }
 */
+
+/* Одностроковый вывод */
+.one-line {
+    overflow-wrap: break-word;
+    display: -webkit-box;
+    line-clamp: 1;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
 @media (max-width: 512px) {
     * {
         --alxgrn-font-size-h1: var(--alxgrn-font-size-big);

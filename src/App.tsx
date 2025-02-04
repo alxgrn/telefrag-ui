@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Icons as Icon, Form, Files, Input, RadioList, Select, Checkbox, CheckboxList, Fieldset, Date, FormData, FormRow, FormCol, Time, Modal, Button, Alert, Confirm, Prompt, Panel, Layout, Page, MainMenuItem } from '../lib/main';
+import { Icons as Icon, Form, Files, Input, RadioList, Select, Checkbox, CheckboxList, Fieldset, Date, FormData, FormRow, FormCol, Time, Modal, Button, Alert, Confirm, Prompt, Panel, Layout, Page, MainMenuItem, PageHeader } from '../lib/main';
 import { CheckboxListOption } from '../lib/components/form/checkbox/CheckboxList';
 import { RadioListOption, RadioListValue } from '../lib/components/form/radio/RadioList';
 import { Menu } from '../lib/components/icons';
@@ -110,7 +110,20 @@ function App() {
     return (
     <Layout mainMenu={[...mainMenu, ...mainMenu, ...mainMenu]} userMenu={<Menu/>}>
         <Page
-            header={
+            header={<>
+                <PageHeader
+                    title='Имя Фамилия'
+                    subtitle='Очень длинное описание чего-либо'
+                    logo='https://dailytelefrag.ru/api/files/523'
+                    back='https://dailytelefrag.ru/api/files/524'
+                    //square
+                    onLogoClick={() => {}}
+                    onLogoCreate={() => {}}
+                    onLogoRemove={() => {}}
+                    onBackClick={() => {}}
+                    onBackCreate={() => {}}
+                    onBackRemove={() => {}}
+                />
                 <Panel>
                     <header>React Form Test</header>
                     <Button type='Accent' onClick={() => setIsAlertOpen(true)} label='Alert'/>&nbsp;
@@ -120,7 +133,8 @@ function App() {
                     <span className='LayoutSidebarShow'>
                         <Button onClick={() => setIsSidebarVisible(true)} label='Sidebar'/>
                     </span>
-                </Panel>}
+                </Panel>
+            </>}
             sidebar={
                 <Panel>
                 <p>
