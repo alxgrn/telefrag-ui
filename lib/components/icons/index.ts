@@ -11,6 +11,7 @@ import Image from "./Image";
 import Menu from "./Menu";
 import Plus from "./Plus";
 import Rocket from "./Rocket";
+import ShowSidebar from "./ShowSidebar";
 import TelefragLogo from "./TelefragLogo";
 import Trash from "./Trash";
 import Users from "./Users";
@@ -29,6 +30,7 @@ export {
     Menu,
     Plus,
     Rocket,
+    ShowSidebar,
     TelefragLogo,
     Trash,
     Users,

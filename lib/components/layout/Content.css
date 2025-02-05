@@ -4,7 +4,7 @@
     gap: var(--alxgrn-unit-half);
     max-width: var(--alxgrn-layout-width);
     margin: 0 auto;
-    margin-top: calc(var(--alxgrn-unit-half) + var(--alxgrn-layout-header-height));
+    margin-top: var(--alxgrn-layout-header-height);
 }
 
 .Content .ContentMain {

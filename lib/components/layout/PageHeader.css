@@ -7,6 +7,7 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    margin-top: var(--alxgrn-unit);
 }
 
 /*
@@ -22,7 +23,8 @@
 }
 
 .PageHeader .PageHeaderBack .PageHeaderBackCreate,
-.PageHeader .PageHeaderBack .PageHeaderBackRemove {
+.PageHeader .PageHeaderBack .PageHeaderBackRemove,
+.PageHeader .PageHeaderBack .PageHeaderShowSidebar {
     display: flex;
     position: absolute;
     font-size: var(--alxgrn-font-size-large);
@@ -51,15 +53,32 @@
     color: var(--alxgrn-color-accent);
 }
 
+.PageHeader .PageHeaderBack .PageHeaderShowSidebar {
+    top: unset;
+    left: unset;
+    right: 0;
+    bottom: 0;
+    opacity: 1;
+    transition: none;
+    color: white;
+    background-color: var(--alxgrn-color-accent);
+    display: none;
+    opacity: .9;
+}
+
+.PageHeader .PageHeaderBack .PageHeaderShowSidebar:hover {
+    opacity: 1;
+}
+
 /*
  * Информация
  */
 
 .PageHeader .PageHeaderAbout {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     width: 100%;
-    height: calc(6 * var(--alxgrn-unit));
+    height: calc(5 * var(--alxgrn-unit));
     background-color: var(--alxgrn-bg-panel);
     z-index: 1;
 }
@@ -78,6 +97,7 @@
     height: calc(10 * var(--alxgrn-unit));
     margin: var(--alxgrn-unit);
     position: relative;
+    align-self: flex-end;
 }
 
 .PageHeader .PageHeaderAbout .PageHeaderLogo .PageHeaderLogoCreate,
@@ -114,22 +134,42 @@
  * Заголовок и подзаголовок
  */
 
-.PageHeader .PageHeaderAbout .PageHeaderDescr {
+.PageHeader .PageHeaderAbout .PageHeaderInfo {
     flex: 1 1 auto;
-    align-self: center;
     overflow: hidden;
 }
 
-.PageHeader .PageHeaderAbout .PageHeaderDescr .PageHeaderTitle {
-    font-size: 24px;
+.PageHeader .PageHeaderAbout .PageHeaderInfo .PageHeaderTitle {
+    font-size: var(--alxgrn-font-size-largest);
     font-weight: 600;
 }
 
-.PageHeader .PageHeaderAbout .PageHeaderDescr .PageHeaderSubtitle {
+.PageHeader .PageHeaderAbout .PageHeaderInfo .PageHeaderSubtitle {
     color: var(--alxgrn-color-light);
 }
 
+/*
+ * Кнопка меню и т.п.
+ */
+
+.PageHeader .PageHeaderAbout .PageHeaderMenu {
+    flex: 0 0 auto;
+    display: flex;
+    margin-right: var(--alxgrn-unit);
+}
+
+@media (max-width: 1024px) {
+    .PageHeader {
+        border-top-left-radius:0;
+        border-top-right-radius: 0;
+        margin-top: 0;
+    }
+}
+
 @media (max-width: 768px) {
+    .PageHeader .PageHeaderBack .PageHeaderShowSidebar {
+        display: flex;
+    }
     .PageHeader .PageHeaderAbout {
         height: calc(3 * var(--alxgrn-unit));
     }
@@ -143,10 +183,13 @@
     .PageHeader .PageHeaderAbout .PageHeaderLogo .PageHeaderLogoCreate {
         margin: 0;
     }
-    .PageHeader .PageHeaderAbout .PageHeaderDescr .PageHeaderTitle {
-        font-size: var(--alxgrn-font-size-largest);
+    .PageHeader .PageHeaderAbout .PageHeaderInfo .PageHeaderTitle {
+        font-size: var(--alxgrn-font-size-big);
     }
-    .PageHeader .PageHeaderAbout .PageHeaderDescr .PageHeaderSubtitle {
+    .PageHeader .PageHeaderAbout .PageHeaderInfo .PageHeaderSubtitle {
         display: none;
-    }   
+    }
+    .PageHeader .PageHeaderAbout .PageHeaderMenu {
+        margin-right: var(--alxgrn-unit-half);
+    }
 }

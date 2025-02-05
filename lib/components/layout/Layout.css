@@ -5,12 +5,12 @@
 }
 
 /* Для отображения кнопки показа сайдбара на странице контента */
-.LayoutSidebarShow {
+.LayoutSidebarIsShown {
     display: none;
 }
 
 @media (max-width: 768px) {
-    .LayoutSidebarShow {
+    .LayoutSidebarIsShown {
         display: initial;
     }
 }

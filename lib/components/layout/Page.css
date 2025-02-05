@@ -1,13 +1,13 @@
 .Page {
     display: flex;
     flex-direction: column;
-    gap: var(--alxgrn-unit);
 }
 
 .Page .PageBody {
     display: flex;
     gap: var(--alxgrn-unit);
     align-items: stretch;
+    margin-top: var(--alxgrn-unit);
 }
 
 .Page .PageBody .PageContent {

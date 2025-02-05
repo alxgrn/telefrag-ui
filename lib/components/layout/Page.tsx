@@ -12,7 +12,7 @@ type Props = {
 const Page: FC<PropsWithChildren<Props>> = ({ header, children, sidebar, isSidebarVisible = false, onSidebarClose }) => {
 	return (
 		<div className='Page'>
-            {header && <div className='PageHeader'>{header}</div>}
+            {header && <>{header}</>}
             <div className='PageBody'>
 				<div className='PageContent'>{children}</div>
 				{sidebar &&

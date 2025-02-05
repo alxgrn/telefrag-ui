@@ -110,31 +110,21 @@ function App() {
     return (
     <Layout mainMenu={[...mainMenu, ...mainMenu, ...mainMenu]} userMenu={<Menu/>}>
         <Page
-            header={<>
-                <PageHeader
+            header={<PageHeader
+                    menu={<Button onClick={() => setIsSidebarVisible(true)} label='Sidebar' size='Small'/>}
                     title='Имя Фамилия'
                     subtitle='Очень длинное описание чего-либо'
                     logo='https://dailytelefrag.ru/api/files/523'
                     back='https://dailytelefrag.ru/api/files/524'
-                    //square
+                    square
                     onLogoClick={() => {}}
                     onLogoCreate={() => {}}
                     onLogoRemove={() => {}}
                     onBackClick={() => {}}
                     onBackCreate={() => {}}
                     onBackRemove={() => {}}
-                />
-                <Panel>
-                    <header>React Form Test</header>
-                    <Button type='Accent' onClick={() => setIsAlertOpen(true)} label='Alert'/>&nbsp;
-                    <Button type='Success' onClick={() => setIsConfirmOpen(true)} label='Confirm'/>&nbsp;
-                    <Button type='Error' onClick={() => setIsPromptOpen(true)} label='Prompt'/>&nbsp;
-                    <Button onClick={() => onTheme()} label={theme === 'dark' ? 'Dark' : 'Light'}/>&nbsp;
-                    <span className='LayoutSidebarShow'>
-                        <Button onClick={() => setIsSidebarVisible(true)} label='Sidebar'/>
-                    </span>
-                </Panel>
-            </>}
+                    onShowSidebar={() => setIsSidebarVisible(true)}
+            />}
             sidebar={
                 <Panel>
                 <p>
@@ -153,6 +143,16 @@ function App() {
             isSidebarVisible={isSidebarVisible}
             onSidebarClose={() => setIsSidebarVisible(false)}
         >
+            <Panel>
+                <header>React Form Test</header>
+                <Button type='Accent' onClick={() => setIsAlertOpen(true)} label='Alert'/>&nbsp;
+                <Button type='Success' onClick={() => setIsConfirmOpen(true)} label='Confirm'/>&nbsp;
+                <Button type='Error' onClick={() => setIsPromptOpen(true)} label='Prompt'/>&nbsp;
+                <Button onClick={() => onTheme()} label={theme === 'dark' ? 'Dark' : 'Light'}/>&nbsp;
+                <span className='LayoutSidebarIsShown'>
+                    <Button onClick={() => setIsSidebarVisible(true)} label='Sidebar'/>
+                </span>
+            </Panel>
             <Panel>
                 <Form
                     info='Info text'
