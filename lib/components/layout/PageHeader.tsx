@@ -12,6 +12,7 @@ type Props = {
     subtitle?: string;
     logo?: string;
     back?: string;
+    admin?: boolean;
     square?: boolean;
     onLogoClick?: () => void;
     onBackClick?: () => void;
@@ -22,7 +23,7 @@ type Props = {
     onShowSidebar?: () => void;
 };
 
-const PageHeader: FC<Props> = ({ menu, title, subtitle, logo, back, square,
+const PageHeader: FC<Props> = ({ menu, title, subtitle, logo, back, admin, square,
                                  onLogoClick, onLogoCreate, onLogoRemove,
                                  onBackClick, onBackCreate, onBackRemove,
                                  onShowSidebar }) => {
@@ -41,8 +42,8 @@ const PageHeader: FC<Props> = ({ menu, title, subtitle, logo, back, square,
                     backgroundImage: back ? `url(${back})` : undefined,
                 }}
             >
-                {onBackCreate && <div className='PageHeaderBackCreate' onClick={e => onClick(e, onBackCreate)}><Image/></div>}
-                {onBackRemove && <div className='PageHeaderBackRemove' onClick={e => onClick(e, onBackRemove)}><Trash/></div>}
+                {admin && onBackCreate && <div className='PageHeaderBackCreate' onClick={e => onClick(e, onBackCreate)}><Image/></div>}
+                {admin && onBackRemove && <div className='PageHeaderBackRemove' onClick={e => onClick(e, onBackRemove)}><Trash/></div>}
                 {onShowSidebar && <div className='PageHeaderShowSidebar' onClick={e => onClick(e, onShowSidebar)}><ShowSidebar/></div>}
             </div>
 			<div className='PageHeaderAbout'>
@@ -54,8 +55,8 @@ const PageHeader: FC<Props> = ({ menu, title, subtitle, logo, back, square,
                         borderRadius: square ? undefined : '50%',
                     }}
 				>
-                    {onLogoCreate && <div className='PageHeaderLogoCreate' onClick={e => onClick(e, onLogoCreate)}><Image/></div>}
-                    {onLogoRemove && <div className='PageHeaderLogoRemove' onClick={e => onClick(e, onLogoRemove)}><Trash/></div>}                
+                    {admin && onLogoCreate && <div className='PageHeaderLogoCreate' onClick={e => onClick(e, onLogoCreate)}><Image/></div>}
+                    {admin && onLogoRemove && <div className='PageHeaderLogoRemove' onClick={e => onClick(e, onLogoRemove)}><Trash/></div>}                
                 </div>
 				<div className='PageHeaderInfo'>
                     <div className='PageHeaderTitle one-line'>{title}</div>

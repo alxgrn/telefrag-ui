@@ -1,7 +1,7 @@
 .Panel {
     background-color: var(--alxgrn-bg-panel);
     border-radius: var(--alxgrn-unit-half);
-    padding: var(--alxgrn-unit-double);
+    padding: var(--alxgrn-unit);
     margin: var(--alxgrn-unit) 0;
 }
 
@@ -21,11 +21,4 @@
 .Panel p:last-child,
 .Panel .p:last-child {
     margin-bottom: 0;
-}
-
-
-@media (max-width: 512px) {
-    .Panel {
-        padding: var(--alxgrn-unit);
-    }
 }

@@ -116,6 +116,7 @@ function App() {
                     subtitle='Очень длинное описание чего-либо'
                     logo='https://dailytelefrag.ru/api/files/523'
                     back='https://dailytelefrag.ru/api/files/524'
+                    admin
                     square
                     onLogoClick={() => {}}
                     onLogoCreate={() => {}}
