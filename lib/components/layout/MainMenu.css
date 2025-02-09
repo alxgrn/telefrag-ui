@@ -1,4 +1,5 @@
 .MainMenu {
+    margin-top: var(--alxgrn-unit);
     margin-right: var(--alxgrn-unit-half);
 }
 

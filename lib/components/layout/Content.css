@@ -19,7 +19,7 @@
     max-height: calc(100vh - var(--alxgrn-unit) - var(--alxgrn-layout-header-height));
     overflow-y: auto;
     position: sticky;
-    top: calc(var(--alxgrn-unit-half) + var(--alxgrn-layout-header-height));
+    top: var(--alxgrn-layout-header-height);
 }
 
 .Content .ContentMenu::-webkit-scrollbar {
