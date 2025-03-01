@@ -7,8 +7,10 @@
     margin-top: var(--alxgrn-layout-header-height);
 }
 
+/* Ширину меню и контента задаем жестко чтобы не было раздвигания при переполнении содержимым */
 .Content .ContentMain {
-    flex: 1 1 auto;
+    flex: 0 0 auto;
+    width: calc(var(--alxgrn-layout-width) - var(--alxgrn-layout-menu-width) - var(--alxgrn-unit-half));
 }
 
 .Content .ContentMenu {
@@ -51,12 +53,7 @@
     .Content .ContentMenu {
         display: none;
     }
-}
-
-/* Разрешение экрана, ниже которого мы считаем что у нас мобильная версия */
-@media (max-width: 768px) {
-    .Content {
-        padding-left: 0;
-        padding-right: 0;
+    .Content .ContentMain {
+        width: 100%;
     }
 }

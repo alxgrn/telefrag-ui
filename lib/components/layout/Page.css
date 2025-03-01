@@ -10,8 +10,10 @@
     margin-top: var(--alxgrn-unit);
 }
 
+/* Ширину контента и сайдбара задаем жестко чтобы не было раздвигания при переполнении содержимым */
 .Page .PageBody .PageContent {
-    flex: 1 1 auto;
+    flex: 0 0 auto;
+    width: calc(67% - var(--alxgrn-unit));
 }
 
 .Page .PageBody .PageSidebar {
@@ -29,6 +31,9 @@
 }
 
 @media (max-width: 768px) {
+    .Page .PageBody .PageContent {
+        width: 100%;
+    }
     .Page .PageBody .PageSidebar {
         display: none;
     }
