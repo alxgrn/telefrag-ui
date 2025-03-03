@@ -19,7 +19,7 @@ textarea.Editable::placeholder {
     cursor: auto;
     border: none;
     outline: none;
-    overflow: auto;
+    overflow: hidden;
     width: 100%;
 }
 
