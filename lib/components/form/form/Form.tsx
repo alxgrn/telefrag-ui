@@ -72,7 +72,7 @@ export const Form: React.FC<PropsWithChildren<FormProps>> = ({ info, error, succ
                     break;
                 case Image:
                     // Файл картинки должен быть выбран
-                    const image = props.image as File;
+                    const image = props.value as File;
                     if (!image) setDisabled(true);
                     break;
                 case Date:
@@ -131,7 +131,7 @@ export const Form: React.FC<PropsWithChildren<FormProps>> = ({ info, error, succ
                     addData(props.id, props.files as File[]);
                     break;
                 case Image:
-                    addData(props.id, props.image as File);
+                    addData(props.id, props.value as File);
                     break;
                 case Hidden:
                     addData(props.id, props.value as string | number);

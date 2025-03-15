@@ -10,7 +10,7 @@ return(
     <Form>
         <Image
             id='image'
-            image={image}
+            value={image}
             onChange={setImage}
             text={<span><Icon.Image/><br/>Выберите изображение</span>}
             required
@@ -26,7 +26,7 @@ return(
 |Prop name|Type|Default|Description|
 |---------|----|-------|-----------|
 |id|string||Идентификатор элемента ввода|
-|image|File||Выбранное изображение|
+|value|File||Выбранное изображение|
 |onChange|(image?: File) => void||Обработчик выбора|
 |label?|string \| null||Название блока ввода|
 |text|React.ReactNode||Текст для размещения в центре|

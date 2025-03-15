@@ -5,7 +5,7 @@ import './Image.css';
 
 export interface FilesProps {
     id: string;
-    image?: File;
+    value?: File;
     text?: React.ReactNode; // текст для размещения в центре
     label?: string | null;
     placeholder?: string | null; // УРЛ предыдущей картинки
@@ -17,26 +17,32 @@ export interface FilesProps {
     disabled?: boolean | null;
 }
 
-export const Image: FC<FilesProps> = ({ id, image, text, onChange, accept, top, bottom, label,
+export const Image: FC<FilesProps> = ({ id, value, text, onChange, accept, top, bottom, label,
                                         placeholder, required = false, disabled = false }) => {
 
     const [ error, setError ] = useState(false);
     const [ style, setStyle ] = useState<React.CSSProperties|undefined>(undefined);
+    const [ waiting, setWaiting ] = useState(false);
 
     useEffect(() => {
-        if(required && !image) setError(true); else setError(false);
-    }, [ image, required ]);
+        if(required && !value) setError(true); else setError(false);
+    }, [ value, required ]);
 
     useEffect(() => {
         setStyle(undefined);
-        if (image) {
+        setWaiting(false);
+        if (value) {
             const fr = new FileReader();
-            fr.onload = function () { setStyle({ backgroundImage: `url(${this.result}`}); };
-            fr.readAsDataURL(image);
+            setWaiting(true);
+            fr.onload = function () { 
+                setStyle({ backgroundImage: `url(${this.result}`}); 
+                setWaiting(false);
+            };
+            fr.readAsDataURL(value);
             return;
         }
         if (placeholder) setStyle({ backgroundImage: `url(${placeholder}`});
-    }, [ placeholder, image ]);
+    }, [ placeholder, value ]);
 
     const doFileChange = (event: ChangeEvent) => {
         const target = event.target as HTMLInputElement;
@@ -63,17 +69,19 @@ export const Image: FC<FilesProps> = ({ id, image, text, onChange, accept, top, 
                 className={`ImageLabel ${disabled ? 'Disabled' : ''} ${error ? 'Error' : ''}`}
                 style={style}
             >
-                {(text && !style) && text}
-                {image && <div className='ImageRemove' onClick={onRemove}><Icons.Trash/></div>}
-                <label>
-                    <input
-                        id={id}
-                        type='file'
-                        accept={accept ?? 'image/*'}
-                        onChange={e => doFileChange(e)}
-                        disabled={disabled ? true : false}
-                    />
-                </label>
+                {waiting ? <Icons.Clock/> : <>
+                    {text ? (!style && text) : (!style && <Icons.Image/>)}
+                    {value && <div className='ImageRemove' onClick={onRemove}><Icons.Trash/></div>}
+                    <label>
+                        <input
+                            id={id}
+                            type='file'
+                            accept={accept ?? 'image/*'}
+                            onChange={e => doFileChange(e)}
+                            disabled={disabled ? true : false}
+                        />
+                    </label>
+                </>}
             </div>
         </Label>
     </div>);

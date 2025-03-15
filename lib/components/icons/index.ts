@@ -3,6 +3,7 @@ import Book from "./Book";
 import Calendar from "./Calendar";
 import ChevronLeft from "./ChevronLeft";
 import ChevronRight from "./ChevronRight";
+import Clock from "./Clock";
 import Feather from "./Feather";
 import Files from "./Files";
 import Forum from "./Forum";
@@ -22,6 +23,7 @@ export {
     Calendar,
     ChevronLeft,
     ChevronRight,
+    Clock,
     Feather,
     Files,
     Forum,

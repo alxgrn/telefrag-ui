@@ -319,13 +319,13 @@ function App() {
                         <FormCol>
                             <Image
                                 id='image'
-                                image={image}
+                                value={image}
                                 onChange={setImage}
-                                text={<span><Icon.Image/><br/>Выберите изображение</span>}
+                                //text={<span><Icon.Image/><br/>Выберите изображение</span>}
                                 required
                                 label='Обложка'
                                 bottom='Выберите файл'
-                                placeholder='https://telefrag.hb.bizmrg.com/cover/d3cbfb168e7a1fcf.jpeg'
+                                //placeholder='https://telefrag.hb.bizmrg.com/cover/d3cbfb168e7a1fcf.jpeg'
                             />
                         </FormCol>
                         <FormCol/>
