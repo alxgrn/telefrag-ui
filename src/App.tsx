@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Icons as Icon, Form, Files, Input, RadioList, Select, Checkbox, CheckboxList, Fieldset, Date, FormData, FormRow, FormCol, Time, Modal, Button, Alert, Confirm, Prompt, Panel, Layout, Page, MainMenuItem, PageHeader } from '../lib/main';
+import { Icons as Icon, Form, Files, Input, RadioList, Select, Checkbox, CheckboxList, Fieldset, Date, FormData, FormRow, FormCol, Time, Modal, Button, Alert, Confirm, Prompt, Panel, Layout, Page, MainMenuItem, PageHeader, Image } from '../lib/main';
 import { CheckboxListOption } from '../lib/components/form/checkbox/CheckboxList';
 import { RadioListOption, RadioListValue } from '../lib/components/form/radio/RadioList';
 import { Menu } from '../lib/components/icons';
@@ -66,6 +66,7 @@ function App() {
     const [ checkbox2, setCheckbox2 ] = useState(false);
     const [ checkbox3, setCheckbox3 ] = useState(true);
     const [ files, setFiles ] = useState<File[]>([file]);
+    const [ image, setImage ] = useState<File|undefined>(undefined);
     const [ checkboxlist, setCheckboxList ] = useState(checkboxes);
     const [ isModalOpen, setIsModalOpen ] = useState(false);
     const [ isAlertOpen, setIsAlertOpen ] = useState(false);
@@ -313,6 +314,21 @@ function App() {
                                 onChange={setCheckboxList}
                             />
                         </FormCol>
+                    </FormRow>
+                    <FormRow>
+                        <FormCol>
+                            <Image
+                                id='image'
+                                image={image}
+                                onChange={setImage}
+                                text={<span><Icon.Image/><br/>Выберите изображение</span>}
+                                required
+                                label='Обложка'
+                                bottom='Выберите файл'
+                                placeholder='https://telefrag.hb.bizmrg.com/cover/d3cbfb168e7a1fcf.jpeg'
+                            />
+                        </FormCol>
+                        <FormCol/>
                     </FormRow>
                 </Form>
             </Panel>

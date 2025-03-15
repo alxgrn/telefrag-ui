@@ -5,7 +5,7 @@ import { RadioListOption } from '../radio/RadioList';
 import { SelectOption } from '../select/Select';
 import { CheckboxListOption, CheckboxListValue } from '../checkbox/CheckboxList';
 import Button, { ButtonType } from '../button/Button';
-import { Hidden, Checkbox, Input, Select, RadioList, Files, Date, CheckboxList, Time, Block } from '../../../main';
+import { Hidden, Checkbox, Input, Select, RadioList, Files, Image, Date, CheckboxList, Time, Block } from '../../../main';
 import './Form.css';
 
 export type FormProps = {
@@ -22,7 +22,7 @@ export type FormProps = {
 }
 
 export type FormData = {
-    [i: string]: string | number | boolean | File[] | any[];
+    [i: string]: string | number | boolean | File | File[] | any[];
 };
 
 export const Form: React.FC<PropsWithChildren<FormProps>> = ({ info, error, success, submit, cancel,
@@ -70,6 +70,11 @@ export const Form: React.FC<PropsWithChildren<FormProps>> = ({ info, error, succ
                     const files = props.files as File[];
                     if(files.length < 1) setDisabled(true);
                     break;
+                case Image:
+                    // Файл картинки должен быть выбран
+                    const image = props.image as File;
+                    if (!image) setDisabled(true);
+                    break;
                 case Date:
                     // Дата должна быть валидна
                     if(!isValidDate((props.value as string).trim())) setDisabled(true);
@@ -91,7 +96,7 @@ export const Form: React.FC<PropsWithChildren<FormProps>> = ({ info, error, succ
 
         // Мы добавляем даные по идентификатору.
         // Если идентификатор повторяется, то мы создаем массив значений.
-        const addData = (id: string, value: string|number|boolean|File[]|CheckboxListValue[]) => {
+        const addData = (id: string, value: string|number|boolean|File|File[]|CheckboxListValue[]) => {
             if(!data[id]) {
                 data[id] = value;
                 return;
@@ -125,6 +130,9 @@ export const Form: React.FC<PropsWithChildren<FormProps>> = ({ info, error, succ
                 case Files:
                     addData(props.id, props.files as File[]);
                     break;
+                case Image:
+                    addData(props.id, props.image as File);
+                    break;
                 case Hidden:
                     addData(props.id, props.value as string | number);
                     break;
@@ -141,7 +149,7 @@ export const Form: React.FC<PropsWithChildren<FormProps>> = ({ info, error, succ
         onSubmit(data);
     };
 
-    return(
+    return (
         <div className={wide ? 'Form FormWide' : 'Form'}>
             {success && <Block type='Success'>{success}</Block>}
             {error && <Block type='Error'>{error}</Block>}

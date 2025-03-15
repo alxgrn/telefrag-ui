@@ -6,6 +6,7 @@ import Date from './components/form/date/Date';
 import DatePicker from './components/form/date/DatePicker';
 import Time from './components/form/time/Time';
 import Files from './components/form/files/Files';
+import Image from './components/form/image/Image';
 import Input from './components/form/input/Input';
 import Label from './components/form/label/Label';
 import { RadioList, RadioListOption, RadioListValue } from './components/form/radio/RadioList';
@@ -39,6 +40,7 @@ export {
     Date,
     Time,
     Files,
+    Image,
     Input,
     Label,
     RadioList,

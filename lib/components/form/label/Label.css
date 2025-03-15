@@ -11,42 +11,54 @@
 /**
  * Лейбл поля ввода text/password/textarea/select
  */
-.FormItem label {
+.FormItem label,
+.FormItem .LabelWrap {
 	color: var(--alxgrn-label-color);
 	display: block;
     user-select: none;
     padding: 0;
 }
 
-.FormItem label .Label {
+.FormItem label .Label,
+.FormItem .LabelWrap .Label {
     display: flex;
     align-items: center;
     margin-bottom: var(--alxgrn-unit-small);
 }
 
 .FormItem label .Top,
-.FormItem label .Bottom {
+.FormItem label .Bottom,
+.FormItem .LabelWrap .Top,
+.FormItem .LabelWrap .Bottom {
     font-size: var(--alxgrn-font-size-small);
 }
 
-.FormItem label .Top {
+.FormItem label .Top,
+.FormItem .LabelWrap .Top {
     color: var(--alxgrn-label-color-top);
     margin-bottom: var(--alxgrn-unit-small);
 }
 
-.FormItem label .Bottom {
+.FormItem label .Bottom,
+.FormItem .LabelWrap .Bottom {
     color: var(--alxgrn-label-color-bottom);
     margin-top: var(--alxgrn-unit-small);
 }
 
 .FormItem label.Disabled,
 .FormItem label.Disabled .Top,
-.FormItem label.Disabled .Bottom {
+.FormItem label.Disabled .Bottom,
+.FormItem .LabelWrap.Disabled,
+.FormItem .LabelWrap.Disabled .Top,
+.FormItem .LabelWrap.Disabled .Bottom {
     color: var(--alxgrn-label-color-disabled);
 }
 
 .FormItem label.Error,
 .FormItem label.Error .Top,
-.FormItem label.Error .Bottom {
+.FormItem label.Error .Bottom,
+.FormItem .LabelWrap.Error,
+.FormItem .LabelWrap.Error .Top,
+.FormItem .LabelWrap.Error .Bottom {
     color: var(--alxgrn-label-color-error);
 }

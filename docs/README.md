@@ -14,6 +14,7 @@ npm install @alxgrn/telefrag-ui
 * [Label](./form/Label.md)
 * [Button](./form/Button.md)
 * [Files](./form/Files.md)
+* [Image](./form/Image.md)
 * [RadioList](./form/RadioList.md)
 * [Select](./form/Select.md)
 * [Hidden](./form/Hidden.md)

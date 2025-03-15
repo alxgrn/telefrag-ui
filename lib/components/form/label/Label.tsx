@@ -9,17 +9,31 @@ export type LabelProps = {
     error?: boolean | null;
     disabled?: boolean | null;
     required?: boolean | null;
+    passive?: boolean; // флаг того что вместо тега label надо использовать div
 };
 
 const Label: FC<PropsWithChildren<LabelProps>> = ({ label, top, bottom,
-                    required = false, error = false, disabled = false, children }) => {
+                    required = false, error = false, disabled = false, children, passive = false }) => {
 
-    const className = () => {
-        let c = '';
+    const className = (name?: string) => {
+        let c = name ?? '';
         if(error) c += ' Error';
         if(disabled) c += ' Disabled';
         return c;
     };
+
+    if (passive) return (
+        <div className={className('LabelWrap')}>
+            {label &&
+            <div className='Label'>
+                <RequiredMark required={required}/>
+                <span>{label}</span>
+            </div>}
+            {top && <div className='Top'>{top}</div>}
+            {children}
+            {bottom && <div className='Bottom'>{bottom}</div>}
+        </div>
+    );
 
     return (
         <label className={className()}>

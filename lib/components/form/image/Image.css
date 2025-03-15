@@ -1,0 +1,65 @@
+/* Дефолтный инпут скрываем */
+ .Form .ImageLabel input[type='file'] {
+    display: none;
+}
+
+.Form .ImageLabel {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--alxgrn-unit-small);
+    border: 1px dashed var(--alxgrn-border-accent);
+    color: var(--alxgrn-color-accent);
+    background-color: var(--alxgrn-bg-accent);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.Form .ImageLabel.Disabled {
+    color: var(--alxgrn-color-light);
+    border-color: var(--alxgrn-border-light);
+    background-color: var(--alxgrn-bg-light);
+    cursor: default;
+}
+
+.Form .ImageLabel.Error {
+    color: var(--alxgrn-color-error);
+    border-color: var(--alxgrn-border-error);
+    background-color: var(--alxgrn-bg-error);
+}
+
+.Form .ImageLabel .ImageRemove {
+    display: flex;
+    position: absolute;
+    top: var(--alxgrn-unit-half);
+    right: var(--alxgrn-unit-half);
+    padding: var(--alxgrn-unit-half);
+    border-radius: var(--alxgrn-unit-smallest);
+    background-color: var(--alxgrn-bg-accent);
+    z-index: 100;
+}
+
+.Form .ImageLabel.Disabled .ImageRemove {
+    display: none;
+}
+
+.Form .ImageLabel label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.Form .ImageLabel.Disabled label {
+    cursor: default;
+}
