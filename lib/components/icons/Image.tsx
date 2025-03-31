@@ -1,4 +1,4 @@
-// lu LuFiles
+// lu LuImage
 const Image = () => (
     <svg
         stroke="currentColor"
