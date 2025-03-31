@@ -1,7 +1,7 @@
 {
   "name": "@alxgrn/telefrag-ui",
   "description": "UI library for The Daily Telefrag project",
-  "version": "0.0.29",
+  "version": "0.0.30",
   "private": false,
   "author": "Alexander Fedorov <alex@molner.ru>",
   "license": "Apache-2.0",
