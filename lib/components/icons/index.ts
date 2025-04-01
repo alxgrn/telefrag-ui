@@ -15,6 +15,8 @@ import Forum from "./Forum";
 import Gamepad from "./Gamepad";
 import Image from "./Image";
 import Italic from "./Italic";
+import JoinUp from "./JoinUp";
+import Lift from "./Lift";
 import Link from "./Link";
 import List from "./List";
 import ListOrdered from "./ListOrdered";
@@ -24,6 +26,7 @@ import Quote from "./Quote";
 import Redo from "./Redo";
 import Rocket from "./Rocket";
 import ShowSidebar from "./ShowSidebar";
+import SquareDashed from "./SquareDashed";
 import Strikethrough from "./Strikethrough";
 import TelefragLogo from "./TelefragLogo";
 import Trash from "./Trash";
@@ -49,6 +52,8 @@ export {
     Gamepad,
     Image,
     Italic,
+    JoinUp,
+    Lift,
     Link,
     List,
     ListOrdered,
@@ -58,6 +63,7 @@ export {
     Redo,
     Rocket,
     ShowSidebar,
+    SquareDashed,
     Strikethrough,
     TelefragLogo,
     Trash,
