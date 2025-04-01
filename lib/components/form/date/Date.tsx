@@ -63,8 +63,8 @@ const Date: FC<DateProps> = ({ id, value, onChange, label, placeholder, top, bot
                     onClick={() => setIsPickerOpen(true)}
                 />
             </Label>
-            <Popup
-                parent={refInput}
+            {refInput.current && <Popup
+                parent={refInput.current}
                 isOpen={isPickerOpen}
                 onClose={() => setIsPickerOpen(false)}
                 horizontal='inner-left'
@@ -76,7 +76,7 @@ const Date: FC<DateProps> = ({ id, value, onChange, label, placeholder, top, bot
                     day={value.split('.')[0]}
                     onChange={onPickerChange}
                 />
-            </Popup>
+            </Popup>}
         </div>
     );
 }

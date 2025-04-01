@@ -122,8 +122,8 @@ const Time: FC<TimeProps> = ({ id, value, step = 1, onChange,
                     />
                 </div>
             </Label>
-            <Menu
-                parent={refHor}
+            {refHor.current && <Menu
+                parent={refHor.current}
                 isOpen={isHorsOpen}
                 onClose={() => setIsHorsOpen(false)}
                 horizontal='inner-left'
@@ -132,9 +132,9 @@ const Time: FC<TimeProps> = ({ id, value, step = 1, onChange,
                 onClick={onHorsClick}
                 maxHeight='auto'
                 width='parent'
-            />
-            <Menu
-                parent={refMin}
+            />}
+            {refMin.current && <Menu
+                parent={refMin.current}
                 isOpen={isMinsOpen}
                 onClose={() => setIsMinsOpen(false)}
                 horizontal='inner-left'
@@ -143,7 +143,7 @@ const Time: FC<TimeProps> = ({ id, value, step = 1, onChange,
                 onClick={onMinsClick}
                 maxHeight='auto'
                 width='parent'
-            />
+            />}
         </div>
     );
 }

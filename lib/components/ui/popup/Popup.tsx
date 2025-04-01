@@ -1,4 +1,4 @@
-import React, { FC, PropsWithChildren, useEffect, useRef, useState } from 'react';
+import { FC, PropsWithChildren, useEffect, useRef, useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import Portal from '../portal/Portal';
 import { ANIMATION_LENGTH } from '../../../config';
@@ -11,7 +11,7 @@ import './Popup.css';
 const TIMEOUT = ANIMATION_LENGTH;
 
 export interface PopupProps {
-    parent: React.RefObject<HTMLElement>;
+    parent: HTMLElement;
     isOpen: boolean;
     onClose: () => void;
     margin?: string; // отступ от родителя в css-юнитах
@@ -38,7 +38,7 @@ export const Popup:FC<PropsWithChildren<PopupProps>> = ({ parent, isOpen, onClos
         // при закрытии после скролла может быть перескок в новые координаты.
         if(!isOpen) return;
         // Если родителя нет, то позиционироваться не понятно от кого
-        if(!parent.current) {
+        if(!parent) {
             setInnerStyle({});
             setPopupStyle({});
             return;
@@ -47,7 +47,7 @@ export const Popup:FC<PropsWithChildren<PopupProps>> = ({ parent, isOpen, onClos
         const clientWidth = document.documentElement.clientWidth;
         const clientHeight = document.documentElement.clientHeight;
         // Координаты родителя
-        const prnt = parent.current.getBoundingClientRect();
+        const prnt = parent.getBoundingClientRect();
         // Скопируем координаты и размеры родителя в стили контейнера
         // с учетом того, как позиционируем попап
         setPopupStyle({

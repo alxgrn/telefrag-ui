@@ -41,7 +41,7 @@ export const Form: React.FC<PropsWithChildren<FormProps>> = ({ info, error, succ
             if (!child) return;
             const element = child as ReactElement;
             if (typeof element.type !== 'function') return; // Игнорируем все, кроме функциональных компонентов
-            const props = element.props;
+            const props = element.props as any;
             if (!props.required) return; // Проверяем только компоненты в которых ввод обязателен
             // Обрабатываем только известные нам компоненты
             switch(element.type) {
@@ -112,7 +112,7 @@ export const Form: React.FC<PropsWithChildren<FormProps>> = ({ info, error, succ
             if (!child) return;
             const element = child as ReactElement;
             if (typeof element.type !== 'function') return; // Игнорируем все, кроме функциональных компонентов
-            const props = element.props;
+            const props = element.props as any;
             // Обрабатываем только известные нам компоненты
             switch(element.type) {
                 case Date:
