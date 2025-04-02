@@ -11,7 +11,7 @@
     position: absolute;
 }
 
-.Popup * {
+.Popup {
     color: var(--alxgrn-popup-color);
     font-size: inherit;
     line-height: inherit;

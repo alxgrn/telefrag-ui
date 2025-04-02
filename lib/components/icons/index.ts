@@ -13,6 +13,13 @@ import Film from "./Film";
 import FlipVertical from "./FlipVertical";
 import Forum from "./Forum";
 import Gamepad from "./Gamepad";
+import Heading from "./Heading";
+import Heading1 from "./Heading1";
+import Heading2 from "./Heading2";
+import Heading3 from "./Heading3";
+import Heading4 from "./Heading4";
+import Heading5 from "./Heading5";
+import Heading6 from "./Heading6";
 import Image from "./Image";
 import IndentDecrease from "./IndentDecrease";
 import Italic from "./Italic";
@@ -21,6 +28,7 @@ import Link from "./Link";
 import List from "./List";
 import ListOrdered from "./ListOrdered";
 import Menu from "./Menu";
+import Pilcrow from "./Pilcrow";
 import Plus from "./Plus";
 import Quote from "./Quote";
 import Redo from "./Redo";
@@ -50,6 +58,13 @@ export {
     FlipVertical,
     Forum,
     Gamepad,
+    Heading,
+    Heading1,
+    Heading2,
+    Heading3,
+    Heading4,
+    Heading5,
+    Heading6,
     Image,
     IndentDecrease,
     Italic,
@@ -58,6 +73,7 @@ export {
     List,
     ListOrdered,
     Menu,
+    Pilcrow,
     Plus,
     Quote,
     Redo,
