@@ -1,5 +1,5 @@
-// Переделано из LuListVideo
-const Lift = () => (
+// LuIndentDecrease
+const IndentDecrease = () => (
     <svg 
         stroke="currentColor" 
         fill="none" 
@@ -11,11 +11,11 @@ const Lift = () => (
         width="1em" 
         xmlns="http://www.w3.org/2000/svg"
     >
-        <path d="M21 12H12"></path>
-        <path d="M21 6H3"></path>
-        <path d="M21 18H3"></path>
-        <path d="m8 9 -5 3 5 3v-6Z" fill="currentColor"></path>
+        <path d="M21 12H11"></path>
+        <path d="M21 18H11"></path>
+        <path d="M21 6H11"></path>
+        <path d="m7 8-4 4 4 4"></path>
     </svg>
 );
 
-export default Lift;
+export default IndentDecrease;

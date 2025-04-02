@@ -14,9 +14,9 @@ import FlipVertical from "./FlipVertical";
 import Forum from "./Forum";
 import Gamepad from "./Gamepad";
 import Image from "./Image";
+import IndentDecrease from "./IndentDecrease";
 import Italic from "./Italic";
 import JoinUp from "./JoinUp";
-import Lift from "./Lift";
 import Link from "./Link";
 import List from "./List";
 import ListOrdered from "./ListOrdered";
@@ -51,9 +51,9 @@ export {
     Forum,
     Gamepad,
     Image,
+    IndentDecrease,
     Italic,
     JoinUp,
-    Lift,
     Link,
     List,
     ListOrdered,
