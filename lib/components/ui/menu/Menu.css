@@ -65,7 +65,12 @@
     background-color: transparent;
 }
 
-.Popup .Menu ul li.Disabled {
+.Popup .Menu ul li.Disabled,
+.Popup .Menu ul li.Disabled:hover .Icon {
     color: var(--alxgrn-menu-color-disabled);
     cursor: default;
+}
+
+.Popup .Menu ul li.Disabled:hover {
+    background-color: transparent;
 }
