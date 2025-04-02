@@ -1,6 +1,7 @@
 :root {
     --alxgrn-menu-bg-hover: var(--alxgrn-bg-active);
     --alxgrn-menu-color-separator: var(--alxgrn-border);
+    --alxgrn-menu-color-disabled: var(--alxgrn-border);
 }
 
 .Popup .Menu {
@@ -65,6 +66,6 @@
 }
 
 .Popup .Menu ul li.Disabled {
-    color: var(--alxgrn-color-disabled);
+    color: var(--alxgrn-menu-color-disabled);
     cursor: default;
 }
