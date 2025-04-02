@@ -7,8 +7,8 @@ const JoinUp = () => (
         viewBox="0 0 24 24" 
         strokeLinecap="round" 
         strokeLinejoin="round" 
-        height="200px" 
-        width="200px" 
+        height="1em" 
+        width="1em" 
         xmlns="http://www.w3.org/2000/svg"
     >
         <path d="M21 6H3"></path>
