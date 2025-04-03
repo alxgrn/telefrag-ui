@@ -36,8 +36,10 @@ import Rocket from "./Rocket";
 import ShowSidebar from "./ShowSidebar";
 import SquareDashed from "./SquareDashed";
 import Strikethrough from "./Strikethrough";
+import Table from "./Table";
 import TelefragLogo from "./TelefragLogo";
 import Trash from "./Trash";
+import Type from "./Type";
 import Underline from "./Underline";
 import Undo from "./Undo";
 import Users from "./Users";
@@ -81,8 +83,10 @@ export {
     ShowSidebar,
     SquareDashed,
     Strikethrough,
+    Table,
     TelefragLogo,
     Trash,
+    Type,
     Underline,
     Undo,
     Users,
