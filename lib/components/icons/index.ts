@@ -7,6 +7,8 @@ import ChevronRight from "./ChevronRight";
 import Clock from "./Clock";
 import Code from "./Code";
 import CodeXml from "./CodeXml";
+import ColumnInsertAfter from "./ColumnInsertAfter";
+import ColumnInsertBefore from "./ColumnInsertBefore";
 import Feather from "./Feather";
 import Files from "./Files";
 import Film from "./Film";
@@ -33,6 +35,8 @@ import Plus from "./Plus";
 import Quote from "./Quote";
 import Redo from "./Redo";
 import Rocket from "./Rocket";
+import RowInsertAfter from "./RowInsertAfter";
+import RowInsertBefore from "./RowInsertBefore";
 import ShowSidebar from "./ShowSidebar";
 import SquareDashed from "./SquareDashed";
 import Strikethrough from "./Strikethrough";
@@ -54,6 +58,8 @@ export {
     Clock,
     Code,
     CodeXml,
+    ColumnInsertAfter,
+    ColumnInsertBefore,
     Feather,
     Files,
     Film,
@@ -80,6 +86,8 @@ export {
     Quote,
     Redo,
     Rocket,
+    RowInsertAfter,
+    RowInsertBefore,
     ShowSidebar,
     SquareDashed,
     Strikethrough,
