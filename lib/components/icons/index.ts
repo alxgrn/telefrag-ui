@@ -1,7 +1,16 @@
+import AlignBottom from "./AlignBottom";
+import AlignCenter from "./AlignCenter";
+import AlignJustify from "./AlignJustify";
+import AlignLeft from "./AlignLeft";
+import AlignMiddle from "./AlignMiddle";
+import AlignRight from "./AlignRight";
+import AlignTop from "./AlignTop";
 import Asterisk from "./Asterisk";
 import Bold from "./Bold";
 import Book from "./Book";
 import Calendar from "./Calendar";
+import CellsMerge from "./CellsMerge";
+import CellsSplit from "./CellsSplit";
 import ChevronLeft from "./ChevronLeft";
 import ChevronRight from "./ChevronRight";
 import Clock from "./Clock";
@@ -49,10 +58,19 @@ import Undo from "./Undo";
 import Users from "./Users";
 
 export {
+    AlignBottom,
+    AlignCenter,
+    AlignJustify,
+    AlignLeft,
+    AlignMiddle,
+    AlignRight,
+    AlignTop,
     Asterisk,
     Bold,
     Book,
     Calendar,
+    CellsMerge,
+    CellsSplit,
     ChevronLeft,
     ChevronRight,
     Clock,
