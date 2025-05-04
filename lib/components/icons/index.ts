@@ -18,6 +18,7 @@ import Code from "./Code";
 import CodeXml from "./CodeXml";
 import ColumnInsertAfter from "./ColumnInsertAfter";
 import ColumnInsertBefore from "./ColumnInsertBefore";
+import Expand from "./Expand";
 import Feather from "./Feather";
 import Files from "./Files";
 import Film from "./Film";
@@ -47,6 +48,7 @@ import Rocket from "./Rocket";
 import RowInsertAfter from "./RowInsertAfter";
 import RowInsertBefore from "./RowInsertBefore";
 import ShowSidebar from "./ShowSidebar";
+import Shrink from "./Shrink";
 import SquareDashed from "./SquareDashed";
 import Strikethrough from "./Strikethrough";
 import Table from "./Table";
@@ -78,6 +80,7 @@ export {
     CodeXml,
     ColumnInsertAfter,
     ColumnInsertBefore,
+    Expand,
     Feather,
     Files,
     Film,
@@ -107,6 +110,7 @@ export {
     RowInsertAfter,
     RowInsertBefore,
     ShowSidebar,
+    Shrink,
     SquareDashed,
     Strikethrough,
     Table,
