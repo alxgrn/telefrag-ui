@@ -39,7 +39,9 @@ import JoinUp from "./JoinUp";
 import Link from "./Link";
 import List from "./List";
 import ListOrdered from "./ListOrdered";
+import Maximize from "./Maximize";
 import Menu from "./Menu";
+import Minimize from "./Minimize";
 import Pilcrow from "./Pilcrow";
 import Plus from "./Plus";
 import Quote from "./Quote";
@@ -101,7 +103,9 @@ export {
     Link,
     List,
     ListOrdered,
+    Maximize,
     Menu,
+    Minimize,
     Pilcrow,
     Plus,
     Quote,
