@@ -34,6 +34,7 @@ import { MainMenuItem } from './components/layout/MainMenu';
 import Page from './components/layout/Page';
 import PageHeader from './components/layout/PageHeader';
 import * as Icons from './components/icons';
+import { MyInfiniteScroll as InfiniteScroll } from './components/ui/infinitescroll/InfiniteScroll';
 
 export {
     Form,
@@ -70,6 +71,7 @@ export {
     Page,
     PageHeader,
     Icons,
+    InfiniteScroll,
 };
 
 export type {

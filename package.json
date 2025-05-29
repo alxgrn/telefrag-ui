@@ -31,6 +31,7 @@
     "react": "^19.0.0",
     "react-children-utilities": "^2.10.0",
     "react-dom": "^19.0.0",
+    "react-infinite-scroll-component": "^6.1.0",
     "react-transition-group": "^4.4.5"
   },
   "devDependencies": {
