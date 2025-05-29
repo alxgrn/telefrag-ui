@@ -1,12 +1,17 @@
-# Подготовка для публикации библиотеки
+# UI-библиотека проекта [The Daily Telefrag](https://dailytelefrag.ru)
+Документация по компонентам [тут](./docs/README.md)
+
+Ниже просто мусор для памяти :)
+
+## Подготовка для публикации библиотеки
 https://dev.to/receter/how-to-create-a-react-component-library-using-vites-library-mode-4lma
 ВНИМАНИЕ: на последней версии Vite может возникнуть ошибка `but '--jsx' is not set`.
 Как её чинить непонятно. В интернете пишут про версии TS и т.п. Поэтому инциализировали версию vite 5.0.0 с более старыми версиями всего.
 
-# Настройка тестов
+## Настройка тестов
 https://deku.posstree.com/en/react/vite/react-typescript/test/
 
-# React + TypeScript + Vite
+## React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
@@ -15,7 +20,7 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+### Expanding the ESLint configuration
 
 If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 

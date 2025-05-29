@@ -36,7 +36,7 @@ const mainMenu: MainMenuItem[] = [{
 },{
     id: 'img',
     text: 'Картинка где-то далеко',
-    icon: <img src='https://habrastorage.org/getpro/habr/company/7c0/e9b/e19/7c0e9be196cdcb46ffbf5be93ddb1af3.png'/>,
+    icon: <img src='https://alxgrn.ru/avatar.png'/>,
     checked: true,
 },{
     id: 'projects',

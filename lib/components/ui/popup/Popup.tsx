@@ -10,7 +10,25 @@ import './Popup.css';
  */
 const TIMEOUT = ANIMATION_LENGTH;
 
-export interface PopupProps {
+// Позиционирование относительно точки окна
+export type PopupPropsPosition = {
+    x: number;
+    y: number;
+    isOpen: boolean;
+    onClose: () => void;
+    margin?: string; // отступ от точки в css-юнитах
+    vertical?: 'auto'|'top'|'bottom';
+    horizontal?: 'auto'|'left'|'right';
+    maxHeight?: 'auto'|'none';
+    position?: 'absolute'|'fixed'; // скроллим элемент вместе с окном или нет
+    parent?: never;
+    width?: never;
+};
+
+// Позиционирование относительно родительского компонента
+export type PopupPropsParent = {
+    x?: never;
+    y?: never;
     parent: HTMLElement;
     isOpen: boolean;
     onClose: () => void;
@@ -22,7 +40,9 @@ export interface PopupProps {
     position?: 'absolute'|'fixed'; // скроллим элемент вместе с окном или нет
 };
 
-export const Popup:FC<PropsWithChildren<PopupProps>> = ({ parent, isOpen, onClose,
+export type PopupProps = PopupPropsPosition | PopupPropsParent;
+
+export const Popup:FC<PropsWithChildren<PopupProps>> = ({ x, y, parent, isOpen, onClose,
                                                         vertical = 'auto', horizontal = 'auto', margin = '0',
                                                         maxHeight = 'none', width = 'auto', position = 'absolute',
                                                         children }) => {
@@ -37,19 +57,21 @@ export const Popup:FC<PropsWithChildren<PopupProps>> = ({ parent, isOpen, onClos
         // Если мы закрываемся, то ничего не пересчитываем. В противном случае
         // при закрытии после скролла может быть перескок в новые координаты.
         if(!isOpen) return;
-        // Если родителя нет, то позиционироваться не понятно от кого
-        if(!parent) {
-            setInnerStyle({});
-            setPopupStyle({});
-            return;
-        }
         // Размеры окна
         const clientWidth = document.documentElement.clientWidth;
         const clientHeight = document.documentElement.clientHeight;
-        // Координаты родителя
-        const prnt = parent.getBoundingClientRect();
-        // Скопируем координаты и размеры родителя в стили контейнера
-        // с учетом того, как позиционируем попап
+        let prnt: any = {};
+        // Формируем координаты компонента относительно которого будеи позиционироваться
+        if(parent) {
+            // Координаты родителя
+            prnt = parent.getBoundingClientRect();
+        } else {
+            // Координаты точки в окне
+            prnt.y = prnt.top = prnt.bottom = y;
+            prnt.x = prnt.left = prnt.right = x;
+            prnt.width = prnt.height = 0;
+        }
+        // Установим координаты и размеры контейнера с учетом того, как позиционируем попап
         setPopupStyle({
             position,
             top: position === 'fixed' ? prnt.top : prnt.top + window.scrollY,

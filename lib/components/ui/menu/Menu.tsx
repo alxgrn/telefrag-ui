@@ -20,7 +20,7 @@ export type MenuAlternative = {
 
 export type MenuItem = MenuAlternative | MenuSeparator;
 
-interface MenuProps extends PopupProps {
+type MenuProps = PopupProps & {
     items: MenuItem[];
     onClick: (item: MenuItem) => void;
 };
