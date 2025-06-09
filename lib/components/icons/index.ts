@@ -11,6 +11,8 @@ import Book from "./Book";
 import Calendar from "./Calendar";
 import CellsMerge from "./CellsMerge";
 import CellsSplit from "./CellsSplit";
+import Check from "./Check";
+import ChevronDown from "./ChevronDown";
 import ChevronLeft from "./ChevronLeft";
 import ChevronRight from "./ChevronRight";
 import Clock from "./Clock";
@@ -75,6 +77,8 @@ export {
     Calendar,
     CellsMerge,
     CellsSplit,
+    Check,
+    ChevronDown,
     ChevronLeft,
     ChevronRight,
     Clock,

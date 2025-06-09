@@ -74,3 +74,10 @@
 .Popup .Menu ul li.Disabled:hover {
     background-color: transparent;
 }
+
+.Popup .Menu .empty {
+    flex: 0 0 auto;
+    display: block;
+    width: var(--alxgrn-font-size-large);
+    height: var(--alxgrn-font-size-large);
+}

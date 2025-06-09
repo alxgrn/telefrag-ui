@@ -1,6 +1,7 @@
 import React, { FC, useEffect, useRef, useState } from 'react';
 import Label from '../label/Label';
 import Menu, { MenuItem } from '../../ui/menu/Menu';
+import { Icons } from '../../../main';
 import './Time.css';
 /**
  * TODO: Добавить выбор секунд
@@ -128,7 +129,7 @@ const Time: FC<TimeProps> = ({ id, value, step = 1, onChange,
                 onClose={() => setIsHorsOpen(false)}
                 horizontal='inner-left'
                 margin='var(--alxgrn-unit-small)'
-                items={hors.map(h => ({ id: h, text: h }))}
+                items={hors.map(h => ({ id: h, text: h, icon: h === hor ? <Icons.Check/> : <div className='empty'/> }))}
                 onClick={onHorsClick}
                 maxHeight='auto'
                 width='parent'
@@ -139,7 +140,7 @@ const Time: FC<TimeProps> = ({ id, value, step = 1, onChange,
                 onClose={() => setIsMinsOpen(false)}
                 horizontal='inner-left'
                 margin='var(--alxgrn-unit-small)'
-                items={mins.map(h => ({ id: h, text: h }))}
+                items={mins.map(m => ({ id: m, text: m, icon: m === min ? <Icons.Check/> : <div className='empty'/> }))}
                 onClick={onMinsClick}
                 maxHeight='auto'
                 width='parent'

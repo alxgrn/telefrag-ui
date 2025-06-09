@@ -76,7 +76,7 @@ function App() {
     const [ isSidebarVisible, setIsSidebarVisible ] = useState(false);
 
     const onSubmit = (data: FormData) => {
-        window.alert(data);
+        window.alert('Смотри вывод в консоль');
         console.dir(data);
     };
 

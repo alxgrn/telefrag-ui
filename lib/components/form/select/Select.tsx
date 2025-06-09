@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Label from '../label/Label';
 import './Select.css';
+import { Icons, Menu, MenuItem } from '../../../main';
 
 export interface SelectOption {
     option: string;
@@ -25,6 +26,24 @@ export interface SelectProps {
 export const Select: React.FC<SelectProps> = ({ id, value, onChange, label, placeholder,
                                                 top, required = false, disabled = false,
                                                 bottom, options }) => {
+    const ref = useRef<HTMLInputElement>(null);
+    const [ items, setItems ] = useState<MenuItem[]>([]);
+    const [ isOpen, setIsOpen ] = useState(false);
+    const [ innerValue, setInnerValue ] = useState('');
+
+    useEffect(() => {
+        let innerValue = '';
+        const items = options.map(item => {
+            if (item.value === value) innerValue = item.option;
+            return {
+                id: item.value,
+                text: item.option,
+                icon: item.value === value ? <Icons.Check/> : <div className='empty'/>
+            }
+        });
+        setItems(items);
+        setInnerValue(innerValue);
+    }, [ value, options ]);
 
     const isError = () => {
         if(required) {
@@ -41,13 +60,6 @@ export const Select: React.FC<SelectProps> = ({ id, value, onChange, label, plac
         };
     };
 
-    const getWrapStyle = () => {
-        let style = 'SelectWrap';
-        if(disabled) style += ' Disabled';
-        if(isError()) style += ' Error';
-        return style;
-    };
-
     return (
         <div className='FormItem'>
             <Label
@@ -58,27 +70,37 @@ export const Select: React.FC<SelectProps> = ({ id, value, onChange, label, plac
                 disabled={disabled}
                 error={isError()}
             >
-                <div className={getWrapStyle()}>
-                    <select
+                <div className='SelectWrap'>
+                    <input
                         id={id}
-                        value={value}
-                        onChange={e => onChange(e.target.value)}
+                        ref={ref}
+                        type='text'
+                        value={innerValue}
                         style={getStyle()}
                         disabled={disabled ? true : false}
-                    >
-                        {placeholder && <option>{placeholder}</option>}
-                        {options.map((item, index) => (
-                            <option
-                                key={index}
-                                value={item.value}
-                                disabled={item.disabled}
-                            >
-                                {item.option}
-                            </option>
-                        ))}
-                    </select>
+                        onClick={() => setIsOpen(true)}
+                        readOnly
+                        placeholder={placeholder ?? undefined}
+                    />
+                    <div className='Icon'>
+                        <Icons.ChevronDown/>
+                    </div>
                 </div>
             </Label>
+            {!disabled && ref.current && <Menu
+                parent={ref.current}
+                isOpen={isOpen}
+                onClose={() => setIsOpen(false)}
+                horizontal='inner-left'
+                margin='var(--alxgrn-unit-small)'
+                items={items}
+                maxHeight='auto'
+                width='parent'
+                onClick={i => {
+                    setIsOpen(false);
+                    onChange(`${i.id}`);
+                }}
+            />}
         </div>
     );
 };
