@@ -21,6 +21,7 @@ import CodeXml from "./CodeXml";
 import ColumnInsertAfter from "./ColumnInsertAfter";
 import ColumnInsertBefore from "./ColumnInsertBefore";
 import Expand from "./Expand";
+import Eye from "./Eye";
 import Feather from "./Feather";
 import Files from "./Files";
 import Film from "./Film";
@@ -87,6 +88,7 @@ export {
     ColumnInsertAfter,
     ColumnInsertBefore,
     Expand,
+    Eye,
     Feather,
     Files,
     Film,
