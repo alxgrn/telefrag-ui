@@ -60,11 +60,16 @@ export const Popup:FC<PropsWithChildren<PopupProps>> = ({ x, y, parent, isOpen, 
         // Размеры окна
         const clientWidth = document.documentElement.clientWidth;
         const clientHeight = document.documentElement.clientHeight;
+        // Координаты точки позиционирования
         let prnt: any = {};
         // Формируем координаты компонента относительно которого будеи позиционироваться
         if(parent) {
-            // Координаты родителя
+            // Координаты родителя относительно viewport
             prnt = parent.getBoundingClientRect();
+            // Проверим не в модалке ли мы и если да, то принудительно поставим позицию в fixed
+            // если этого не сделать то позиция попапа будет вычислена неверно из-за смещения внутри модалки
+            const modal = parent.closest('ModalInner');
+            if (modal) position = 'fixed';
         } else {
             // Координаты точки в окне
             prnt.y = prnt.top = prnt.bottom = y;

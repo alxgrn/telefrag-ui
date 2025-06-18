@@ -2,10 +2,10 @@ import React, { useEffect, useState, ReactNode, ReactElement, PropsWithChildren 
 import { deepForEach } from 'react-children-utilities';
 import { isValidDate } from '../date/Date';
 import { RadioListOption } from '../radio/RadioList';
-import { SelectOption } from '../select/Select';
+import { Select, SelectOption } from '../select/Select';
 import { CheckboxListOption, CheckboxListValue } from '../checkbox/CheckboxList';
 import Button, { ButtonType } from '../button/Button';
-import { Hidden, Checkbox, Input, Select, RadioList, Files, Image, Date, CheckboxList, Time, Block } from '../../../main';
+import { Hidden, Checkbox, Input, RadioList, Files, Image, Date, CheckboxList, Time, Block } from '../../../main';
 import './Form.css';
 
 export type FormProps = {
