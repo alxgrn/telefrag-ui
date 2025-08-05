@@ -230,6 +230,7 @@ function App() {
                                 label='Textarea label'
                                 placeholder='Textarea placeholder'
                                 bottom='Textarea bottom'
+                                autoGrow
                             />
                         </FormCol>
                         <FormCol>

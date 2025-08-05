@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect, useRef } from 'react';
 import Label from '../label/Label';
 import './Input.css';
 
@@ -16,12 +16,29 @@ export type InputProps = {
     limit?: number | null;
     rows?: number | null;
     autoFocus?: boolean;
+    autoGrow?: boolean;
     //__TYPE?: 'Input';
 };
 
 const Input: FC<InputProps> = ({ id, type = 'text', value, onChange, label, 
-                                placeholder, rows = 5, top, bottom, autoFocus = false,
+                                placeholder, rows = 5, top, bottom, autoFocus = false, autoGrow = false,
                                 required = false, disabled = false, limit }) => {
+
+    const ref = useRef<HTMLTextAreaElement>(null);
+
+    // Установим минимальную высоту через стили для подгона высоты
+    useEffect(() => {
+        if (!autoGrow || !ref.current) return;
+        ref.current.style.minHeight = `calc(${rows} * var(--alxgrn-font-size) * var(--alxgrn-line-height))`;
+    }, [ rows, ref, autoGrow ]);
+
+    // Подгоняем размер поля ввода под содержание
+    useEffect(() => {
+        if (!autoGrow || !ref.current) return;
+        ref.current.style.height = '0px';
+        ref.current.style.height = ref.current.scrollHeight + 'px';
+        ref.current.style.overflow = 'hidden';
+    }, [ autoGrow, value, ref ]);
 
     const isError = () => {
         if(required && !value.trim().length) return true; else return false;
@@ -68,6 +85,7 @@ const Input: FC<InputProps> = ({ id, type = 'text', value, onChange, label,
             {type === 'textarea' &&
             <textarea
                 id={id}
+                ref={ref}
                 rows={rows ? rows : 5}
                 value={value}
                 onChange={(e) => doChange(e.target.value)}
