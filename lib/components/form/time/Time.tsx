@@ -132,18 +132,18 @@ const Time: FC<TimeProps> = ({ id, value, step = 1, onChange,
                 items={hors.map(h => ({ id: h, text: h, icon: h === hor ? <Icons.Check/> : <div className='empty'/> }))}
                 onClick={onHorsClick}
                 maxHeight='auto'
-                width='parent'
+                width='auto'
             />}
             {refMin.current && <Menu
                 parent={refMin.current}
                 isOpen={isMinsOpen}
                 onClose={() => setIsMinsOpen(false)}
-                horizontal='inner-left'
+                horizontal='inner-right'
                 margin='var(--alxgrn-unit-small)'
                 items={mins.map(m => ({ id: m, text: m, icon: m === min ? <Icons.Check/> : <div className='empty'/> }))}
                 onClick={onMinsClick}
                 maxHeight='auto'
-                width='parent'
+                width='auto'
             />}
         </div>
     );

@@ -30,7 +30,7 @@
  */
 .Form .FormItem {
     display: block;
-    margin: var(--alxgrn-unit) 0;
+    margin-top: var(--alxgrn-unit);
 }
 /**
  * Контейнер под кнопки под формой (submit, cancel)
