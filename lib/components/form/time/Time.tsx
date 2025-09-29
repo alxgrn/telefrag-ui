@@ -45,7 +45,8 @@ const Time: FC<TimeProps> = ({ id, value, step = 1, onChange,
         setMin(min);
         // Вызовем установку разобранного времени в колбеке чтобы не было
         // несостыковки при передаче некорректного начального значения.
-        if(onChange) onChange(`${hor}:${min}`);
+        const time = `${hor}:${min}`;
+        if(time !== value && onChange) onChange(time);
     }, [ value, onChange ]);
 
     // Подготавливаем массивы со списками альтернатив выбора часов и минут
