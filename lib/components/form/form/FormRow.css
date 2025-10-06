@@ -11,6 +11,10 @@
     justify-content: space-between;
 }
 
+.Form .FormRow:first-child {
+    margin-top: 0;
+}
+
 @media (max-width: 512px) {
     .Form .FormRow {
         display: block;

@@ -12,8 +12,8 @@ const Header: FC<Props> = ({ userMenu, onMenuSwitch, onLogoClick }) => {
     return (
         <header className='HeaderWrapper'>
             <div className='Header'>
-                <div className='HeaderLeft'>
-                    <span onClick={onMenuSwitch}><Menu/></span>
+                <div className='HeaderLeft' onClick={onMenuSwitch}>
+                    <Menu/>
                 </div>
                 <div className='HeaderCenter'>
                     <TelefragLogo onClick={onLogoClick}/>

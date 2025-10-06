@@ -19,10 +19,8 @@
 
 .HeaderLeft {
     display: none;
-}
-
-.HeaderLeft span {
     cursor: pointer;
+    padding-left: var(--alxgrn-unit-half);
 }
 
 .HeaderCenter {
@@ -47,5 +45,8 @@
     }
     .HeaderCenter {
         padding-left: 0;
+    }
+    .HeaderRight {
+        padding-right: var(--alxgrn-unit-half);
     }
 }

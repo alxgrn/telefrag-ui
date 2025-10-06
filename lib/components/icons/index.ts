@@ -38,6 +38,7 @@ import Heading6 from "./Heading6";
 import Image from "./Image";
 import IndentDecrease from "./IndentDecrease";
 import Italic from "./Italic";
+import Jam from "./Jam";
 import JoinUp from "./JoinUp";
 import Link from "./Link";
 import List from "./List";
@@ -105,6 +106,7 @@ export {
     Image,
     IndentDecrease,
     Italic,
+    Jam,
     JoinUp,
     Link,
     List,

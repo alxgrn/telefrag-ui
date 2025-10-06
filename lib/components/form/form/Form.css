@@ -32,6 +32,9 @@
     display: block;
     margin-top: var(--alxgrn-unit);
 }
+.Form .FormItem:first-child {
+    margin-top: 0;
+}
 /**
  * Контейнер под кнопки под формой (submit, cancel)
  */

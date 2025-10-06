@@ -47,6 +47,10 @@ const mainMenu: MainMenuItem[] = [{
     text: 'Запуски',
     icon: <Icon.Rocket/>,
 },{
+    id: 'jams',
+    text: 'Джемы',
+    icon: <Icon.Jam/>,
+},{
     id: 'calendar',
     text: 'Календарь',
     icon: <Icon.Calendar/>,

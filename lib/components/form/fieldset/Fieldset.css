@@ -16,8 +16,12 @@
  */
 .Form .Fieldset {
     display: block;
-    margin: var(--alxgrn-unit) 0;
+    margin-top: var(--alxgrn-unit);
     overflow: hidden;
+}
+
+.Form .Fieldset:first-child {
+    margin-top: 0;
 }
 
 .Form .Fieldset .FormItem {
