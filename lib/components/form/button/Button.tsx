@@ -14,7 +14,10 @@ export interface ButtonProps {
 export const Button: React.FC<ButtonProps> = ({ label, type = 'Default', size = 'Normal', disabled = false, onClick }) => (
     <span
         className={disabled ? `Button ${type} ${size} Disabled` : `Button ${type} ${size}`}
-        onClick={() => { if(onClick && !disabled) onClick() }}
+        onClick={e => {
+            e.stopPropagation();
+            if(onClick && !disabled) onClick();
+        }}
     >
         {label && label}
     </span>
