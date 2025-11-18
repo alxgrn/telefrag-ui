@@ -124,7 +124,7 @@
 
 .PageHeader .Button {
     font-size: var(--alxgrn-font-size-small);
-    padding: var(--alxgrn-unit-half) var(--alxgrn-unit);
+    padding: var(--alxgrn-unit-half) var(--alxgrn-unit)!important;
 }
 
 /*

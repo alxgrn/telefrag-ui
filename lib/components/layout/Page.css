@@ -7,7 +7,7 @@
  */
 .Page .PageBody {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     column-gap: var(--alxgrn-unit);
     margin-top: var(--alxgrn-unit);
     @media (max-width: 768px) {
@@ -17,6 +17,7 @@
 
 .Page .PageBody .PageContent {
     display: block;
+    grid-column: span 2;
 }
 
 .Page .PageBody .PageSidebar {
