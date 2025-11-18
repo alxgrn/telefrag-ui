@@ -3,7 +3,8 @@
  * Отображает логотип, обложку, основную информацию и кнопки управления
  */
 import { FC, MouseEvent, ReactNode } from "react";
-import { Image, ShowSidebar, Trash } from "../icons";
+import { Image, Trash } from "../icons";
+import { Button } from "../../main";
 import './PageHeader.css';
 
 type Props = {
@@ -44,26 +45,31 @@ const PageHeader: FC<Props> = ({ menu, title, subtitle, logo, back, admin, squar
             >
                 {admin && onBackCreate && <div className='PageHeaderBackCreate' onClick={e => onClick(e, onBackCreate)}><Image/></div>}
                 {admin && onBackRemove && <div className='PageHeaderBackRemove' onClick={e => onClick(e, onBackRemove)}><Trash/></div>}
-                {onShowSidebar && <div className='PageHeaderShowSidebar' onClick={e => onClick(e, onShowSidebar)}><ShowSidebar/></div>}
             </div>
 			<div className='PageHeaderAbout'>
-				<div className={square ? 'PageHeaderLogo Square' : 'PageHeaderLogo'}
-                    onClick={e => onClick(e, onLogoClick)}
-                    style={{
-                        cursor: onLogoClick ? 'pointer' : undefined,
-                        backgroundImage: logo ? `url(${logo})` : undefined,
-                        borderRadius: square ? undefined : '50%',
-                    }}
-				>
-                    {admin && onLogoCreate && <div className='PageHeaderLogoCreate' onClick={e => onClick(e, onLogoCreate)}><Image/></div>}
-                    {admin && onLogoRemove && <div className='PageHeaderLogoRemove' onClick={e => onClick(e, onLogoRemove)}><Trash/></div>}                
-                </div>
 				<div className='PageHeaderInfo'>
                     <div className='PageHeaderTitle one-line'>{title}</div>
                     <div className='PageHeaderSubtitle one-line'>{subtitle}</div>
 				</div>
                 {menu && <div className='PageHeaderMenu'>{menu}</div>}
+                {onShowSidebar && <div className='PageHeaderShowSidebar'>
+                    <Button 
+                        label='Ещё...'
+                        onClick={onShowSidebar}
+                    />
+                    </div>}
 			</div>
+            <div className={square ? 'PageHeaderLogo Square' : 'PageHeaderLogo'}
+                onClick={e => onClick(e, onLogoClick)}
+                style={{
+                    cursor: onLogoClick ? 'pointer' : undefined,
+                    backgroundImage: logo ? `url(${logo})` : undefined,
+                    borderRadius: square ? undefined : '50%',
+                }}
+            >
+                {admin && onLogoCreate && <div className='PageHeaderLogoCreate' onClick={e => onClick(e, onLogoCreate)}><Image/></div>}
+                {admin && onLogoRemove && <div className='PageHeaderLogoRemove' onClick={e => onClick(e, onLogoRemove)}><Trash/></div>}                
+            </div>
         </div>
 	);
 };

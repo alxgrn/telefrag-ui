@@ -3,11 +3,17 @@
  */
 
 .PageHeader {
+    position: relative;
     border-radius: var(--alxgrn-unit-half);
     display: flex;
     flex-direction: column;
     overflow: hidden;
     margin-top: var(--alxgrn-unit);
+    @media (max-width: 1024px) {
+        border-top-left-radius:0;
+        border-top-right-radius: 0;
+        margin-top: 0;
+    }
 }
 
 /*
@@ -23,8 +29,7 @@
 }
 
 .PageHeader .PageHeaderBack .PageHeaderBackCreate,
-.PageHeader .PageHeaderBack .PageHeaderBackRemove,
-.PageHeader .PageHeaderBack .PageHeaderShowSidebar {
+.PageHeader .PageHeaderBack .PageHeaderBackRemove {
     display: flex;
     position: absolute;
     font-size: var(--alxgrn-font-size-large);
@@ -33,7 +38,7 @@
     background-color: var(--alxgrn-bg-panel);
     border-radius: var(--alxgrn-unit-small);
     top: 0;
-    left: 0;
+    right: 0;
     color: var(--alxgrn-color-light);
     cursor: pointer;
     opacity: 0;
@@ -44,30 +49,13 @@
     opacity: 1;
     transition: .5s;
 }
-.PageHeader .PageHeaderBack .PageHeaderBackCreate {
+.PageHeader .PageHeaderBack .PageHeaderBackRemove {
     left: unset;
-    right: 0;
+    right: calc(2.5 * var(--alxgrn-unit));
 }
 .PageHeader .PageHeaderBack .PageHeaderBackCreate:hover,
 .PageHeader .PageHeaderBack .PageHeaderBackRemove:hover {
     color: var(--alxgrn-color-accent);
-}
-
-.PageHeader .PageHeaderBack .PageHeaderShowSidebar {
-    top: unset;
-    left: unset;
-    right: 0;
-    bottom: 0;
-    opacity: 1;
-    transition: none;
-    color: white;
-    background-color: var(--alxgrn-color-accent);
-    display: none;
-    opacity: .9;
-}
-
-.PageHeader .PageHeaderBack .PageHeaderShowSidebar:hover {
-    opacity: 1;
 }
 
 /*
@@ -76,58 +64,17 @@
 
 .PageHeader .PageHeaderAbout {
     display: flex;
+    gap: var(--alxgrn-unit-half);
     align-items: center;
-    width: 100%;
+    background-color: var(--alxgrn-bg-panel);
     height: calc(5 * var(--alxgrn-unit));
-    background-color: var(--alxgrn-bg-panel);
-    z-index: 1;
-}
-
-/*
- * Лого
- */
-
-.PageHeader .PageHeaderAbout .PageHeaderLogo {
-    flex: 0 0 auto;
-    border-radius: var(--alxgrn-unit-half);
-    border: var(--alxgrn-unit-small) solid var(--alxgrn-bg-panel);
-    background-size: contain;
-    background-color: var(--alxgrn-logo-color-blue);
-    width: calc(10 * var(--alxgrn-unit));
-    height: calc(10 * var(--alxgrn-unit));
-    margin: var(--alxgrn-unit);
-    position: relative;
-    align-self: flex-end;
-}
-
-.PageHeader .PageHeaderAbout .PageHeaderLogo .PageHeaderLogoCreate,
-.PageHeader .PageHeaderAbout .PageHeaderLogo .PageHeaderLogoRemove {
-    display: flex;
-    position: absolute;
-    font-size: var(--alxgrn-font-size-large);
-    padding: var(--alxgrn-unit-half);
-    margin: var(--alxgrn-unit-half);
-    background-color: var(--alxgrn-bg-panel);
-    border-radius: 50%;
-    bottom: 0;
-    left: 0;
-    cursor: pointer;
-    color: var(--alxgrn-color-light);
-    opacity: 0;
-    transition: .5s;
-}
-.PageHeader .PageHeaderAbout .PageHeaderLogo:hover .PageHeaderLogoCreate,
-.PageHeader .PageHeaderAbout .PageHeaderLogo:hover .PageHeaderLogoRemove {
-    opacity: 1;
-    transition: .5s;
-}
-.PageHeader .PageHeaderAbout .PageHeaderLogo .PageHeaderLogoCreate {
-    left: unset;
-    right: 0;
-}
-.PageHeader .PageHeaderAbout .PageHeaderLogo .PageHeaderLogoCreate:hover,
-.PageHeader .PageHeaderAbout .PageHeaderLogo .PageHeaderLogoRemove:hover {
-    color: var(--alxgrn-color-accent);
+    padding-left: calc(11.5 * var(--alxgrn-unit));
+    padding-right: var(--alxgrn-unit);
+    @media (max-width: 768px) {
+        height: calc(3 * var(--alxgrn-unit));
+        padding-left: var(--alxgrn-unit);
+        padding-right: var(--alxgrn-unit-half);
+    }
 }
 
 /*
@@ -142,10 +89,18 @@
 .PageHeader .PageHeaderAbout .PageHeaderInfo .PageHeaderTitle {
     font-size: var(--alxgrn-font-size-largest);
     font-weight: 600;
+/*    
+    @media (max-width: 768px) {
+        font-size: var(--alxgrn-font-size-big);
+    }
+*/
 }
 
 .PageHeader .PageHeaderAbout .PageHeaderInfo .PageHeaderSubtitle {
     color: var(--alxgrn-color-light);
+    @media (max-width: 768px) {    
+        display: none;
+    }
 }
 
 /*
@@ -155,41 +110,81 @@
 .PageHeader .PageHeaderAbout .PageHeaderMenu {
     flex: 0 0 auto;
     display: flex;
-    margin-right: var(--alxgrn-unit);
 }
 
-@media (max-width: 1024px) {
-    .PageHeader {
-        border-top-left-radius:0;
-        border-top-right-radius: 0;
-        margin-top: 0;
-    }
-}
-
-@media (max-width: 768px) {
-    .PageHeader .PageHeaderBack .PageHeaderShowSidebar {
+/*
+ * Кнопка показа сайдбара
+ */
+ .PageHeader .PageHeaderShowSidebar {
+    display: none;
+    @media (max-width: 768px) {    
         display: flex;
     }
-    .PageHeader .PageHeaderAbout {
-        height: calc(3 * var(--alxgrn-unit));
-    }
-    .PageHeader .PageHeaderAbout .PageHeaderLogo {
+}
+
+.PageHeader .Button {
+    font-size: var(--alxgrn-font-size-small);
+    padding: var(--alxgrn-unit-half) var(--alxgrn-unit);
+}
+
+/*
+ * Лого
+ */
+
+ .PageHeader .PageHeaderLogo {
+    position: absolute;
+    flex: 0 0 auto;
+    border-radius: var(--alxgrn-unit-half);
+    border: var(--alxgrn-unit-small) solid var(--alxgrn-bg-panel);
+    background-size: contain;
+    background-color: var(--alxgrn-logo-color-blue);
+    aspect-ratio: 1 / 1;
+    height: calc(10 * var(--alxgrn-unit));
+    left: calc(var(--alxgrn-unit) - var(--alxgrn-unit-small));
+    bottom: calc(var(--alxgrn-unit) - var(--alxgrn-unit-small));
+    @media (max-width: 768px) {
         border-width: var(--alxgrn-unit-smallest);
-        width: calc(5 * var(--alxgrn-unit));
-        height: calc(5 * var(--alxgrn-unit));
-        margin: var(--alxgrn-unit-half);
+        height: calc(25vw - var(--alxgrn-unit-double) + var(--alxgrn-unit-smallest));
+        left: calc(var(--alxgrn-unit) - var(--alxgrn-unit-smallest));
+        bottom: calc(4 * var(--alxgrn-unit) - var(--alxgrn-unit-smallest));
     }
-    .PageHeader .PageHeaderAbout .PageHeaderLogo .PageHeaderLogoRemove,
-    .PageHeader .PageHeaderAbout .PageHeaderLogo .PageHeaderLogoCreate {
+}
+
+.PageHeader .PageHeaderLogo .PageHeaderLogoCreate,
+.PageHeader .PageHeaderLogo .PageHeaderLogoRemove {
+    display: flex;
+    position: absolute;
+    font-size: var(--alxgrn-font-size-large);
+    padding: var(--alxgrn-unit-half);
+    margin: var(--alxgrn-unit-half);
+    background-color: var(--alxgrn-bg-panel);
+    border-radius: var(--alxgrn-unit-small);
+    bottom: 0;
+    left: 0;
+    cursor: pointer;
+    color: var(--alxgrn-color-light);
+    opacity: 0;
+    transition: .5s;
+    @media (max-width: 768px) {
         margin: 0;
+        border-radius: 0;
+        border-top-right-radius: var(--alxgrn-unit-small);
     }
-    .PageHeader .PageHeaderAbout .PageHeaderInfo .PageHeaderTitle {
-        font-size: var(--alxgrn-font-size-big);
+}
+.PageHeader .PageHeaderLogo:hover .PageHeaderLogoCreate,
+.PageHeader .PageHeaderLogo:hover .PageHeaderLogoRemove {
+    opacity: 1;
+    transition: .5s;
+}
+.PageHeader .PageHeaderLogo .PageHeaderLogoCreate {
+    left: unset;
+    right: 0;
+    @media (max-width: 768px) {
+        border-top-left-radius: var(--alxgrn-unit-small);
+        border-top-right-radius: 0;
     }
-    .PageHeader .PageHeaderAbout .PageHeaderInfo .PageHeaderSubtitle {
-        display: none;
-    }
-    .PageHeader .PageHeaderAbout .PageHeaderMenu {
-        margin-right: var(--alxgrn-unit-half);
-    }
+}
+.PageHeader .PageHeaderLogo .PageHeaderLogoCreate:hover,
+.PageHeader .PageHeaderLogo .PageHeaderLogoRemove:hover {
+    color: var(--alxgrn-color-accent);
 }

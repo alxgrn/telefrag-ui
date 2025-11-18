@@ -116,7 +116,7 @@ function App() {
     <Layout mainMenu={[...mainMenu, ...mainMenu, ...mainMenu]} userMenu={<Menu/>}>
         <Page
             header={<PageHeader
-                    menu={<Button onClick={() => setIsSidebarVisible(true)} label='Sidebar' size='Small'/>}
+                    menu={<Button onClick={() => setIsSidebarVisible(true)} label='Sidebar'/>}
                     title='Имя Фамилия'
                     subtitle='Очень длинное описание чего-либо'
                     logo='https://dailytelefrag.ru/api/files/523'

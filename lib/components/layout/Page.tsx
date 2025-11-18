@@ -13,7 +13,7 @@ const Page: FC<PropsWithChildren<Props>> = ({ header, children, sidebar, isSideb
 	return (
 		<div className='Page'>
             {header && <>{header}</>}
-            <div className='PageBody'>
+            <div className={sidebar ? 'PageBody' : 'PageBody Wide'}>
 				<div className='PageContent'>{children}</div>
 				{sidebar &&
 				<div className='PageSidebar'>

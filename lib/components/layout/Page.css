@@ -2,25 +2,29 @@
     display: flex;
     flex-direction: column;
 }
-
+/*
+ * Страница у которой есть sidebar
+ */
 .Page .PageBody {
-    display: flex;
-    gap: var(--alxgrn-unit);
-    align-items: stretch;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: var(--alxgrn-unit);
     margin-top: var(--alxgrn-unit);
+    @media (max-width: 768px) {
+        display: block;
+    }
 }
 
-/* Ширину контента и сайдбара задаем жестко чтобы не было раздвигания при переполнении содержимым */
 .Page .PageBody .PageContent {
-    flex: 0 0 auto;
-    width: calc(67% - var(--alxgrn-unit));
+    display: block;
 }
 
 .Page .PageBody .PageSidebar {
-    flex: 0 0 auto;
-    width: 33%;
     display: flex;
     align-items: flex-end;
+    @media (max-width: 768px) {
+        display: none;
+    }
 }
 
 .Page .PageBody .PageSidebar .PageSidebarInner {
@@ -30,11 +34,9 @@
     min-height: calc(100vh - var(--alxgrn-layout-header-height) - var(--alxgrn-unit));
 }
 
-@media (max-width: 768px) {
-    .Page .PageBody .PageContent {
-        width: 100%;
-    }
-    .Page .PageBody .PageSidebar {
-        display: none;
-    }
+/*
+ * Страница у которой нет sidebar
+ */
+ .Page .PageBody.Wide {
+    display: block;
 }
