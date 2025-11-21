@@ -136,7 +136,9 @@
     flex: 0 0 auto;
     border-radius: var(--alxgrn-unit-half);
     border: var(--alxgrn-unit-small) solid var(--alxgrn-bg-panel);
-    background-size: contain;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     background-color: var(--alxgrn-logo-color-blue);
     aspect-ratio: 1 / 1;
     height: calc(10 * var(--alxgrn-unit));
