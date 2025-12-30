@@ -1,10 +1,10 @@
 import React, { FC, PropsWithChildren, useState } from 'react';
 import Header from './Header';
-import Footer from './Footer';
+//import Footer from './Footer';
 import Content from './Content';
 import { Sidebar } from '../../main';
-import './Layout.css';
 import MainMenu, { MainMenuItem } from './MainMenu';
+import './Layout.css';
 
 type Props = {
 	mainMenu: MainMenuItem[];
@@ -25,7 +25,7 @@ const Layout: FC<PropsWithChildren<Props>> = ({ children, mainMenu, userMenu, on
             <Content mainMenu={mainMenu} onMenuClick={onMenuClick}>
 				{children}
 			</Content>
-            <Footer/>
+            {/* <Footer/> */}
 			<Sidebar
 				isOpen={isMenuVisible}
 				onClose={() => setIsMenuVisible(false)}

@@ -58,6 +58,7 @@ import Shrink from "./Shrink";
 import SquareDashed from "./SquareDashed";
 import Strikethrough from "./Strikethrough";
 import Table from "./Table";
+import TelefragSymbol from "./TelefragSymbol";
 import TelefragLogo from "./TelefragLogo";
 import Trash from "./Trash";
 import Type from "./Type";
@@ -126,6 +127,7 @@ export {
     SquareDashed,
     Strikethrough,
     Table,
+    TelefragSymbol,
     TelefragLogo,
     Trash,
     Type,

@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Menu, TelefragLogo } from '../icons';
+import { TelefragLogo, TelefragSymbol } from '../icons';
 import './Header.css';
 
 type Props = {
@@ -12,10 +12,13 @@ const Header: FC<Props> = ({ userMenu, onMenuSwitch, onLogoClick }) => {
     return (
         <header className='HeaderWrapper'>
             <div className='Header'>
-                <div className='HeaderLeft' onClick={onMenuSwitch}>
-                    <Menu/>
+                <div className='HeaderMobile' onClick={onMenuSwitch}>
+                    <TelefragSymbol/>
                 </div>
-                <div className='HeaderCenter'>
+                <div className='HeaderTablet'>
+                    <TelefragLogo onClick={onMenuSwitch}/>
+                </div>
+                <div className='HeaderDesktop'>
                     <TelefragLogo onClick={onLogoClick}/>
                 </div>
                 <div className='HeaderRight'>

@@ -1,5 +1,6 @@
 .HeaderWrapper {
-    /* Ставим выше контента, но popup и modal все равно будут выше, меню при скролинге будут плыть над заголовком */
+    /* Ставим выше контента, но popup и modal все равно будут выше,
+       меню при скролинге будут плыть над заголовком */
     z-index: 100;
     display: block;
     position: fixed;
@@ -11,42 +12,55 @@
 .Header {
     display: flex;
     align-items: center;
-    gap: var(--alxgrn-unit);
+    justify-content: space-between;
     max-width: var(--alxgrn-layout-width);
     height: var(--alxgrn-layout-header-height);
     margin: 0 auto;
-}
-
-.HeaderLeft {
-    display: none;
-    cursor: pointer;
-    padding-left: var(--alxgrn-unit-half);
-}
-
-.HeaderCenter {
-    flex: 1 1 auto;
-    display: flex;
-    align-items: center;
     padding-left: calc(var(--alxgrn-unit-half) + var(--alxgrn-layout-menu-width));
 }
 
-.HeaderCenter svg {
-    width: auto;
-    height: calc(2 * var(--alxgrn-unit));
+.HeaderMobile,
+.HeaderTablet {
+    display: none;
 }
 
-/* Показываем весь контент */
+.HeaderDesktop {
+    flex: 0 0 auto;
+    display: flex;
+}
+
+.HeaderMobile svg,
+.HeaderTablet svg,
+.HeaderDesktop svg {
+    width: auto;
+    height: calc(2 * var(--alxgrn-unit));
+    cursor: pointer;
+}
+
 @media (max-width: 1024px) {
-    .HeaderLeft {
+    .Header {
+        padding: 0 var(--alxgrn-unit);
+    }
+    .HeaderTablet {
         flex: 0 0 auto;
         display: flex;
-        align-items: center;
-        justify-content: center;
     }
-    .HeaderCenter {
-        padding-left: 0;
+    .HeaderMobile,
+    .HeaderDesktop {
+        display: none;
     }
-    .HeaderRight {
-        padding-right: var(--alxgrn-unit-half);
+}
+
+@media (max-width: 512px) {
+    .Header {
+        padding: 0 var(--alxgrn-unit);
+    }
+    .HeaderMobile {
+        flex: 0 0 auto;
+        display: flex;
+    }
+    .HeaderTablet,
+    .HeaderDesktop {
+        display: none;
     }
 }

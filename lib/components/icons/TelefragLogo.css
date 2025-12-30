@@ -1,0 +1,10 @@
+.TelefragLogo {
+    --color-back: #287BBF;
+    --color-fore: white;
+    --color-text: #555;
+}
+
+[data-theme='dark'] .TelefragLogo {
+    --color-fore: #CCC;
+    --color-text: #999;
+}

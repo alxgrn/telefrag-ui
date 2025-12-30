@@ -113,7 +113,7 @@ function App() {
     };
 
     return (
-    <Layout mainMenu={[...mainMenu, ...mainMenu, ...mainMenu]} userMenu={<Menu/>}>
+    <Layout mainMenu={[...mainMenu, { title: 'О сайте'}, { node: <>&copy; Alexander Fedorov</> }]} userMenu={<Menu/>}>
         <Page
             header={<PageHeader
                     menu={<Button onClick={() => setIsSidebarVisible(true)} label='Sidebar'/>}

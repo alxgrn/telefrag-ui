@@ -1,0 +1,8 @@
+.TelefragSymbol {
+    --color-back: #287BBF;
+    --color-fore: white;
+}
+
+[data-theme='dark'] .TelefragSymbol {
+    --color-fore: #CCC;
+}

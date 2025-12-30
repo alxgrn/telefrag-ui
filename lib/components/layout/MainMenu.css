@@ -3,7 +3,11 @@
     margin-right: var(--alxgrn-unit-half);
 }
 
-.MainMenu div {
+.Sidebar .MainMenu {
+    margin-top: 0;
+}
+
+.MainMenu .MainMenuAlternative {
     display: flex;
     align-items: center;
     gap: var(--alxgrn-unit-half);
@@ -12,35 +16,27 @@
     border-radius: var(--alxgrn-unit-half);
 }
 
-.MainMenu div:hover {
+.MainMenu .MainMenuAlternative:hover {
     background-color: var(--alxgrn-bg-panel);
 }
 
-.MainMenu div.MainMenuTitle {
-    cursor: initial;
-}
-
-.MainMenu div.MainMenuTitle:hover {
-    background-color: unset;
-}
-
-.MainMenu div:hover * {
+.MainMenu .MainMenuAlternative:hover * {
     color: var(--alxgrn-color-accent);
 }
 
-.MainMenu div svg {
+.MainMenu .MainMenuAlternative svg {
     color: var(--alxgrn-color-accent);
     font-size: var(--alxgrn-font-size-big);
 }
 
-.MainMenu div img {
+.MainMenu .MainMenuAlternative img {
     width: var(--alxgrn-font-size-big);
     height: var(--alxgrn-font-size-big);
     border-radius: 50%;
     flex: 0 0 auto;
 }
 
-.MainMenu div span {
+.MainMenu .MainMenuAlternative span {
     font-size: var(--alxgrn-font-size);
     overflow-wrap: break-word;
     display: -webkit-box;
@@ -51,18 +47,22 @@
     flex: 1 1 auto;
 }
 
-.MainMenu div.MainMenuTitle span {
-    text-transform: uppercase;
-    font-size: var(--alxgrn-font-size-small);
-    font-weight: 600;
-    color: var(--alxgrn-color-light);
-}
-
-.MainMenu div span.MainMenuCheck {
+.MainMenu .MainMenuAlternative span.MainMenuCheck {
     display: block;
     width: var(--alxgrn-unit-half);
     height: var(--alxgrn-unit-half);
     border-radius: 50%;
     background-color: var(--alxgrn-color-accent);
     flex: 0 0 auto;
+}
+
+.MainMenu .MainMenuNode,
+.MainMenu .MainMenuTitle {
+    padding: var(--alxgrn-unit-half);
+}
+.MainMenu .MainMenuTitle span {
+    text-transform: uppercase;
+    font-size: var(--alxgrn-font-size-small);
+    font-weight: 600;
+    color: var(--alxgrn-color-light);
 }

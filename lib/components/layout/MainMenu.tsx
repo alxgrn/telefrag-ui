@@ -7,6 +7,7 @@ export type MainMenuTitle = {
     icon?: never;
     title: string;
     checked?: never;
+    node?: never;
 };
 
 export type MainMenuAlternative = {
@@ -14,10 +15,20 @@ export type MainMenuAlternative = {
     text: string;
     icon: ReactNode;
     title?: never;
-    checked?: boolean; 
+    checked?: boolean;
+    node?: never;
 };
 
-export type MainMenuItem = MainMenuTitle | MainMenuAlternative;
+export type MainMenuNode = {
+    id?: never;
+    text?: never;
+    icon?: never;
+    title?: string;
+    checked?: never;
+    node: ReactNode;
+};
+
+export type MainMenuItem = MainMenuTitle | MainMenuAlternative | MainMenuNode;
 
 type Props = {
     items: MainMenuItem[];
@@ -30,9 +41,9 @@ const MainMenu: FC<Props> = ({ items, onMenuClick }) => {
             {items.map((item, index) => <div
                 key={index}
                 onClick={() => { if(onMenuClick && item.id) onMenuClick(item.id) }}
-                className={item.title ? 'MainMenuTitle' : undefined}
+                className={item.node ? 'MainMenuNode' : item.title ? 'MainMenuTitle' : 'MainMenuAlternative'}
             >
-                {item.title
+                {item.node ? item.node : item.title
                 ? <span className='one-line'>{item.title}</span>
                 : <>{item.icon}<span className='one-line'>{item.text}</span></>}
                 {item.checked && <span className='MainMenuCheck'/>}
