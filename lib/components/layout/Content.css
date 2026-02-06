@@ -16,10 +16,13 @@
 .Content .ContentMenu {
     flex: 0 0 auto;
     width: var(--alxgrn-layout-menu-width);
+/*
     color: var(--alxgrn-color-text);
     background-color: var(--alxgrn-bg-main);
+*/
     max-height: calc(100vh - var(--alxgrn-unit) - var(--alxgrn-layout-header-height));
     overflow-y: auto;
+    margin: var(--alxgrn-unit-half) 0;
     position: sticky;
     top: var(--alxgrn-layout-header-height);
 }

@@ -1,0 +1,105 @@
+/* Контейнер блока скроллинга */
+.Scroll {
+    width: 100%;
+    position: relative;
+    /* Запрет выделения */
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+/* Кнопки скролла */
+.Scroll .ScrollPrev,
+.Scroll .ScrollNext {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: var(--alxgrn-unit);
+    background-color: var(--alxgrn-color-light);
+    cursor: pointer;
+    font-size: var(--alxgrn-font-size-large);
+    border-top-left-radius: var(--alxgrn-unit-small);
+    border-bottom-left-radius: var(--alxgrn-unit-small);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    transition: 300ms;
+}
+
+.Scroll .ScrollNext {
+    right: 0;
+    left: unset;
+    border-top-left-radius: unset;
+    border-bottom-left-radius: unset;
+    border-top-right-radius: var(--alxgrn-unit-small);
+    border-bottom-right-radius: var(--alxgrn-unit-small);
+}
+
+.Scroll:hover .ScrollPrev,
+.Scroll:hover .ScrollNext {
+    opacity: .7;
+}
+
+.Scroll:hover .ScrollPrev:hover,
+.Scroll:hover .ScrollNext:hover {
+    color: white;
+    background-color: var(--alxgrn-color-accent);
+}
+
+.Scroll .ScrollList {
+    display: flex;
+    align-items: stretch;
+    gap: var(--alxgrn-unit-half);
+    border-radius: var(--alxgrn-unit-small);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;  
+    /*
+    scroll-snap-points-x: repeat(100%);
+    scroll-snap-type: mandatory;
+    */
+}
+
+.Scroll .ScrollItem {
+    flex: 0 0 auto;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Необходимо для блокирования клика внутри элемента (к примеру, внутри iframe) */
+.Scroll .ScrollItem::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.Scroll .ScrollList::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.Scroll .ScrollList::-webkit-scrollbar-thumb {
+    border: none;
+    background: transparent;
+}
+
+.Scroll .ScrollList::-webkit-scrollbar-track {
+    border: none;
+    background: transparent;
+}

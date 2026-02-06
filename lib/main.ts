@@ -27,7 +27,9 @@ import Message from './components/ui/message/Message';
 import Alert from './components/ui/alert/Alert';
 import Confirm from './components/ui/confirm/Confirm';
 import Prompt from './components/ui/prompt/Prompt';
+import Scroll from './components/ui/scroll/Scroll';
 import Sidebar from './components/ui/sidebar/Sidebar';
+import Toolbar, { ToolbarItem } from './components/ui/toolbar/Toolbar';
 import Editable from './components/ui/editable/Editable';
 import Layout from './components/layout/Layout';
 import { MainMenuItem } from './components/layout/MainMenu';
@@ -64,7 +66,9 @@ export {
     Alert,
     Confirm,
     Prompt,
+    Scroll,
     Sidebar,
+    Toolbar,
     Editable,
     Layout,
     Page,
@@ -82,4 +86,5 @@ export type {
     RadioListOption,
     RadioListValue,
     SelectOption,
+    ToolbarItem,
 };

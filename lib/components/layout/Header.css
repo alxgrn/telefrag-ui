@@ -33,13 +33,13 @@
 .HeaderTablet svg,
 .HeaderDesktop svg {
     width: auto;
-    height: calc(2 * var(--alxgrn-unit));
+    height: var(--alxgrn-unit-double);
     cursor: pointer;
 }
 
 @media (max-width: 1024px) {
     .Header {
-        padding: 0 var(--alxgrn-unit);
+        padding: 0 var(--alxgrn-unit-half);
     }
     .HeaderTablet {
         flex: 0 0 auto;
@@ -53,7 +53,7 @@
 
 @media (max-width: 512px) {
     .Header {
-        padding: 0 var(--alxgrn-unit);
+        padding: 0 var(--alxgrn-unit-half);
     }
     .HeaderMobile {
         flex: 0 0 auto;

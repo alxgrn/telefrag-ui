@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Icons as Icon, Form, Files, Input, RadioList, Select, Checkbox, CheckboxList, Fieldset, Date, FormData, FormRow, FormCol, Time, Modal, Button, Alert, Confirm, Prompt, Panel, Layout, Page, MainMenuItem, PageHeader, Image } from '../lib/main';
+import { Icons as Icon, Form, Files, Input, RadioList, Select, Checkbox, CheckboxList, Fieldset, Date, FormData, FormRow, FormCol, Time, Modal, Button, Alert, Confirm, Prompt, Panel, Layout, Page, MainMenuItem, PageHeader, Image, ToolbarItem } from '../lib/main';
 import { CheckboxListOption } from '../lib/components/form/checkbox/CheckboxList';
 import { RadioListOption, RadioListValue } from '../lib/components/form/radio/RadioList';
 import { Menu } from '../lib/components/icons';
@@ -56,6 +56,17 @@ const mainMenu: MainMenuItem[] = [{
     icon: <Icon.Calendar/>,
 }];
 
+const tbItems: ToolbarItem[] = [{
+    id: 'one',
+    text: 'Первый пункт'
+},{
+    id: 'two',
+    text: 'Второй пункт'
+},{
+    id: 'three',
+    text: 'Третий пункт'
+}];
+
 const file = new File(['CONTENT'], 'test.txt', { type: 'text/plain;charset=utf-8' });
 
 function App() {
@@ -78,6 +89,7 @@ function App() {
     const [ isPromptOpen, setIsPromptOpen ] = useState(false);
     const [ theme, setTheme ] = useState<'light'|'dark'>('light');
     const [ isSidebarVisible, setIsSidebarVisible ] = useState(false);
+    const [ tbActive, setTbActive ] = useState(tbItems[0].id);
 
     const onSubmit = (data: FormData) => {
         window.alert('Смотри вывод в консоль');
@@ -130,6 +142,9 @@ function App() {
                     onBackCreate={() => {}}
                     onBackRemove={() => {}}
                     onShowSidebar={() => setIsSidebarVisible(true)}
+                    tbItems={tbItems}
+                    tbActive={tbActive}
+                    tbOnActive={setTbActive}
             />}
             sidebar={
                 <Panel>

@@ -1,0 +1,33 @@
+.Toolbar.LikePanel {
+    background-color: var(--alxgrn-bg-panel);
+    border-radius: var(--alxgrn-unit-half);
+    padding: var(--alxgrn-unit-half);
+    margin-bottom: var(--alxgrn-unit);
+}
+
+.Toolbar .Scroll .ScrollItem div {
+    align-items: center;
+    display: flex;
+    gap: var(--alxgrn-unit-small);
+    border-radius: var(--alxgrn-unit-small);
+    padding: var(--alxgrn-unit-small) var(--alxgrn-unit-half);
+    cursor: pointer;
+    color: var(--alxgrn-color-light);
+}
+
+.Toolbar .Scroll .ScrollItem:hover div {
+    color: var(--alxgrn-color-accent);
+}
+
+.Toolbar .Scroll .ScrollItem.active div {
+    cursor: default;
+    color: var(--alxgrn-color-accent);
+    background-color: var(--alxgrn-bg-accent);
+}
+
+.Toolbar .Scroll .ScrollItem div span {
+    display: flex;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
