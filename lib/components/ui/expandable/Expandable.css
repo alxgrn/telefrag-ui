@@ -1,0 +1,31 @@
+.Expandable {
+    position: relative;
+    overflow: hidden;
+}
+
+.ExpandableExpanded,
+.ExpandableCollapsed {
+    transition: max-height 0.5s ease;
+    overflow: hidden;
+}
+
+.ExpandableShadow {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(rgba(255, 255, 255, .001), var(--alxgrn-bg-panel));
+    bottom: calc(var(--alxgrn-font-size) * var(--alxgrn-line-height) + var(--alxgrn-unit));
+}
+
+.ExpandableButton {
+    display: inline-block;
+    margin-top: var(--alxgrn-unit);
+    color: var(--alxgrn-color-accent);
+    cursor: pointer;
+    border-bottom: 1px solid transparent;
+}
+
+.ExpandableButton:hover {
+    border-bottom: 1px solid var(--alxgrn-color-accent);
+}
+

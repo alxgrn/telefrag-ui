@@ -31,6 +31,7 @@ import Scroll from './components/ui/scroll/Scroll';
 import Sidebar from './components/ui/sidebar/Sidebar';
 import Toolbar, { ToolbarItem } from './components/ui/toolbar/Toolbar';
 import Editable from './components/ui/editable/Editable';
+import Expandable from './components/ui/expandable/Expandable';
 import Layout from './components/layout/Layout';
 import { MainMenuItem } from './components/layout/MainMenu';
 import Page from './components/layout/Page';
@@ -70,6 +71,7 @@ export {
     Sidebar,
     Toolbar,
     Editable,
+    Expandable,
     Layout,
     Page,
     PageHeader,
