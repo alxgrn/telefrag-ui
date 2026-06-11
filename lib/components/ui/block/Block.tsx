@@ -1,5 +1,5 @@
 /**
- * Блок текста с подсветко и окантовкой
+ * Блок текста с подсветкой и окантовкой
  */
 import React, { PropsWithChildren } from 'react';
 import './Block.css';

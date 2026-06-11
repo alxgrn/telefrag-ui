@@ -1,7 +1,7 @@
 {
   "name": "@alxgrn/telefrag-ui",
   "description": "UI library for The Daily Telefrag project",
-  "version": "0.0.64",
+  "version": "0.1.0",
   "private": false,
   "author": "Alexander Fedorov <alex@molner.ru>",
   "license": "Apache-2.0",
@@ -29,7 +29,6 @@
   },
   "peerDependencies": {
     "react": "^19.2.0",
-    "react-children-utilities": "^2.10.0",
     "react-dom": "^19.2.0",
     "react-transition-group": "^4.4.5"
   },
