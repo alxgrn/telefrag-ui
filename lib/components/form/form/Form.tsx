@@ -1,10 +1,10 @@
 import React, { useEffect, useState, PropsWithChildren } from 'react';
-import { isValidDate } from '../date/Date';
-import { RadioListOption } from '../radio/RadioList';
-import { SelectOption } from '../select/Select';
-import { CheckboxListOption, CheckboxListValue } from '../checkbox/CheckboxList';
+import Date, { isValidDate } from '../date/Date';
+import RadioList, { RadioListOption } from '../radio/RadioList';
+import Select, { SelectOption } from '../select/Select';
+import CheckboxList, { CheckboxListOption, CheckboxListValue } from '../checkbox/CheckboxList';
 import Button, { ButtonType } from '../button/Button';
-import { Block } from '../../../main';
+import { Block, Checkbox, Files, Hidden, Image, Input, Time } from '../../../main';
 import traverseFunctionalComponents from './traverse';
 import './Form.css';
 
@@ -34,44 +34,45 @@ export const Form: React.FC<PropsWithChildren<FormProps>> = ({ info, error, succ
         setDisabled(false);
         traverseFunctionalComponents(children, (element) => {
             const props = element.props as any;
-            if (!props.required) return; // Проверяем только компоненты в которых ввод обязателен
+            if(!props.required) return; // Проверяем только компоненты в которых ввод обязателен
             // Обрабатываем только известные нам компоненты
-            switch((element.type as Function).name) {
-                case 'Input':
+            switch(element.type) {
+                case Time:
+                case Input:
                     // Значение должно быть непустой строкой
                     if(!(props.value as string).trim()) setDisabled(true);
                     break;
-                case 'Checkbox':
+                case Checkbox:
                     // Чекбокс должен быть отмечен
                     if(!(props.checked as boolean)) setDisabled(true);
                     break;
-                case 'Select': {
+                case Select: {
                     // Среди списка опций должна быть опция с указанным значением
                     const value = props.value as string;
                     const options = props.options as SelectOption[];
                     if(options.findIndex(a => a.value === value) < 0) setDisabled(true); }
                     break;
-                case 'RadioList': {
+                case RadioList: {
                     // Среди списка опций должна быть опция с указанным значением
                     const value = props.value as string;
                     const options = props.options as RadioListOption[];
                     if(options.findIndex(a => a.value === value) < 0) setDisabled(true); }
                     break;
-                case 'Files':
+                case Files:
                     // Должен быть выбран хотя бы один файл
                     const files = props.files as File[];
                     if(files.length < 1) setDisabled(true);
                     break;
-                case 'Image':
+                case Image:
                     // Файл картинки должен быть выбран
                     const image = props.value as File;
-                    if (!image) setDisabled(true);
+                    if(!image) setDisabled(true);
                     break;
-                case 'Date':
+                case Date:
                     // Дата должна быть валидна
                     if(!isValidDate((props.value as string).trim())) setDisabled(true);
                     break;
-                case 'CheckboxList': {
+                case CheckboxList: {
                     // Должен быть выбран хотя бы один чекбокс
                     const options = props.options as CheckboxListOption[];
                     if(options.findIndex(a => a.checked === true) < 0) setDisabled(true); }
@@ -103,29 +104,29 @@ export const Form: React.FC<PropsWithChildren<FormProps>> = ({ info, error, succ
         traverseFunctionalComponents(children, (element) => {
             const props = element.props as any;
             // Обрабатываем только известные нам компоненты
-            switch((element.type as Function).name) {
-                case 'Date':
-                case 'Time':
-                case 'Input':
+            switch(element.type) {
+                case Date:
+                case Time:
+                case Input:
                     addData(props.id, (props.value as string).trim());
                     break;
-                case 'Checkbox':
+                case Checkbox:
                     addData(props.id, props.checked as boolean ? props.value : undefined);
                     break;
-                case 'Select': 
-                case 'RadioList':
+                case Select: 
+                case RadioList:
                     addData(props.id, props.value as string);
                     break;
-                case 'Files':
+                case Files:
                     addData(props.id, props.files as File[]);
                     break;
-                case 'Image':
+                case Image:
                     addData(props.id, props.value as File);
                     break;
-                case 'Hidden':
+                case Hidden:
                     addData(props.id, props.value as string | number);
                     break;
-                case 'CheckboxList': {
+                case CheckboxList: {
                     const value: CheckboxListValue[] = [];
                     const options = props.options as CheckboxListOption[];
                     options.forEach(o => { if(o.checked) value.push(o.value); });
