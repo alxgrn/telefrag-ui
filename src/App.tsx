@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Icons as Icon, Form, Files, Input, RadioList, Select, Checkbox, CheckboxList, Fieldset, Date, FormData, FormRow, FormCol, Time, Modal, Button, Alert, Confirm, Prompt, Panel, Layout, Page, MainMenuItem, PageHeader, Image, ToolbarItem } from '../lib/main';
+import { Icons as Icon, Form, Files, Input, RadioList, Select, Checkbox, CheckboxList, Fieldset, Date, FormData, FormRow, FormCol, Time, Modal, Button, Alert, Confirm, Prompt, Panel, Layout, Page, MainMenuItem, PageHeader, Image, ToolbarItem, Hidden } from '../lib/main';
 import { CheckboxListOption } from '../lib/components/form/checkbox/CheckboxList';
 import { RadioListOption, RadioListValue } from '../lib/components/form/radio/RadioList';
 import { Menu } from '../lib/components/icons';
@@ -185,6 +185,11 @@ function App() {
                     cancel='Cancel'
                     onCancel={() => setIsModalOpen(true)}
                 >
+                    <Hidden
+                        id='hidden'
+                        value={0}
+                        required
+                    />
                     <FormRow>
                         <FormCol>
                             <Input

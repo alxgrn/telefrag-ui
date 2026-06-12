@@ -33,6 +33,9 @@ function isFunctionalComponent(element: ReactElement): boolean {
 
     let type = element.type;
 
+    // Пропускаем DOM-теги (строки)
+    if (typeof type === 'string') return false;
+
     // Пробираемся сквозь React.memo и React.forwardRef
     while (isExoticComponent(type)) {
         if (type.$$typeof === Symbol.for('react.memo') ||

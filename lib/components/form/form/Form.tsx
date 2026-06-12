@@ -1,3 +1,13 @@
+/**
+ * Обработчик формы
+ * ВАЖНО: Все компоненты ввода должны быть внутри компонента формы.
+ * Если какие-то компоненты вынесены в подкомпоненты, то их значение
+ * и параметр required не будут корректно обработаны из-за того, что
+ * рекурсия обходит только компоненты, которые имеют children.
+ * Обычно это не вызывает проблем при передаче данных т.к. данные
+ * переданные в onSubmit используются редко. Но с проверкой required
+ * будут проблемы. Их можно обойти используя Hidden c опцией required.
+ */
 import React, { useEffect, useState, PropsWithChildren } from 'react';
 import Date, { isValidDate } from '../date/Date';
 import RadioList, { RadioListOption } from '../radio/RadioList';
@@ -76,6 +86,11 @@ export const Form: React.FC<PropsWithChildren<FormProps>> = ({ info, error, succ
                     // Должен быть выбран хотя бы один чекбокс
                     const options = props.options as CheckboxListOption[];
                     if(options.findIndex(a => a.checked === true) < 0) setDisabled(true); }
+                    break;
+                case Hidden: {
+                    // Если значение строка, то она не должна быть пустой
+                    const value = props.value as string|number;
+                    if (!`${value}`.trim()) setDisabled(true); }
                     break;
                 default:
                     break;
