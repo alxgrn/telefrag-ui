@@ -20,7 +20,7 @@ export default defineConfig({
       formats: ['es']
     },
     rollupOptions: {
-      external: ['react', 'react-dom', 'react/jsx-runtime', 'react-children-utilities','react-transition-group'],
+      external: ['react', 'react-dom', 'react-router', 'react/jsx-runtime', 'react-children-utilities','react-transition-group'],
       input: Object.fromEntries(
         glob.sync('lib/**/*.{ts,tsx}', {
           ignore: ["lib/**/*.d.ts"],

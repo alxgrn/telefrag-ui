@@ -4,14 +4,13 @@ import './Content.css';
 
 type Props = {
     mainMenu: MainMenuItem[];
-    onMenuClick?: (id: string) => void;
 };
 
-const Content: FC<PropsWithChildren<Props>> = ({ children, mainMenu, onMenuClick }) => {
+const Content: FC<PropsWithChildren<Props>> = ({ children, mainMenu }) => {
     return (
         <main className='Content'>
             <div className='ContentMenu'>
-                <MainMenu items={mainMenu} onMenuClick={onMenuClick}/>
+                <MainMenu items={mainMenu}/>
             </div>
             <div className='ContentMain'>
                 {children}

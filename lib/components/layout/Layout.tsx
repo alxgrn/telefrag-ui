@@ -10,10 +10,9 @@ type Props = {
 	mainMenu: MainMenuItem[];
 	userMenu: React.ReactNode;
 	onLogoClick?: () => void;
-	onMenuClick?: (id: string) => void;
 }
 
-const Layout: FC<PropsWithChildren<Props>> = ({ children, mainMenu, userMenu, onLogoClick, onMenuClick }) => {
+const Layout: FC<PropsWithChildren<Props>> = ({ children, mainMenu, userMenu, onLogoClick }) => {
 	const [ isMenuVisible, setIsMenuVisible ] = useState(false);
 	return (
 		<div className='Layout'>
@@ -22,7 +21,7 @@ const Layout: FC<PropsWithChildren<Props>> = ({ children, mainMenu, userMenu, on
 				onMenuSwitch={() => setIsMenuVisible(b => !b)}
 				onLogoClick={onLogoClick}
 			/>
-            <Content mainMenu={mainMenu} onMenuClick={onMenuClick}>
+            <Content mainMenu={mainMenu}>
 				{children}
 			</Content>
             {/* <Footer/> */}
@@ -32,10 +31,7 @@ const Layout: FC<PropsWithChildren<Props>> = ({ children, mainMenu, userMenu, on
 			>
 				<MainMenu
 					items={mainMenu}
-					onMenuClick={id => {
-						setIsMenuVisible(false);
-						if (onMenuClick) onMenuClick(id);
-					}}
+					onMenuClick={() => setIsMenuVisible(false)}
 				/>
 			</Sidebar>
 		</div>

@@ -1,28 +1,29 @@
 import { FC, ReactNode } from 'react';
 import './MainMenu.css';
+import { Link } from 'react-router';
 
 export type MainMenuTitle = {
-    id?: never;
     text?: never;
     icon?: never;
+    link?: never;
     title: string;
     checked?: never;
     node?: never;
 };
 
 export type MainMenuAlternative = {
-    id: string;
     text: string;
     icon: ReactNode;
+    link: string;
     title?: never;
     checked?: boolean;
     node?: never;
 };
 
 export type MainMenuNode = {
-    id?: never;
     text?: never;
     icon?: never;
+    link?: never;
     title?: string;
     checked?: never;
     node: ReactNode;
@@ -32,7 +33,7 @@ export type MainMenuItem = MainMenuTitle | MainMenuAlternative | MainMenuNode;
 
 type Props = {
     items: MainMenuItem[];
-    onMenuClick?: (id: string) => void;
+    onMenuClick?: () => void;
 };
 
 const MainMenu: FC<Props> = ({ items, onMenuClick }) => {
@@ -40,13 +41,14 @@ const MainMenu: FC<Props> = ({ items, onMenuClick }) => {
         <div className='MainMenu'>
             {items.map((item, index) => <div
                 key={index}
-                onClick={() => { if(onMenuClick && item.id) onMenuClick(item.id) }}
                 className={item.node ? 'MainMenuNode' : item.title ? 'MainMenuTitle' : 'MainMenuAlternative'}
             >
-                {item.node ? item.node : item.title
-                ? <span className='one-line'>{item.title}</span>
-                : <>{item.icon}<span className='one-line'>{item.text}</span></>}
-                {item.checked && <span className='MainMenuCheck'/>}
+                {item.node ? item.node : item.title ? item.title :
+                <Link to={item.link ?? '/'} onClick={() => onMenuClick?.()}>
+                    {item.icon}
+                    <span className='MainMenuAlternativeText'>{item.text}</span>
+                    {item.checked && <span className='MainMenuAlternativeCheck'/>}
+                </Link>}
             </div>)}
         </div>
     );
