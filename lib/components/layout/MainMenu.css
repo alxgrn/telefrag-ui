@@ -26,8 +26,9 @@
     align-items: center;
     gap: var(--alxgrn-unit-half);
     cursor: pointer;
-    color: var(--alxgrn-color-text)!important;
+    color: var(--alxgrn-color-text);
     text-decoration: none;
+    border: none; /* в главном проекте подчеркивание через бордер */
 }
 
 .MainMenu .MainMenuAlternative svg {
